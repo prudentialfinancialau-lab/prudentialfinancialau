@@ -48,10 +48,17 @@ export const PagePartsFragmentDoc = gql`
     __typename
     title
     description
+    lenderList {
+      __typename
+      name
+      logo
+    }
   }
   contact {
     __typename
     title
+    mapUrl
+    location
   }
   newsletter {
     __typename

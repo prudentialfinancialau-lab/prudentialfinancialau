@@ -124,13 +124,21 @@ type PageHelp {
   features: [PageHelpFeatures]
 }
 
+type PageLendersLenderList {
+  name: String
+  logo: String
+}
+
 type PageLenders {
   title: String
   description: String
+  lenderList: [PageLendersLenderList]
 }
 
 type PageContact {
   title: String
+  mapUrl: String
+  location: String
 }
 
 type PageNewsletter {
@@ -221,13 +229,21 @@ input PageHelpFilter {
   features: PageHelpFeaturesFilter
 }
 
+input PageLendersLenderListFilter {
+  name: StringFilter
+  logo: ImageFilter
+}
+
 input PageLendersFilter {
   title: StringFilter
   description: StringFilter
+  lenderList: PageLendersLenderListFilter
 }
 
 input PageContactFilter {
   title: StringFilter
+  mapUrl: StringFilter
+  location: StringFilter
 }
 
 input PageNewsletterFilter {
@@ -331,13 +347,21 @@ input PageHelpMutation {
   features: [PageHelpFeaturesMutation]
 }
 
+input PageLendersLenderListMutation {
+  name: String
+  logo: String
+}
+
 input PageLendersMutation {
   title: String
   description: String
+  lenderList: [PageLendersLenderListMutation]
 }
 
 input PageContactMutation {
   title: String
+  mapUrl: String
+  location: String
 }
 
 input PageNewsletterMutation {

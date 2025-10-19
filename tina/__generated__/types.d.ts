@@ -206,15 +206,24 @@ export type PageHelp = {
   features?: Maybe<Array<Maybe<PageHelpFeatures>>>;
 };
 
+export type PageLendersLenderList = {
+  __typename?: 'PageLendersLenderList';
+  name?: Maybe<Scalars['String']['output']>;
+  logo?: Maybe<Scalars['String']['output']>;
+};
+
 export type PageLenders = {
   __typename?: 'PageLenders';
   title?: Maybe<Scalars['String']['output']>;
   description?: Maybe<Scalars['String']['output']>;
+  lenderList?: Maybe<Array<Maybe<PageLendersLenderList>>>;
 };
 
 export type PageContact = {
   __typename?: 'PageContact';
   title?: Maybe<Scalars['String']['output']>;
+  mapUrl?: Maybe<Scalars['String']['output']>;
+  location?: Maybe<Scalars['String']['output']>;
 };
 
 export type PageNewsletter = {
@@ -310,13 +319,21 @@ export type PageHelpFilter = {
   features?: InputMaybe<PageHelpFeaturesFilter>;
 };
 
+export type PageLendersLenderListFilter = {
+  name?: InputMaybe<StringFilter>;
+  logo?: InputMaybe<ImageFilter>;
+};
+
 export type PageLendersFilter = {
   title?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
+  lenderList?: InputMaybe<PageLendersLenderListFilter>;
 };
 
 export type PageContactFilter = {
   title?: InputMaybe<StringFilter>;
+  mapUrl?: InputMaybe<StringFilter>;
+  location?: InputMaybe<StringFilter>;
 };
 
 export type PageNewsletterFilter = {
@@ -468,13 +485,21 @@ export type PageHelpMutation = {
   features?: InputMaybe<Array<InputMaybe<PageHelpFeaturesMutation>>>;
 };
 
+export type PageLendersLenderListMutation = {
+  name?: InputMaybe<Scalars['String']['input']>;
+  logo?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type PageLendersMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
+  lenderList?: InputMaybe<Array<InputMaybe<PageLendersLenderListMutation>>>;
 };
 
 export type PageContactMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
+  mapUrl?: InputMaybe<Scalars['String']['input']>;
+  location?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type PageNewsletterMutation = {
@@ -511,14 +536,14 @@ export type PageMutation = {
   footer?: InputMaybe<PageFooterMutation>;
 };
 
-export type PagePartsFragment = { __typename: 'Page', hero?: { __typename: 'PageHero', breadcrumb?: string | null, title?: string | null, buttonText?: string | null, formTitle?: string | null, heroImage?: string | null } | null, about?: { __typename: 'PageAbout', label?: string | null, title?: string | null, paragraph1?: string | null, paragraph2?: string | null, quote?: string | null, quoteAuthor?: string | null, stat1Value?: string | null, stat1Label?: string | null, stat2Value?: string | null, stat2Label?: string | null, image?: string | null } | null, help?: { __typename: 'PageHelp', title?: string | null, description?: string | null, statValue?: string | null, statLabel?: string | null, image?: string | null, features?: Array<{ __typename: 'PageHelpFeatures', icon?: string | null, title?: string | null, description?: string | null } | null> | null } | null, lenders?: { __typename: 'PageLenders', title?: string | null, description?: string | null } | null, contact?: { __typename: 'PageContact', title?: string | null } | null, newsletter?: { __typename: 'PageNewsletter', title?: string | null } | null, header?: { __typename: 'PageHeader', phone?: string | null, email?: string | null, logo?: string | null } | null, footer?: { __typename: 'PageFooter', description?: string | null, email?: string | null, copyright?: string | null, address?: { __typename: 'PageFooterAddress', line1?: string | null, line2?: string | null, line3?: string | null } | null } | null };
+export type PagePartsFragment = { __typename: 'Page', hero?: { __typename: 'PageHero', breadcrumb?: string | null, title?: string | null, buttonText?: string | null, formTitle?: string | null, heroImage?: string | null } | null, about?: { __typename: 'PageAbout', label?: string | null, title?: string | null, paragraph1?: string | null, paragraph2?: string | null, quote?: string | null, quoteAuthor?: string | null, stat1Value?: string | null, stat1Label?: string | null, stat2Value?: string | null, stat2Label?: string | null, image?: string | null } | null, help?: { __typename: 'PageHelp', title?: string | null, description?: string | null, statValue?: string | null, statLabel?: string | null, image?: string | null, features?: Array<{ __typename: 'PageHelpFeatures', icon?: string | null, title?: string | null, description?: string | null } | null> | null } | null, lenders?: { __typename: 'PageLenders', title?: string | null, description?: string | null, lenderList?: Array<{ __typename: 'PageLendersLenderList', name?: string | null, logo?: string | null } | null> | null } | null, contact?: { __typename: 'PageContact', title?: string | null, mapUrl?: string | null, location?: string | null } | null, newsletter?: { __typename: 'PageNewsletter', title?: string | null } | null, header?: { __typename: 'PageHeader', phone?: string | null, email?: string | null, logo?: string | null } | null, footer?: { __typename: 'PageFooter', description?: string | null, email?: string | null, copyright?: string | null, address?: { __typename: 'PageFooterAddress', line1?: string | null, line2?: string | null, line3?: string | null } | null } | null };
 
 export type PageQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type PageQuery = { __typename?: 'Query', page: { __typename: 'Page', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'PageHero', breadcrumb?: string | null, title?: string | null, buttonText?: string | null, formTitle?: string | null, heroImage?: string | null } | null, about?: { __typename: 'PageAbout', label?: string | null, title?: string | null, paragraph1?: string | null, paragraph2?: string | null, quote?: string | null, quoteAuthor?: string | null, stat1Value?: string | null, stat1Label?: string | null, stat2Value?: string | null, stat2Label?: string | null, image?: string | null } | null, help?: { __typename: 'PageHelp', title?: string | null, description?: string | null, statValue?: string | null, statLabel?: string | null, image?: string | null, features?: Array<{ __typename: 'PageHelpFeatures', icon?: string | null, title?: string | null, description?: string | null } | null> | null } | null, lenders?: { __typename: 'PageLenders', title?: string | null, description?: string | null } | null, contact?: { __typename: 'PageContact', title?: string | null } | null, newsletter?: { __typename: 'PageNewsletter', title?: string | null } | null, header?: { __typename: 'PageHeader', phone?: string | null, email?: string | null, logo?: string | null } | null, footer?: { __typename: 'PageFooter', description?: string | null, email?: string | null, copyright?: string | null, address?: { __typename: 'PageFooterAddress', line1?: string | null, line2?: string | null, line3?: string | null } | null } | null } };
+export type PageQuery = { __typename?: 'Query', page: { __typename: 'Page', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'PageHero', breadcrumb?: string | null, title?: string | null, buttonText?: string | null, formTitle?: string | null, heroImage?: string | null } | null, about?: { __typename: 'PageAbout', label?: string | null, title?: string | null, paragraph1?: string | null, paragraph2?: string | null, quote?: string | null, quoteAuthor?: string | null, stat1Value?: string | null, stat1Label?: string | null, stat2Value?: string | null, stat2Label?: string | null, image?: string | null } | null, help?: { __typename: 'PageHelp', title?: string | null, description?: string | null, statValue?: string | null, statLabel?: string | null, image?: string | null, features?: Array<{ __typename: 'PageHelpFeatures', icon?: string | null, title?: string | null, description?: string | null } | null> | null } | null, lenders?: { __typename: 'PageLenders', title?: string | null, description?: string | null, lenderList?: Array<{ __typename: 'PageLendersLenderList', name?: string | null, logo?: string | null } | null> | null } | null, contact?: { __typename: 'PageContact', title?: string | null, mapUrl?: string | null, location?: string | null } | null, newsletter?: { __typename: 'PageNewsletter', title?: string | null } | null, header?: { __typename: 'PageHeader', phone?: string | null, email?: string | null, logo?: string | null } | null, footer?: { __typename: 'PageFooter', description?: string | null, email?: string | null, copyright?: string | null, address?: { __typename: 'PageFooterAddress', line1?: string | null, line2?: string | null, line3?: string | null } | null } | null } };
 
 export type PageConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -530,7 +555,7 @@ export type PageConnectionQueryVariables = Exact<{
 }>;
 
 
-export type PageConnectionQuery = { __typename?: 'Query', pageConnection: { __typename?: 'PageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PageConnectionEdges', cursor: string, node?: { __typename: 'Page', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'PageHero', breadcrumb?: string | null, title?: string | null, buttonText?: string | null, formTitle?: string | null, heroImage?: string | null } | null, about?: { __typename: 'PageAbout', label?: string | null, title?: string | null, paragraph1?: string | null, paragraph2?: string | null, quote?: string | null, quoteAuthor?: string | null, stat1Value?: string | null, stat1Label?: string | null, stat2Value?: string | null, stat2Label?: string | null, image?: string | null } | null, help?: { __typename: 'PageHelp', title?: string | null, description?: string | null, statValue?: string | null, statLabel?: string | null, image?: string | null, features?: Array<{ __typename: 'PageHelpFeatures', icon?: string | null, title?: string | null, description?: string | null } | null> | null } | null, lenders?: { __typename: 'PageLenders', title?: string | null, description?: string | null } | null, contact?: { __typename: 'PageContact', title?: string | null } | null, newsletter?: { __typename: 'PageNewsletter', title?: string | null } | null, header?: { __typename: 'PageHeader', phone?: string | null, email?: string | null, logo?: string | null } | null, footer?: { __typename: 'PageFooter', description?: string | null, email?: string | null, copyright?: string | null, address?: { __typename: 'PageFooterAddress', line1?: string | null, line2?: string | null, line3?: string | null } | null } | null } | null } | null> | null } };
+export type PageConnectionQuery = { __typename?: 'Query', pageConnection: { __typename?: 'PageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PageConnectionEdges', cursor: string, node?: { __typename: 'Page', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'PageHero', breadcrumb?: string | null, title?: string | null, buttonText?: string | null, formTitle?: string | null, heroImage?: string | null } | null, about?: { __typename: 'PageAbout', label?: string | null, title?: string | null, paragraph1?: string | null, paragraph2?: string | null, quote?: string | null, quoteAuthor?: string | null, stat1Value?: string | null, stat1Label?: string | null, stat2Value?: string | null, stat2Label?: string | null, image?: string | null } | null, help?: { __typename: 'PageHelp', title?: string | null, description?: string | null, statValue?: string | null, statLabel?: string | null, image?: string | null, features?: Array<{ __typename: 'PageHelpFeatures', icon?: string | null, title?: string | null, description?: string | null } | null> | null } | null, lenders?: { __typename: 'PageLenders', title?: string | null, description?: string | null, lenderList?: Array<{ __typename: 'PageLendersLenderList', name?: string | null, logo?: string | null } | null> | null } | null, contact?: { __typename: 'PageContact', title?: string | null, mapUrl?: string | null, location?: string | null } | null, newsletter?: { __typename: 'PageNewsletter', title?: string | null } | null, header?: { __typename: 'PageHeader', phone?: string | null, email?: string | null, logo?: string | null } | null, footer?: { __typename: 'PageFooter', description?: string | null, email?: string | null, copyright?: string | null, address?: { __typename: 'PageFooterAddress', line1?: string | null, line2?: string | null, line3?: string | null } | null } | null } | null } | null> | null } };
 
 export const PagePartsFragmentDoc = gql`
     fragment PageParts on Page {
@@ -575,10 +600,17 @@ export const PagePartsFragmentDoc = gql`
     __typename
     title
     description
+    lenderList {
+      __typename
+      name
+      logo
+    }
   }
   contact {
     __typename
     title
+    mapUrl
+    location
   }
   newsletter {
     __typename

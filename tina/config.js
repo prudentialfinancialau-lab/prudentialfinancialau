@@ -221,6 +221,24 @@ export default defineConfig({
                 name: "description",
                 label: "Description",
               },
+              {
+                type: "object",
+                name: "lenderList",
+                label: "Lender List",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "name",
+                    label: "Lender Name",
+                  },
+                  {
+                    type: "image",
+                    name: "logo",
+                    label: "Lender Logo (optional)",
+                  },
+                ],
+              },
             ],
           },
           // Contact Section
@@ -233,6 +251,19 @@ export default defineConfig({
                 type: "string",
                 name: "title",
                 label: "Title",
+              },
+              {
+                type: "string",
+                name: "mapUrl",
+                label: "Google Maps Embed URL",
+                ui: {
+                  component: "textarea",
+                },
+              },
+              {
+                type: "string",
+                name: "location",
+                label: "Location Name",
               },
             ],
           },

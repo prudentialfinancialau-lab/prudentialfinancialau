@@ -3,14 +3,19 @@ const Lenders = ({ data = {} }) => {
   const title = data?.title || 'Our Lenders';
   const description = data?.description || 'We compare hundreds of loans for you from our network of lenders.';
 
-  // Placeholder lender names - in production these would be actual logo images
-  const lenders = [
-    "Commonwealth", "Westpac", "ANZ", "NAB", "St.George",
-    "Adelaide Bank", "AFG", "AMP", "BankSA", "Bank of Melb",
-    "Beyond Bank", "Macquarie", "Greater", "Heritage", "Mortgage Choice",
-    "NAB Broker", "Liberty", "BOQ", "RACQ", "Teachers Mutual",
-    "Newcastle Permanent", "P&N Bank", "Police Bank", "IMB"
+  // Default lenders if not provided
+  const defaultLenders = [
+    { name: "Commonwealth" }, { name: "Westpac" }, { name: "ANZ" },
+    { name: "NAB" }, { name: "St.George" }, { name: "Adelaide Bank" },
+    { name: "AFG" }, { name: "AMP" }, { name: "BankSA" },
+    { name: "Bank of Melb" }, { name: "Beyond Bank" }, { name: "Macquarie" },
+    { name: "Greater" }, { name: "Heritage" }, { name: "Mortgage Choice" },
+    { name: "NAB Broker" }, { name: "Liberty" }, { name: "BOQ" },
+    { name: "RACQ" }, { name: "Teachers Mutual" }, { name: "Newcastle Permanent" },
+    { name: "P&N Bank" }, { name: "Police Bank" }, { name: "IMB" }
   ];
+
+  const lenders = data?.lenderList || defaultLenders;
 
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-white">
@@ -30,12 +35,22 @@ const Lenders = ({ data = {} }) => {
               className="bg-white border border-gray-200 rounded-lg p-4 sm:p-5 md:p-6 flex items-center justify-center hover:shadow-lg transition-shadow"
             >
               <div className="text-center">
-                <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 bg-gray-100 rounded-lg mx-auto mb-1.5 sm:mb-2 flex items-center justify-center">
-                  <span className="text-xl sm:text-2xl font-bold text-gray-400">
-                    {lender.charAt(0)}
-                  </span>
-                </div>
-                <p className="text-xs text-gray-600 font-medium line-clamp-2">{lender}</p>
+                {lender.logo ? (
+                  <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 mx-auto mb-1.5 sm:mb-2 flex items-center justify-center">
+                    <img
+                      src={lender.logo}
+                      alt={lender.name}
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 bg-gray-100 rounded-lg mx-auto mb-1.5 sm:mb-2 flex items-center justify-center">
+                    <span className="text-xl sm:text-2xl font-bold text-gray-400">
+                      {lender.name.charAt(0)}
+                    </span>
+                  </div>
+                )}
+                <p className="text-xs text-gray-600 font-medium line-clamp-2">{lender.name}</p>
               </div>
             </div>
           ))}
