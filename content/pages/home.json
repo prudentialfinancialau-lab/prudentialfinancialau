@@ -1,7 +1,7 @@
 {
   "hero": {
     "breadcrumb": "Home / Mortgage Landing Page",
-    "title": "Mortgage Is A Great For You",
+    "title": "Mortgage Is A Great For Youh",
     "buttonText": "Join with Company",
     "formTitle": "Calculate Your Mortgage",
     "heroImage": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop"
@@ -13,7 +13,7 @@
     "paragraph2": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat.",
     "quote": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec velit neque, auctor sit amet aliquam vel.",
     "quoteAuthor": "John Doe, President",
-    "stat1Value": "20+",
+    "stat1Value": "30+",
     "stat1Label": "Years Of Experience",
     "stat2Value": "90%",
     "stat2Label": "Customer Worldwide",
