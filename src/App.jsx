@@ -1,23 +1,4 @@
-import { TinaProvider, useTina } from 'tinacms/dist/react'
-import { TinaEditProvider } from 'tinacms/dist/edit-state'
-import client from '../tina/__generated__/client'
-
 function App() {
-  return (
-    <TinaEditProvider
-      showEditButton={true}
-      editMode={
-        <TinaProvider client={client}>
-          <InnerApp />
-        </TinaProvider>
-      }
-    >
-      <InnerApp />
-    </TinaEditProvider>
-  )
-}
-
-function InnerApp() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8">
       <div className="max-w-4xl mx-auto">
@@ -40,8 +21,8 @@ function InnerApp() {
           </p>
           <div className="bg-indigo-50 border-l-4 border-indigo-500 p-4 mb-4">
             <p className="text-sm text-indigo-700">
-              <strong>Note:</strong> To use the visual editor, you'll need to set up
-              TinaCMS Cloud and configure your environment variables.
+              <strong>Note:</strong> TinaCMS is configured and ready.
+              The visual editor will be integrated in the next steps.
             </p>
           </div>
         </div>
