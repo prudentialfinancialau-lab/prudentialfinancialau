@@ -5,65 +5,97 @@ const Header = () => {
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
-      <div className="bg-gray-900 text-white py-2">
-        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center text-sm">
-          <div className="flex items-center gap-6">
-            <span>Call Us: +1 (855) 933-9318</span>
-            <span>Mail: support@domain.com</span>
+      {/* Top Contact Bar */}
+      <div className="bg-gray-900 text-white py-2 text-xs sm:text-sm">
+        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
+          <div className="flex items-center gap-3 sm:gap-6 flex-wrap">
+            <span className="flex items-center gap-1">
+              <i className="fas fa-phone"></i>
+              <span className="hidden sm:inline">Call Us: </span>
+              <span>+1 (855) 933-9318</span>
+            </span>
+            <span className="flex items-center gap-1">
+              <i className="fas fa-envelope"></i>
+              <span className="hidden sm:inline">Mail: </span>
+              <span>support@domain.com</span>
+            </span>
           </div>
-          <div className="flex items-center gap-3">
-            <a href="#" className="hover:text-emerald-400"><i className="fab fa-facebook-f"></i></a>
-            <a href="#" className="hover:text-emerald-400"><i className="fab fa-twitter"></i></a>
-            <a href="#" className="hover:text-emerald-400"><i className="fab fa-linkedin-in"></i></a>
-            <a href="#" className="hover:text-emerald-400"><i className="fab fa-youtube"></i></a>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <a href="#" className="hover:text-emerald-400 transition-colors"><i className="fab fa-facebook-f"></i></a>
+            <a href="#" className="hover:text-emerald-400 transition-colors"><i className="fab fa-twitter"></i></a>
+            <a href="#" className="hover:text-emerald-400 transition-colors"><i className="fab fa-linkedin-in"></i></a>
+            <a href="#" className="hover:text-emerald-400 transition-colors"><i className="fab fa-youtube"></i></a>
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-4">
+      {/* Main Navigation */}
+      <div className="max-w-7xl mx-auto px-4 py-3 sm:py-4">
         <div className="flex justify-between items-center">
+          {/* Logo */}
           <div className="flex items-center">
-            <div className="text-3xl font-bold text-gray-900">
+            <div className="text-2xl sm:text-3xl font-bold text-gray-900">
               <span className="text-emerald-500">≋</span> Levi
             </div>
           </div>
 
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-gray-700 hover:text-emerald-500 font-medium">Home</a>
-            <a href="#" className="text-gray-700 hover:text-emerald-500 font-medium">About Us</a>
-            <a href="#" className="text-gray-700 hover:text-emerald-500 font-medium">Services</a>
-            <a href="#" className="text-gray-700 hover:text-emerald-500 font-medium">Team</a>
-            <a href="#" className="text-gray-700 hover:text-emerald-500 font-medium">Blog</a>
-            <a href="#" className="text-gray-700 hover:text-emerald-500 font-medium">Contact Us</a>
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+            <a href="#" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Home</a>
+            <a href="#" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">About Us</a>
+            <a href="#" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Services</a>
+            <a href="#" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Team</a>
+            <a href="#" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Blog</a>
+            <a href="#" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Contact Us</a>
           </nav>
 
-          <div className="flex items-center gap-4">
-            <button className="text-gray-700 hover:text-emerald-500 font-medium">Sign In</button>
-            <button className="bg-emerald-500 text-white px-6 py-2 rounded-md hover:bg-emerald-600 font-medium">
+          {/* Auth Buttons - Desktop */}
+          <div className="hidden lg:flex items-center gap-3">
+            <button className="text-gray-700 hover:text-emerald-500 font-medium transition-colors px-4 py-2">
+              Sign In
+            </button>
+            <button className="bg-emerald-500 text-white px-5 py-2 rounded-md hover:bg-emerald-600 font-medium transition-colors">
               Sign Up
             </button>
           </div>
 
+          {/* Mobile Menu Button */}
           <button
-            className="md:hidden"
+            className="lg:hidden p-2 text-gray-700 hover:text-emerald-500"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+            {mobileMenuOpen ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
           </button>
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t">
-          <nav className="flex flex-col space-y-4 p-4">
-            <a href="#" className="text-gray-700 hover:text-emerald-500">Home</a>
-            <a href="#" className="text-gray-700 hover:text-emerald-500">About Us</a>
-            <a href="#" className="text-gray-700 hover:text-emerald-500">Services</a>
-            <a href="#" className="text-gray-700 hover:text-emerald-500">Team</a>
-            <a href="#" className="text-gray-700 hover:text-emerald-500">Blog</a>
-            <a href="#" className="text-gray-700 hover:text-emerald-500">Contact Us</a>
+        <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
+          <nav className="flex flex-col p-4 space-y-1">
+            <a href="#" className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Home</a>
+            <a href="#" className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">About Us</a>
+            <a href="#" className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Services</a>
+            <a href="#" className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Team</a>
+            <a href="#" className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Blog</a>
+            <a href="#" className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Contact Us</a>
+            <div className="border-t border-gray-200 pt-4 mt-4 space-y-2">
+              <button className="w-full text-gray-700 hover:text-emerald-500 font-medium px-4 py-2 border border-gray-300 rounded-md transition-colors">
+                Sign In
+              </button>
+              <button className="w-full bg-emerald-500 text-white px-4 py-2 rounded-md hover:bg-emerald-600 font-medium transition-colors">
+                Sign Up
+              </button>
+            </div>
           </nav>
         </div>
       )}
