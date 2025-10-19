@@ -1,0 +1,70 @@
+fragment PageParts on Page {
+  __typename
+  hero {
+    __typename
+    breadcrumb
+    title
+    buttonText
+    formTitle
+    heroImage
+  }
+  about {
+    __typename
+    label
+    title
+    paragraph1
+    paragraph2
+    quote
+    quoteAuthor
+    stat1Value
+    stat1Label
+    stat2Value
+    stat2Label
+    image
+  }
+  help {
+    __typename
+    title
+    description
+    statValue
+    statLabel
+    image
+    features {
+      __typename
+      icon
+      title
+      description
+    }
+  }
+  lenders {
+    __typename
+    title
+    description
+  }
+  contact {
+    __typename
+    title
+  }
+  newsletter {
+    __typename
+    title
+  }
+  header {
+    __typename
+    phone
+    email
+    logo
+  }
+  footer {
+    __typename
+    description
+    address {
+      __typename
+      line1
+      line2
+      line3
+    }
+    email
+    copyright
+  }
+}

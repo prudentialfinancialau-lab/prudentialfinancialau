@@ -1,7 +1,12 @@
 import { useState } from 'react';
 
-const Header = () => {
+const Header = ({ data = {} }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Default values
+  const phone = data?.phone || '+1 (855) 933-9318';
+  const email = data?.email || 'support@domain.com';
+  const logo = data?.logo || 'Levi';
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
@@ -12,12 +17,12 @@ const Header = () => {
             <span className="flex items-center gap-1">
               <i className="fas fa-phone"></i>
               <span className="hidden sm:inline">Call Us: </span>
-              <span>+1 (855) 933-9318</span>
+              <span>{phone}</span>
             </span>
             <span className="flex items-center gap-1">
               <i className="fas fa-envelope"></i>
               <span className="hidden sm:inline">Mail: </span>
-              <span>support@domain.com</span>
+              <span>{email}</span>
             </span>
           </div>
           <div className="flex items-center gap-2 sm:gap-3">
@@ -35,7 +40,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <div className="text-2xl sm:text-3xl font-bold text-gray-900">
-              <span className="text-emerald-500">≋</span> Levi
+              <span className="text-emerald-500">≋</span> {logo}
             </div>
           </div>
 

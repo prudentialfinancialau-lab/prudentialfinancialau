@@ -1,0 +1,86 @@
+{
+  "hero": {
+    "breadcrumb": "Home / Mortgage Landing Page",
+    "title": "Mortgage Is A Great For You",
+    "buttonText": "Join with Company",
+    "formTitle": "Calculate Your Mortgage",
+    "heroImage": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop"
+  },
+  "about": {
+    "label": "About Our Company",
+    "title": "Why Should You Choose Us?",
+    "paragraph1": "Sed porttitor lectus nibh. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
+    "paragraph2": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat.",
+    "quote": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec velit neque, auctor sit amet aliquam vel.",
+    "quoteAuthor": "John Doe, President",
+    "stat1Value": "20+",
+    "stat1Label": "Years Of Experience",
+    "stat2Value": "90%",
+    "stat2Label": "Customer Worldwide",
+    "image": "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&h=600&fit=crop"
+  },
+  "help": {
+    "title": "We Are Here To Help You",
+    "description": "Sed porttitor lectus nibh. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus magna justo, lacinia eget consectetur sed.",
+    "statValue": "56+",
+    "statLabel": "Consulting Awards",
+    "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
+    "features": [
+      {
+        "icon": "💡",
+        "title": "Make A New Dream",
+        "description": "Lorem ipsum dolor sit amet, consec tetur adipiscing elit sed do."
+      },
+      {
+        "icon": "📋",
+        "title": "Create A Plans",
+        "description": "Lorem ipsum dolor sit amet, consec tetur adipiscing elit sed do."
+      },
+      {
+        "icon": "🤝",
+        "title": "Be A Part Of Community",
+        "description": "Lorem ipsum dolor sit amet, consec tetur adipiscing elit sed do."
+      },
+      {
+        "icon": "💰",
+        "title": "Pay Principal",
+        "description": "Lorem ipsum dolor sit amet, consec tetur adipiscing elit sed do."
+      },
+      {
+        "icon": "🔒",
+        "title": "Get Tax Savings",
+        "description": "Lorem ipsum dolor sit amet, consec tetur adipiscing elit sed do."
+      },
+      {
+        "icon": "💳",
+        "title": "Build Credit",
+        "description": "Lorem ipsum dolor sit amet, consec tetur adipiscing elit sed do."
+      }
+    ]
+  },
+  "lenders": {
+    "title": "Our Lenders",
+    "description": "We compare hundreds of loans for you from our network of lenders."
+  },
+  "contact": {
+    "title": "Contact With Us"
+  },
+  "newsletter": {
+    "title": "Do You Want To Get Update What's Upcoming?"
+  },
+  "header": {
+    "phone": "+1 (855) 933-9318",
+    "email": "support@domain.com",
+    "logo": "Levi"
+  },
+  "footer": {
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "address": {
+      "line1": "1250 US-46 Unit 205",
+      "line2": "Parsippany NJ 07054",
+      "line3": "United States of America"
+    },
+    "email": "support@domain.com",
+    "copyright": "© 2023 Levi Consulting Platform. All Rights Reserved."
+  }
+}
