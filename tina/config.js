@@ -33,6 +33,9 @@ export default defineConfig({
             create: false,
             delete: false,
           },
+          router: () => {
+            return '/';
+          },
         },
         fields: [
           // Hero Section

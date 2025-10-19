@@ -26,6 +26,9 @@ var config_default = defineConfig({
           allowedActions: {
             create: false,
             delete: false
+          },
+          router: () => {
+            return "/";
           }
         },
         fields: [
