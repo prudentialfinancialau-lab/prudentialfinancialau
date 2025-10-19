@@ -10,9 +10,7 @@ const branch =
 export default defineConfig({
   branch,
 
-  // Get this from tina.io
-  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
-  // Get this from tina.io
+  clientId: "1f3442f9-93fd-4285-a485-f1fa4b91329a",
   token: process.env.TINA_TOKEN,
 
   build: {
@@ -25,26 +23,79 @@ export default defineConfig({
       publicFolder: "public",
     },
   },
-  // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
   schema: {
     collections: [
       {
-        name: "post",
-        label: "Posts",
-        path: "content/posts",
+        name: "page",
+        label: "Pages",
+        path: "content/pages",
+        format: "mdx",
         fields: [
           {
             type: "string",
             name: "title",
-            label: "Title",
-            isTitle: true,
+            label: "Page Title",
             required: true,
           },
           {
+            type: "string",
+            name: "description",
+            label: "Description",
+          },
+          {
+            type: "image",
+            name: "heroImage",
+            label: "Hero Image",
+          },
+          {
             type: "rich-text",
-            name: "body",
-            label: "Body",
+            name: "content",
+            label: "Content",
             isBody: true,
+          },
+        ],
+      },
+      {
+        name: "section",
+        label: "Landing Sections",
+        path: "content/sections",
+        format: "json",
+        fields: [
+          {
+            type: "string",
+            name: "heading",
+            label: "Section Heading",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "subheading",
+            label: "Subheading",
+          },
+          {
+            type: "image",
+            name: "image",
+            label: "Section Image",
+          },
+          {
+            type: "string",
+            name: "imageAlt",
+            label: "Image Alt Text",
+          },
+          {
+            type: "rich-text",
+            name: "description",
+            label: "Description",
+          },
+          {
+            type: "string",
+            name: "buttonText",
+            label: "Button Text",
+          },
+          {
+            type: "string",
+            name: "buttonLink",
+            label: "Button Link",
           },
         ],
       },
