@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const Contact = () => {
+const Contact = ({ data = {} }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -8,6 +8,9 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+
+  // Default values
+  const title = data?.title || 'Contact With Us';
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,7 +30,7 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
           {/* Left - Contact Form */}
           <div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 sm:mb-8">Contact With Us</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 sm:mb-8">{title}</h2>
 
             <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
               <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">

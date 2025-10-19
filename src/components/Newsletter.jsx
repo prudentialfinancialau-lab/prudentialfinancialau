@@ -1,7 +1,10 @@
 import { useState } from 'react';
 
-const Newsletter = () => {
+const Newsletter = ({ data = {} }) => {
   const [email, setEmail] = useState('');
+
+  // Default values
+  const title = data?.title || "Do You Want To Get Update What's Upcoming?";
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,8 +18,7 @@ const Newsletter = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
           <div className="text-white text-center md:text-left">
             <h3 className="text-2xl sm:text-3xl font-bold mb-2">
-              Do You Want To Get Update<br className="hidden sm:inline" />
-              <span className="sm:hidden"> </span>What's Upcoming?
+              {title}
             </h3>
           </div>
 

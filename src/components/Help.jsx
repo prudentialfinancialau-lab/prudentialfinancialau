@@ -1,5 +1,12 @@
-const Help = () => {
-  const features = [
+const Help = ({ data = {} }) => {
+  // Default values
+  const title = data?.title || 'We Are Here To Help You';
+  const description = data?.description || 'Sed porttitor lectus nibh. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus magna justo, lacinia eget consectetur sed.';
+  const statValue = data?.statValue || '56+';
+  const statLabel = data?.statLabel || 'Consulting Awards';
+  const image = data?.image || 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop';
+
+  const features = data?.features || [
     {
       icon: "💡",
       title: "Make A New Dream",
@@ -39,7 +46,7 @@ const Help = () => {
           {/* Left Image */}
           <div className="relative">
             <img
-              src="/images/couple.jpg"
+              src={image}
               alt="Couple moving"
               className="rounded-xl sm:rounded-2xl shadow-xl w-full h-64 sm:h-80 md:h-96 lg:h-full object-cover"
               onError={(e) => {
@@ -49,18 +56,18 @@ const Help = () => {
 
             {/* Stats Card */}
             <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 md:bottom-8 md:left-8 bg-emerald-500 text-white px-6 sm:px-7 md:px-8 py-4 sm:py-5 md:py-6 rounded-lg sm:rounded-xl shadow-2xl">
-              <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2">56+</div>
-              <p className="text-xs sm:text-sm font-medium">Consulting Awards</p>
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2">{statValue}</div>
+              <p className="text-xs sm:text-sm font-medium">{statLabel}</p>
             </div>
           </div>
 
           {/* Right Content */}
           <div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-              We Are Here To Help You
+              {title}
             </h2>
             <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
-              Sed porttitor lectus nibh. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus magna justo, lacinia eget consectetur sed.
+              {description}
             </p>
 
             {/* Features Grid */}

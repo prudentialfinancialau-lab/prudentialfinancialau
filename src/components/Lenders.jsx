@@ -1,4 +1,8 @@
-const Lenders = () => {
+const Lenders = ({ data = {} }) => {
+  // Default values
+  const title = data?.title || 'Our Lenders';
+  const description = data?.description || 'We compare hundreds of loans for you from our network of lenders.';
+
   // Placeholder lender names - in production these would be actual logo images
   const lenders = [
     "Commonwealth", "Westpac", "ANZ", "NAB", "St.George",
@@ -12,9 +16,9 @@ const Lenders = () => {
     <section className="py-12 sm:py-16 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-8 sm:mb-10 md:mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Our Lenders</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">{title}</h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
-            We compare hundreds of loans for you from our network of lenders.
+            {description}
           </p>
         </div>
 

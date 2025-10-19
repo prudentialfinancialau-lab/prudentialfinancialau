@@ -1,4 +1,10 @@
-const Footer = () => {
+const Footer = ({ data = {} }) => {
+  // Default values
+  const description = data?.description || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
+  const address = data?.address || '1250 US-46 Unit 205, Parsippany NJ 07054, United States of America';
+  const email = data?.email || 'support@domain.com';
+  const copyright = data?.copyright || '© 2023 Levi Consulting Platform. All Rights Reserved.';
+
   return (
     <footer className="bg-gray-900 text-white py-10 sm:py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4">
@@ -11,7 +17,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-gray-400 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              {description}
             </p>
             <div className="flex gap-3 sm:gap-4">
               <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-500 transition-colors text-sm sm:text-base">
@@ -66,12 +72,10 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-6 sm:pt-8 mb-6 sm:mb-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 text-xs sm:text-sm">
             <div>
-              <p className="text-gray-400">1250 US-46 Unit 205</p>
-              <p className="text-gray-400">Parsippany NJ 07054</p>
-              <p className="text-gray-400">United States of America</p>
+              <p className="text-gray-400">{address}</p>
             </div>
             <div>
-              <p className="text-gray-400">support@domain.com</p>
+              <p className="text-gray-400">{email}</p>
             </div>
             <div>
               <p className="text-gray-400">Terms & Conditions</p>
@@ -82,7 +86,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
           <p className="text-gray-400 text-xs sm:text-sm text-center md:text-left">
-            © 2023 Levi Consulting Platform. All Rights Reserved.
+            {copyright}
           </p>
           <div className="flex gap-2">
             <img src="/images/payment-visa.png" alt="Visa" className="h-6 sm:h-8 bg-white rounded px-1.5 sm:px-2" onError={(e) => e.target.style.display = 'none'} />
