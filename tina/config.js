@@ -8,9 +8,7 @@ const branch =
 
 export default defineConfig({
   branch,
-
-  // Use Tina Cloud when token is available
-  clientId: process.env.TINA_TOKEN ? "1f3442f9-93fd-4285-a485-f1fa4b91329a" : null,
+  clientId: "1f3442f9-93fd-4285-a485-f1fa4b91329a",
   token: process.env.TINA_TOKEN,
 
   build: {

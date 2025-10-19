@@ -8,6 +8,7 @@ import Lenders from './components/Lenders';
 import Contact from './components/Contact';
 import Newsletter from './components/Newsletter';
 import Footer from './components/Footer';
+import EditButton from './components/EditButton';
 
 export default function TinaApp(props) {
   // Use the Tina hook to get editable data
@@ -29,6 +30,7 @@ export default function TinaApp(props) {
       <Contact data={content.contact} />
       <Newsletter data={content.newsletter} />
       <Footer data={content.footer} />
+      <EditButton />
     </div>
   );
 }

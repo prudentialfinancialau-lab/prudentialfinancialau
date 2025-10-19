@@ -1,7 +1,13 @@
 const Footer = ({ data = {} }) => {
   // Default values
   const description = data?.description || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
-  const address = data?.address || '1250 US-46 Unit 205, Parsippany NJ 07054, United States of America';
+
+  // Handle address - it can be an object or a string
+  const address = data?.address;
+  const addressLine1 = typeof address === 'object' ? (address?.line1 || '1250 US-46 Unit 205') : '1250 US-46 Unit 205';
+  const addressLine2 = typeof address === 'object' ? (address?.line2 || 'Parsippany NJ 07054') : 'Parsippany NJ 07054';
+  const addressLine3 = typeof address === 'object' ? (address?.line3 || 'United States of America') : 'United States of America';
+
   const email = data?.email || 'support@domain.com';
   const copyright = data?.copyright || '© 2023 Levi Consulting Platform. All Rights Reserved.';
 
@@ -72,7 +78,9 @@ const Footer = ({ data = {} }) => {
         <div className="border-t border-gray-800 pt-6 sm:pt-8 mb-6 sm:mb-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 text-xs sm:text-sm">
             <div>
-              <p className="text-gray-400">{address}</p>
+              <p className="text-gray-400">{addressLine1}</p>
+              <p className="text-gray-400">{addressLine2}</p>
+              <p className="text-gray-400">{addressLine3}</p>
             </div>
             <div>
               <p className="text-gray-400">{email}</p>
