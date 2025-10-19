@@ -1,4 +1,4 @@
-import { useTina } from "tinacms/dist/react";
+import { useTina, tinaField } from "tinacms/dist/react";
 import client from "../tina/__generated__/client";
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -20,7 +20,7 @@ export default function TinaApp(props) {
   const content = data.page;
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" data-tina-field={tinaField(content)}>
       <Header data={content.header} />
       <Hero data={content.hero} />
       <About data={content.about} />
