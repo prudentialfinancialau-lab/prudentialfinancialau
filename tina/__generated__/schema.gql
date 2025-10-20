@@ -149,6 +149,7 @@ type PageHeader {
   phone: String
   email: String
   logo: String
+  logoIcon: String
 }
 
 type PageFooterAddress {
@@ -254,6 +255,7 @@ input PageHeaderFilter {
   phone: StringFilter
   email: StringFilter
   logo: StringFilter
+  logoIcon: StringFilter
 }
 
 input PageFooterAddressFilter {
@@ -372,6 +374,7 @@ input PageHeaderMutation {
   phone: String
   email: String
   logo: String
+  logoIcon: String
 }
 
 input PageFooterAddressMutation {

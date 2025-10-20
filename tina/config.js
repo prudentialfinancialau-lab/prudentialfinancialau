@@ -302,6 +302,11 @@ export default defineConfig({
                 name: "logo",
                 label: "Logo Text",
               },
+              {
+                type: "string",
+                name: "logoIcon",
+                label: "Logo Icon (Emoji or Icon)",
+              },
             ],
           },
           // Footer

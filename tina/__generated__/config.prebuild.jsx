@@ -294,6 +294,11 @@ var config_default = defineConfig({
                 type: "string",
                 name: "logo",
                 label: "Logo Text"
+              },
+              {
+                type: "string",
+                name: "logoIcon",
+                label: "Logo Icon (Emoji or Icon)"
               }
             ]
           },

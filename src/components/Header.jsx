@@ -6,7 +6,8 @@ const Header = ({ data = {} }) => {
   // Default values
   const phone = data?.phone || '+1 (855) 933-9318';
   const email = data?.email || 'support@domain.com';
-  const logo = data?.logo || 'Levi';
+  const logo = data?.logo || 'Prudential Financial';
+  const logoIcon = data?.logoIcon || '🏦';
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
@@ -39,8 +40,9 @@ const Header = ({ data = {} }) => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="text-2xl sm:text-3xl font-bold text-gray-900">
-              <span className="text-emerald-500">≋</span> {logo}
+            <div className="text-2xl sm:text-3xl font-bold text-gray-900 flex items-center gap-2">
+              <span className="text-3xl">{logoIcon}</span>
+              <span>{logo}</span>
             </div>
           </div>
 
@@ -53,16 +55,6 @@ const Header = ({ data = {} }) => {
             <a href="#" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Blog</a>
             <a href="#" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Contact Us</a>
           </nav>
-
-          {/* Auth Buttons - Desktop */}
-          <div className="hidden lg:flex items-center gap-3">
-            <button className="text-gray-700 hover:text-emerald-500 font-medium transition-colors px-4 py-2">
-              Sign In
-            </button>
-            <button className="bg-emerald-500 text-white px-5 py-2 rounded-md hover:bg-emerald-600 font-medium transition-colors">
-              Sign Up
-            </button>
-          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -93,14 +85,6 @@ const Header = ({ data = {} }) => {
             <a href="#" className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Team</a>
             <a href="#" className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Blog</a>
             <a href="#" className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Contact Us</a>
-            <div className="border-t border-gray-200 pt-4 mt-4 space-y-2">
-              <button className="w-full text-gray-700 hover:text-emerald-500 font-medium px-4 py-2 border border-gray-300 rounded-md transition-colors">
-                Sign In
-              </button>
-              <button className="w-full bg-emerald-500 text-white px-4 py-2 rounded-md hover:bg-emerald-600 font-medium transition-colors">
-                Sign Up
-              </button>
-            </div>
           </nav>
         </div>
       )}
