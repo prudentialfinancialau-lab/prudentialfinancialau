@@ -6,6 +6,7 @@ const branch =
   process.env.HEAD ||
   "main";
 
+// TinaCMS Config - Updated with lender list and map fields
 export default defineConfig({
   branch,
   clientId: "1f3442f9-93fd-4285-a485-f1fa4b91329a",
