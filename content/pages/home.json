@@ -27,32 +27,32 @@
     "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
     "features": [
       {
-        "icon": "🏠",
+        "icon": "fas fa-home",
         "title": "First Home Buyers",
         "description": "Expert guidance for your first property purchase with tailored loan options and government grants."
       },
       {
-        "icon": "📊",
+        "icon": "fas fa-chart-line",
         "title": "Property Investors",
         "description": "Specialized investment loan solutions to maximize returns and build your property portfolio."
       },
       {
-        "icon": "💰",
+        "icon": "fas fa-dollar-sign",
         "title": "Refinancers",
         "description": "Save money by refinancing to a better rate or access equity for your next investment."
       },
       {
-        "icon": "💼",
+        "icon": "fas fa-briefcase",
         "title": "Self-Employed Borrowers",
         "description": "Flexible loan solutions designed specifically for business owners and contractors."
       },
       {
-        "icon": "🔍",
+        "icon": "fas fa-search",
         "title": "Compare Multiple Lenders",
         "description": "We compare multiple home loan products to find the right option for your budget and lifestyle."
       },
       {
-        "icon": "🤝",
+        "icon": "fas fa-handshake",
         "title": "Independent Expert Advice",
         "description": "Clear, unbiased guidance from application to settlement, handling all paperwork and lender communication."
       }

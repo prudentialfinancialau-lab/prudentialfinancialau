@@ -6,7 +6,7 @@ const branch =
   process.env.HEAD ||
   "main";
 
-// TinaCMS Config - Updated with lender list and map fields
+// TinaCMS Config - Updated with Font Awesome icons, lender list and map fields
 export default defineConfig({
   branch,
   clientId: "1f3442f9-93fd-4285-a485-f1fa4b91329a",
@@ -187,7 +187,7 @@ export default defineConfig({
                   {
                     type: "string",
                     name: "icon",
-                    label: "Icon (Emoji)",
+                    label: "Icon (Font Awesome class, e.g., 'fas fa-home')",
                   },
                   {
                     type: "string",

@@ -8,32 +8,32 @@ const Help = ({ data = {} }) => {
 
   const features = data?.features || [
     {
-      icon: "💡",
+      icon: "fas fa-lightbulb",
       title: "Make A New Dream",
       description: "Lorem ipsum dolor sit amet, consec tetur adipiscing elit sed do."
     },
     {
-      icon: "📋",
+      icon: "fas fa-clipboard-list",
       title: "Create A Plans",
       description: "Lorem ipsum dolor sit amet, consec tetur adipiscing elit sed do."
     },
     {
-      icon: "🤝",
+      icon: "fas fa-handshake",
       title: "Be A Part Of Community",
       description: "Lorem ipsum dolor sit amet, consec tetur adipiscing elit sed do."
     },
     {
-      icon: "💰",
+      icon: "fas fa-dollar-sign",
       title: "Pay Principal",
       description: "Lorem ipsum dolor sit amet, consec tetur adipiscing elit sed do."
     },
     {
-      icon: "🔒",
+      icon: "fas fa-lock",
       title: "Get Tax Savings",
       description: "Lorem ipsum dolor sit amet, consec tetur adipiscing elit sed do."
     },
     {
-      icon: "💳",
+      icon: "fas fa-credit-card",
       title: "Build Credit",
       description: "Lorem ipsum dolor sit amet, consec tetur adipiscing elit sed do."
     }
@@ -76,7 +76,7 @@ const Help = ({ data = {} }) => {
                 <div key={index} className="flex items-start gap-3 sm:gap-4">
                   <div className="flex-shrink-0">
                     <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 bg-emerald-100 rounded-lg flex items-center justify-center">
-                      <span className="text-xl sm:text-2xl">{feature.icon}</span>
+                      <i className={`${feature.icon} text-emerald-600 text-lg sm:text-xl`}></i>
                     </div>
                   </div>
                   <div>
