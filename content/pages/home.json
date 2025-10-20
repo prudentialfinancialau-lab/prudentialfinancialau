@@ -58,6 +58,10 @@
       }
     ]
   },
+  "calculator": {
+    "title": "Mortgage Calculator",
+    "description": "Calculate your home loan repayments with our Australian mortgage calculator. Get instant estimates for principal and interest or interest-only loans."
+  },
   "lenders": {
     "title": "Our Lenders",
     "description": "We compare hundreds of loans for you from our network of lenders.",

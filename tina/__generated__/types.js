@@ -54,6 +54,11 @@ export const PagePartsFragmentDoc = gql`
       logo
     }
   }
+  calculator {
+    __typename
+    title
+    description
+  }
   contact {
     __typename
     title

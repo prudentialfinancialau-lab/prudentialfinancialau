@@ -135,6 +135,11 @@ type PageLenders {
   lenderList: [PageLendersLenderList]
 }
 
+type PageCalculator {
+  title: String
+  description: String
+}
+
 type PageContact {
   title: String
   mapUrl: String
@@ -174,6 +179,7 @@ type Page implements Node & Document {
   about: PageAbout
   help: PageHelp
   lenders: PageLenders
+  calculator: PageCalculator
   contact: PageContact
   newsletter: PageNewsletter
   header: PageHeader
@@ -245,6 +251,11 @@ input PageLendersFilter {
   lenderList: PageLendersLenderListFilter
 }
 
+input PageCalculatorFilter {
+  title: StringFilter
+  description: StringFilter
+}
+
 input PageContactFilter {
   title: StringFilter
   mapUrl: StringFilter
@@ -284,6 +295,7 @@ input PageFilter {
   about: PageAboutFilter
   help: PageHelpFilter
   lenders: PageLendersFilter
+  calculator: PageCalculatorFilter
   contact: PageContactFilter
   newsletter: PageNewsletterFilter
   header: PageHeaderFilter
@@ -368,6 +380,11 @@ input PageLendersMutation {
   lenderList: [PageLendersLenderListMutation]
 }
 
+input PageCalculatorMutation {
+  title: String
+  description: String
+}
+
 input PageContactMutation {
   title: String
   mapUrl: String
@@ -407,6 +424,7 @@ input PageMutation {
   about: PageAboutMutation
   help: PageHelpMutation
   lenders: PageLendersMutation
+  calculator: PageCalculatorMutation
   contact: PageContactMutation
   newsletter: PageNewsletterMutation
   header: PageHeaderMutation

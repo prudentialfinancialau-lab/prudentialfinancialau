@@ -242,6 +242,27 @@ export default defineConfig({
               },
             ],
           },
+          // Mortgage Calculator Section
+          {
+            type: "object",
+            name: "calculator",
+            label: "Mortgage Calculator",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Title",
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Description",
+                ui: {
+                  component: "textarea",
+                },
+              },
+            ],
+          },
           // Contact Section
           {
             type: "object",

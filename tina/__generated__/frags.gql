@@ -46,6 +46,11 @@ fragment PageParts on Page {
       logo
     }
   }
+  calculator {
+    __typename
+    title
+    description
+  }
   contact {
     __typename
     title
