@@ -61,6 +61,10 @@ fragment PageParts on Page {
     phone
     email
     logo
+    facebookUrl
+    twitterUrl
+    linkedinUrl
+    youtubeUrl
   }
   footer {
     __typename

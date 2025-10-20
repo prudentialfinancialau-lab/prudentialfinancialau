@@ -148,7 +148,11 @@
   "header": {
     "phone": "+1 (855) 933-9318",
     "email": "info@prudentialfinancial.com.au",
-    "logo": "/logo.svg"
+    "logo": "/logo.svg",
+    "facebookUrl": "https://facebook.com",
+    "twitterUrl": "https://twitter.com",
+    "linkedinUrl": "https://linkedin.com",
+    "youtubeUrl": "https://youtube.com"
   },
   "footer": {
     "logo": "/logo.svg",

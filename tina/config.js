@@ -302,6 +302,26 @@ export default defineConfig({
                 name: "logo",
                 label: "Logo Image",
               },
+              {
+                type: "string",
+                name: "facebookUrl",
+                label: "Facebook URL",
+              },
+              {
+                type: "string",
+                name: "twitterUrl",
+                label: "Twitter URL",
+              },
+              {
+                type: "string",
+                name: "linkedinUrl",
+                label: "LinkedIn URL",
+              },
+              {
+                type: "string",
+                name: "youtubeUrl",
+                label: "YouTube URL",
+              },
             ],
           },
           // Footer

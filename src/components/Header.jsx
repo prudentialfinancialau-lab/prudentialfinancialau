@@ -6,7 +6,11 @@ const Header = ({ data = {} }) => {
   // Default values
   const phone = data?.phone || '+1 (855) 933-9318';
   const email = data?.email || 'support@domain.com';
-  const logo = data?.logo || '/logo.png';
+  const logo = data?.logo || '/logo.svg';
+  const facebookUrl = data?.facebookUrl || 'https://facebook.com';
+  const twitterUrl = data?.twitterUrl || 'https://twitter.com';
+  const linkedinUrl = data?.linkedinUrl || 'https://linkedin.com';
+  const youtubeUrl = data?.youtubeUrl || 'https://youtube.com';
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
@@ -26,10 +30,10 @@ const Header = ({ data = {} }) => {
             </span>
           </div>
           <div className="flex items-center gap-2 sm:gap-3">
-            <a href="#" className="hover:text-emerald-400 transition-colors"><i className="fab fa-facebook-f"></i></a>
-            <a href="#" className="hover:text-emerald-400 transition-colors"><i className="fab fa-twitter"></i></a>
-            <a href="#" className="hover:text-emerald-400 transition-colors"><i className="fab fa-linkedin-in"></i></a>
-            <a href="#" className="hover:text-emerald-400 transition-colors"><i className="fab fa-youtube"></i></a>
+            <a href={facebookUrl} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors"><i className="fab fa-facebook-f"></i></a>
+            <a href={twitterUrl} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors"><i className="fab fa-twitter"></i></a>
+            <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors"><i className="fab fa-linkedin-in"></i></a>
+            <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors"><i className="fab fa-youtube"></i></a>
           </div>
         </div>
       </div>

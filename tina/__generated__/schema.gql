@@ -149,6 +149,10 @@ type PageHeader {
   phone: String
   email: String
   logo: String
+  facebookUrl: String
+  twitterUrl: String
+  linkedinUrl: String
+  youtubeUrl: String
 }
 
 type PageFooterAddress {
@@ -255,6 +259,10 @@ input PageHeaderFilter {
   phone: StringFilter
   email: StringFilter
   logo: ImageFilter
+  facebookUrl: StringFilter
+  twitterUrl: StringFilter
+  linkedinUrl: StringFilter
+  youtubeUrl: StringFilter
 }
 
 input PageFooterAddressFilter {
@@ -374,6 +382,10 @@ input PageHeaderMutation {
   phone: String
   email: String
   logo: String
+  facebookUrl: String
+  twitterUrl: String
+  linkedinUrl: String
+  youtubeUrl: String
 }
 
 input PageFooterAddressMutation {

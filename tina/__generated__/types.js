@@ -69,6 +69,10 @@ export const PagePartsFragmentDoc = gql`
     phone
     email
     logo
+    facebookUrl
+    twitterUrl
+    linkedinUrl
+    youtubeUrl
   }
   footer {
     __typename
