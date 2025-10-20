@@ -149,7 +149,6 @@ type PageHeader {
   phone: String
   email: String
   logo: String
-  logoIcon: String
 }
 
 type PageFooterAddress {
@@ -159,6 +158,7 @@ type PageFooterAddress {
 }
 
 type PageFooter {
+  logo: String
   description: String
   address: PageFooterAddress
   email: String
@@ -254,8 +254,7 @@ input PageNewsletterFilter {
 input PageHeaderFilter {
   phone: StringFilter
   email: StringFilter
-  logo: StringFilter
-  logoIcon: StringFilter
+  logo: ImageFilter
 }
 
 input PageFooterAddressFilter {
@@ -265,6 +264,7 @@ input PageFooterAddressFilter {
 }
 
 input PageFooterFilter {
+  logo: ImageFilter
   description: StringFilter
   address: PageFooterAddressFilter
   email: StringFilter
@@ -374,7 +374,6 @@ input PageHeaderMutation {
   phone: String
   email: String
   logo: String
-  logoIcon: String
 }
 
 input PageFooterAddressMutation {
@@ -384,6 +383,7 @@ input PageFooterAddressMutation {
 }
 
 input PageFooterMutation {
+  logo: String
   description: String
   address: PageFooterAddressMutation
   email: String

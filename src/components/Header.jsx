@@ -6,8 +6,7 @@ const Header = ({ data = {} }) => {
   // Default values
   const phone = data?.phone || '+1 (855) 933-9318';
   const email = data?.email || 'support@domain.com';
-  const logo = data?.logo || 'Prudential Financial';
-  const logoIcon = data?.logoIcon || '🏦';
+  const logo = data?.logo || '/logo.png';
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
@@ -40,10 +39,7 @@ const Header = ({ data = {} }) => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="text-2xl sm:text-3xl font-bold text-gray-900 flex items-center gap-2">
-              <span className="text-3xl">{logoIcon}</span>
-              <span>{logo}</span>
-            </div>
+            <img src={logo} alt="Logo" className="h-10 sm:h-12 object-contain" />
           </div>
 
           {/* Desktop Navigation */}

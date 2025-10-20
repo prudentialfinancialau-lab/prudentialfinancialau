@@ -1,5 +1,6 @@
 const Footer = ({ data = {} }) => {
   // Default values
+  const logo = data?.logo || '/logo.svg';
   const description = data?.description || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
 
   // Handle address - it can be an object or a string
@@ -9,7 +10,7 @@ const Footer = ({ data = {} }) => {
   const addressLine3 = typeof address === 'object' ? (address?.line3 || 'United States of America') : 'United States of America';
 
   const email = data?.email || 'support@domain.com';
-  const copyright = data?.copyright || '© 2023 Levi Consulting Platform. All Rights Reserved.';
+  const copyright = data?.copyright || '© 2025 Prudential Financial. All Rights Reserved.';
 
   return (
     <footer className="bg-gray-900 text-white py-10 sm:py-12 md:py-16">
@@ -18,9 +19,7 @@ const Footer = ({ data = {} }) => {
           {/* Logo and Description */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-3 sm:mb-4">
-              <div className="text-2xl sm:text-3xl font-bold">
-                <span className="text-emerald-500">≋</span> Levi
-              </div>
+              <img src={logo} alt="Logo" className="h-10 sm:h-12 object-contain" />
             </div>
             <p className="text-gray-400 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
               {description}

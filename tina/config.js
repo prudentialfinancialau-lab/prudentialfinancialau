@@ -298,14 +298,9 @@ export default defineConfig({
                 label: "Email",
               },
               {
-                type: "string",
+                type: "image",
                 name: "logo",
-                label: "Logo Text",
-              },
-              {
-                type: "string",
-                name: "logoIcon",
-                label: "Logo Icon (Emoji or Icon)",
+                label: "Logo Image",
               },
             ],
           },
@@ -315,6 +310,11 @@ export default defineConfig({
             name: "footer",
             label: "Footer",
             fields: [
+              {
+                type: "image",
+                name: "logo",
+                label: "Logo Image",
+              },
               {
                 type: "string",
                 name: "description",

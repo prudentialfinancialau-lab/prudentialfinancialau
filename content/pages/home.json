@@ -148,10 +148,10 @@
   "header": {
     "phone": "+1 (855) 933-9318",
     "email": "info@prudentialfinancial.com.au",
-    "logo": "Prudential Financial",
-    "logoIcon": "🏦"
+    "logo": "/logo.svg"
   },
   "footer": {
+    "logo": "/logo.svg",
     "description": "Prudential Financial is your trusted independent mortgage broker. We work for you, not the banks, connecting you with the right lender, loan, and rate tailored to your needs.",
     "address": {
       "line1": "1250 US-46 Unit 205",
