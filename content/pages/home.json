@@ -1,60 +1,60 @@
 {
   "hero": {
-    "breadcrumb": "Home / Mortgage Landing Page",
-    "title": "Mortgage Is A Great For Youh",
-    "buttonText": "Join with Company",
+    "breadcrumb": "Home / Independent Mortgage Brokers",
+    "title": "Your Trusted Independent Mortgage Broker",
+    "buttonText": "Get Started",
     "formTitle": "Calculate Your Mortgage",
     "heroImage": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop"
   },
   "about": {
-    "label": "About Our Company",
-    "title": "Why Should You Choose Us?",
-    "paragraph1": "Sed porttitor lectus nibh. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
-    "paragraph2": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat.",
-    "quote": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec velit neque, auctor sit amet aliquam vel.",
-    "quoteAuthor": "John Doe, President",
-    "stat1Value": "30+",
-    "stat1Label": "Years Of Experience",
-    "stat2Value": "90%",
-    "stat2Label": "Customer Worldwide",
+    "label": "About Us",
+    "title": "We Work For You, Not The Banks",
+    "paragraph1": "We act as independent mortgage brokers – meaning, we work for you and not the banks. We connect clients with the right lender, the right loan, and the right rate – tailored specifically to your needs.",
+    "paragraph2": "From application to settlement, we handle all the paperwork, follow-ups and communication with the lender. Whether you're a first home buyer, investor, or refinancing, we provide clear, unbiased guidance that's trustworthy.",
+    "quote": "We negotiate rates on your behalf and help you avoid costly mistakes, saving you both time and money throughout the entire mortgage process.",
+    "quoteAuthor": "Prudential Financial Team",
+    "stat1Value": "1000+",
+    "stat1Label": "Happy Clients",
+    "stat2Value": "100%",
+    "stat2Label": "Independent Advice",
     "image": "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&h=600&fit=crop"
   },
   "help": {
-    "title": "We Are Here To Help You",
-    "description": "Sed porttitor lectus nibh. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus magna justo, lacinia eget consectetur sed.",
-    "statValue": "56+",
-    "statLabel": "Consulting Awards",
+    "title": "What We Do For You",
+    "description": "As independent mortgage brokers, we compare loans from multiple lenders and provide expert guidance throughout your entire mortgage journey.",
+    "statValue": "50+",
+    "statLabel": "Lender Partnerships",
     "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
     "features": [
       {
-        "icon": "💡",
-        "title": "Make A New Dream",
-        "description": "Lorem ipsum dolor sit amet, consec tetur adipiscing elit sed do."
+        "icon": "🏠",
+        "title": "First Home Buyers",
+        "description": "Expert guidance for your first property purchase with tailored loan options and government grants."
       },
       {
-        "icon": "📋",
-        "title": "Create A Plans",
-        "description": "Lorem ipsum dolor sit amet, consec tetur adipiscing elit sed do."
-      },
-      {
-        "icon": "🤝",
-        "title": "Be A Part Of Community",
-        "description": "Lorem ipsum dolor sit amet, consec tetur adipiscing elit sed do."
+        "icon": "📊",
+        "title": "Property Investors",
+        "description": "Specialized investment loan solutions to maximize returns and build your property portfolio."
       },
       {
         "icon": "💰",
-        "title": "Pay Principal",
-        "description": "Lorem ipsum dolor sit amet, consec tetur adipiscing elit sed do."
+        "title": "Refinancers",
+        "description": "Save money by refinancing to a better rate or access equity for your next investment."
       },
       {
-        "icon": "🔒",
-        "title": "Get Tax Savings",
-        "description": "Lorem ipsum dolor sit amet, consec tetur adipiscing elit sed do."
+        "icon": "💼",
+        "title": "Self-Employed Borrowers",
+        "description": "Flexible loan solutions designed specifically for business owners and contractors."
       },
       {
-        "icon": "💳",
-        "title": "Build Credit",
-        "description": "Lorem ipsum dolor sit amet, consec tetur adipiscing elit sed do."
+        "icon": "🔍",
+        "title": "Compare Multiple Lenders",
+        "description": "We compare multiple home loan products to find the right option for your budget and lifestyle."
+      },
+      {
+        "icon": "🤝",
+        "title": "Independent Expert Advice",
+        "description": "Clear, unbiased guidance from application to settlement, handling all paperwork and lender communication."
       }
     ]
   },
@@ -143,21 +143,21 @@
     "location": "New York, NY, USA"
   },
   "newsletter": {
-    "title": "Do You Want To Get Update What's Upcoming?"
+    "title": "Get Expert Mortgage Advice Today"
   },
   "header": {
     "phone": "+1 (855) 933-9318",
-    "email": "support@domain.com",
-    "logo": "Levi"
+    "email": "info@prudentialfinancial.com.au",
+    "logo": "Prudential Financial"
   },
   "footer": {
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Prudential Financial is your trusted independent mortgage broker. We work for you, not the banks, connecting you with the right lender, loan, and rate tailored to your needs.",
     "address": {
       "line1": "1250 US-46 Unit 205",
       "line2": "Parsippany NJ 07054",
       "line3": "United States of America"
     },
-    "email": "support@domain.com",
-    "copyright": "© 2023 Levi Consulting Platform. All Rights Reserved."
+    "email": "info@prudentialfinancial.com.au",
+    "copyright": "© 2025 Prudential Financial. All Rights Reserved."
   }
 }
