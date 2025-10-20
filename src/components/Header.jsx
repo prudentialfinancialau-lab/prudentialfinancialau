@@ -48,12 +48,11 @@ const Header = ({ data = {} }) => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-            <a href="#" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Home</a>
-            <a href="#" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">About Us</a>
-            <a href="#" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Services</a>
-            <a href="#" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Team</a>
-            <a href="#" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Blog</a>
-            <a href="#" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Contact Us</a>
+            <a href="#home" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Home</a>
+            <a href="#about" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">About Us</a>
+            <a href="#services" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Services</a>
+            <a href="#lenders" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Our Lenders</a>
+            <a href="#contact" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Contact</a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -79,12 +78,11 @@ const Header = ({ data = {} }) => {
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
           <nav className="flex flex-col p-4 space-y-1">
-            <a href="#" className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Home</a>
-            <a href="#" className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">About Us</a>
-            <a href="#" className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Services</a>
-            <a href="#" className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Team</a>
-            <a href="#" className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Blog</a>
-            <a href="#" className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Contact Us</a>
+            <a href="#home" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Home</a>
+            <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">About Us</a>
+            <a href="#services" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Services</a>
+            <a href="#lenders" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Our Lenders</a>
+            <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Contact</a>
           </nav>
         </div>
       )}

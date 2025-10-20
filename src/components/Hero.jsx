@@ -30,7 +30,7 @@ const Hero = ({ data = {} }) => {
   };
 
   return (
-    <section className="relative bg-gradient-to-r from-gray-50 to-white py-10 sm:py-16 md:py-20">
+    <section id="home" className="relative bg-gradient-to-r from-gray-50 to-white py-10 sm:py-16 md:py-20">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Left Content */}

@@ -44,31 +44,31 @@ const Footer = ({ data = {} }) => {
           <div>
             <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Quick Links</h4>
             <ul className="space-y-1.5 sm:space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">About us</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Marketplace</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Sustainability Challenge</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Contact</a></li>
+              <li><a href="#home" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Home</a></li>
+              <li><a href="#about" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">About Us</a></li>
+              <li><a href="#services" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Services</a></li>
+              <li><a href="#contact" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Contact</a></li>
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Services */}
           <div>
-            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Company</h4>
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Our Services</h4>
             <ul className="space-y-1.5 sm:space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Blog</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">FAQ</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Documentation</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Mortgage Calculator</a></li>
+              <li><a href="#services" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">First Home Buyers</a></li>
+              <li><a href="#services" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Property Investors</a></li>
+              <li><a href="#services" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Refinancing</a></li>
+              <li><a href="#services" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Self-Employed Loans</a></li>
             </ul>
           </div>
 
-          {/* Support */}
+          {/* Resources */}
           <div>
-            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Support</h4>
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Resources</h4>
             <ul className="space-y-1.5 sm:space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Contact</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Home Warranty</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Mortgage & Insurance</a></li>
+              <li><a href="#lenders" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Our Lenders</a></li>
+              <li><a href="#contact" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Mortgage Calculator</a></li>
+              <li><a href="#contact" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Get Expert Advice</a></li>
             </ul>
           </div>
         </div>
