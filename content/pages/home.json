@@ -62,30 +62,79 @@
     "title": "Our Lenders",
     "description": "We compare hundreds of loans for you from our network of lenders.",
     "lenderList": [
-      { "name": "Commonwealth" },
-      { "name": "Westpac" },
-      { "name": "ANZ" },
-      { "name": "NAB" },
-      { "name": "St.George" },
-      { "name": "Adelaide Bank" },
-      { "name": "AFG" },
-      { "name": "AMP" },
-      { "name": "BankSA" },
-      { "name": "Bank of Melb" },
-      { "name": "Beyond Bank" },
-      { "name": "Macquarie" },
-      { "name": "Greater" },
-      { "name": "Heritage" },
-      { "name": "Mortgage Choice" },
-      { "name": "NAB Broker" },
-      { "name": "Liberty" },
-      { "name": "BOQ" },
-      { "name": "RACQ" },
-      { "name": "Teachers Mutual" },
-      { "name": "Newcastle Permanent" },
-      { "name": "P&N Bank" },
-      { "name": "Police Bank" },
-      { "name": "IMB" }
+      {
+        "name": "Commonwealth",
+        "logo": "/suncorp-logo-png_seeklogo-133577.png"
+      },
+      {
+        "name": "Westpac"
+      },
+      {
+        "name": "ANZ"
+      },
+      {
+        "name": "NAB"
+      },
+      {
+        "name": "St.George"
+      },
+      {
+        "name": "Adelaide Bank"
+      },
+      {
+        "name": "AFG"
+      },
+      {
+        "name": "AMP"
+      },
+      {
+        "name": "BankSA"
+      },
+      {
+        "name": "Bank of Melb"
+      },
+      {
+        "name": "Beyond Bank"
+      },
+      {
+        "name": "Macquarie"
+      },
+      {
+        "name": "Greater"
+      },
+      {
+        "name": "Heritage"
+      },
+      {
+        "name": "Mortgage Choice"
+      },
+      {
+        "name": "NAB Broker"
+      },
+      {
+        "name": "Liberty"
+      },
+      {
+        "name": "BOQ"
+      },
+      {
+        "name": "RACQ"
+      },
+      {
+        "name": "Teachers Mutual"
+      },
+      {
+        "name": "Newcastle Permanent"
+      },
+      {
+        "name": "P&N Bank"
+      },
+      {
+        "name": "Police Bank"
+      },
+      {
+        "name": "IMB"
+      }
     ]
   },
   "contact": {
