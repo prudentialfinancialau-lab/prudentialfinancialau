@@ -17,8 +17,8 @@ export default function HomePage() {
   useEffect(() => {
     async function loadContent() {
       try {
-        const result = await client.queries.page({ relativePath: 'home.json' });
-        setContent(result.data.page);
+        const result = await client.queries.home({ relativePath: 'home.json' });
+        setContent(result.data.home);
       } catch (error) {
         console.error('Error loading home page content:', error);
       } finally {

@@ -12,8 +12,8 @@ export default function AboutPage() {
   useEffect(() => {
     async function loadContent() {
       try {
-        const result = await client.queries.page({ relativePath: 'about.json' });
-        setContent(result.data.page);
+        const result = await client.queries.about({ relativePath: 'about.json' });
+        setContent(result.data.about);
       } catch (error) {
         console.error('Error loading about page content:', error);
       } finally {

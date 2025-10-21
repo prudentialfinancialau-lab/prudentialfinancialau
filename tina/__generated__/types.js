@@ -5,8 +5,8 @@ export function gql(strings, ...args) {
   });
   return str;
 }
-export const PagePartsFragmentDoc = gql`
-    fragment PageParts on Page {
+export const HomePartsFragmentDoc = gql`
+    fragment HomeParts on Home {
   __typename
   hero {
     __typename
@@ -44,6 +44,11 @@ export const PagePartsFragmentDoc = gql`
       description
     }
   }
+  calculator {
+    __typename
+    title
+    description
+  }
   lenders {
     __typename
     title
@@ -53,11 +58,6 @@ export const PagePartsFragmentDoc = gql`
       name
       logo
     }
-  }
-  calculator {
-    __typename
-    title
-    description
   }
   contact {
     __typename
@@ -94,9 +94,142 @@ export const PagePartsFragmentDoc = gql`
   }
 }
     `;
-export const PageDocument = gql`
-    query page($relativePath: String!) {
-  page(relativePath: $relativePath) {
+export const AboutPartsFragmentDoc = gql`
+    fragment AboutParts on About {
+  __typename
+  about {
+    __typename
+    label
+    title
+    paragraph1
+    paragraph2
+    quote
+    quoteAuthor
+    stat1Value
+    stat1Label
+    stat2Value
+    stat2Label
+    image
+  }
+  help {
+    __typename
+    title
+    description
+    statValue
+    statLabel
+    image
+    features {
+      __typename
+      icon
+      title
+      description
+    }
+  }
+  header {
+    __typename
+    phone
+    email
+    logo
+    facebookUrl
+    twitterUrl
+    linkedinUrl
+    youtubeUrl
+  }
+  footer {
+    __typename
+    logo
+    description
+    address {
+      __typename
+      line1
+      line2
+      line3
+    }
+    email
+    copyright
+  }
+}
+    `;
+export const LendersPartsFragmentDoc = gql`
+    fragment LendersParts on Lenders {
+  __typename
+  lenders {
+    __typename
+    title
+    description
+    lenderList {
+      __typename
+      name
+      logo
+    }
+  }
+  calculator {
+    __typename
+    title
+    description
+  }
+  header {
+    __typename
+    phone
+    email
+    logo
+    facebookUrl
+    twitterUrl
+    linkedinUrl
+    youtubeUrl
+  }
+  footer {
+    __typename
+    logo
+    description
+    address {
+      __typename
+      line1
+      line2
+      line3
+    }
+    email
+    copyright
+  }
+}
+    `;
+export const ContactPartsFragmentDoc = gql`
+    fragment ContactParts on Contact {
+  __typename
+  contact {
+    __typename
+    title
+    mapUrl
+    location
+  }
+  header {
+    __typename
+    phone
+    email
+    logo
+    facebookUrl
+    twitterUrl
+    linkedinUrl
+    youtubeUrl
+  }
+  footer {
+    __typename
+    logo
+    description
+    address {
+      __typename
+      line1
+      line2
+      line3
+    }
+    email
+    copyright
+  }
+}
+    `;
+export const HomeDocument = gql`
+    query home($relativePath: String!) {
+  home(relativePath: $relativePath) {
     ... on Document {
       _sys {
         filename
@@ -109,13 +242,13 @@ export const PageDocument = gql`
       }
       id
     }
-    ...PageParts
+    ...HomeParts
   }
 }
-    ${PagePartsFragmentDoc}`;
-export const PageConnectionDocument = gql`
-    query pageConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: PageFilter) {
-  pageConnection(
+    ${HomePartsFragmentDoc}`;
+export const HomeConnectionDocument = gql`
+    query homeConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: HomeFilter) {
+  homeConnection(
     before: $before
     after: $after
     first: $first
@@ -145,19 +278,208 @@ export const PageConnectionDocument = gql`
           }
           id
         }
-        ...PageParts
+        ...HomeParts
       }
     }
   }
 }
-    ${PagePartsFragmentDoc}`;
+    ${HomePartsFragmentDoc}`;
+export const AboutDocument = gql`
+    query about($relativePath: String!) {
+  about(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...AboutParts
+  }
+}
+    ${AboutPartsFragmentDoc}`;
+export const AboutConnectionDocument = gql`
+    query aboutConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: AboutFilter) {
+  aboutConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...AboutParts
+      }
+    }
+  }
+}
+    ${AboutPartsFragmentDoc}`;
+export const LendersDocument = gql`
+    query lenders($relativePath: String!) {
+  lenders(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...LendersParts
+  }
+}
+    ${LendersPartsFragmentDoc}`;
+export const LendersConnectionDocument = gql`
+    query lendersConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: LendersFilter) {
+  lendersConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...LendersParts
+      }
+    }
+  }
+}
+    ${LendersPartsFragmentDoc}`;
+export const ContactDocument = gql`
+    query contact($relativePath: String!) {
+  contact(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ContactParts
+  }
+}
+    ${ContactPartsFragmentDoc}`;
+export const ContactConnectionDocument = gql`
+    query contactConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ContactFilter) {
+  contactConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ContactParts
+      }
+    }
+  }
+}
+    ${ContactPartsFragmentDoc}`;
 export function getSdk(requester) {
   return {
-    page(variables, options) {
-      return requester(PageDocument, variables, options);
+    home(variables, options) {
+      return requester(HomeDocument, variables, options);
     },
-    pageConnection(variables, options) {
-      return requester(PageConnectionDocument, variables, options);
+    homeConnection(variables, options) {
+      return requester(HomeConnectionDocument, variables, options);
+    },
+    about(variables, options) {
+      return requester(AboutDocument, variables, options);
+    },
+    aboutConnection(variables, options) {
+      return requester(AboutConnectionDocument, variables, options);
+    },
+    lenders(variables, options) {
+      return requester(LendersDocument, variables, options);
+    },
+    lendersConnection(variables, options) {
+      return requester(LendersConnectionDocument, variables, options);
+    },
+    contact(variables, options) {
+      return requester(ContactDocument, variables, options);
+    },
+    contactConnection(variables, options) {
+      return requester(ContactConnectionDocument, variables, options);
     }
   };
 }

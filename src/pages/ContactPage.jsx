@@ -11,8 +11,8 @@ export default function ContactPage() {
   useEffect(() => {
     async function loadContent() {
       try {
-        const result = await client.queries.page({ relativePath: 'contact.json' });
-        setContent(result.data.page);
+        const result = await client.queries.contact({ relativePath: 'contact.json' });
+        setContent(result.data.contact);
       } catch (error) {
         console.error('Error loading contact page content:', error);
       } finally {

@@ -12,8 +12,8 @@ export default function LendersPage() {
   useEffect(() => {
     async function loadContent() {
       try {
-        const result = await client.queries.page({ relativePath: 'lenders.json' });
-        setContent(result.data.page);
+        const result = await client.queries.lenders({ relativePath: 'lenders.json' });
+        setContent(result.data.lenders);
       } catch (error) {
         console.error('Error loading lenders page content:', error);
       } finally {
