@@ -1,6 +1,7 @@
 // Prudential Financial - Australian Mortgage Broker Landing Page
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { useTina } from 'tinacms/dist/react';
 import client from '../tina/__generated__/client';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -40,7 +41,7 @@ function App() {
     loadPageContent();
   }, [location.pathname]);
 
-  if (loading) {
+  if (loading || !pageData) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
