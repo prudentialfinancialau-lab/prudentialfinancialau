@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = ({ data = {} }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -42,16 +43,16 @@ const Header = ({ data = {} }) => {
       <div className="max-w-7xl mx-auto px-4 py-3 sm:py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img src={logo} alt="Logo" className="h-10 sm:h-12 object-contain" />
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-            <a href="#home" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Home</a>
-            <a href="#about" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">About Us</a>
-            <a href="#loan-facilities" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Our Loan Facilities</a>
-            <a href="#contact" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Contact Us</a>
+            <Link to="/" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Home</Link>
+            <Link to="/about" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">About Us</Link>
+            <Link to="/lenders" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Our Lenders</Link>
+            <Link to="/contact" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Contact Us</Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -77,10 +78,10 @@ const Header = ({ data = {} }) => {
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
           <nav className="flex flex-col p-4 space-y-1">
-            <a href="#home" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Home</a>
-            <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">About Us</a>
-            <a href="#loan-facilities" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Our Loan Facilities</a>
-            <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Contact Us</a>
+            <Link to="/" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Home</Link>
+            <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">About Us</Link>
+            <Link to="/lenders" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Our Lenders</Link>
+            <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Contact Us</Link>
           </nav>
         </div>
       )}

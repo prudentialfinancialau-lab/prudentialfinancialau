@@ -27,8 +27,11 @@ var config_default = defineConfig({
             create: false,
             delete: false
           },
-          router: () => {
-            return "/";
+          router: ({ document }) => {
+            if (document._sys.filename === "home") {
+              return "/";
+            }
+            return `/${document._sys.filename}`;
           }
         },
         fields: [
@@ -180,7 +183,7 @@ var config_default = defineConfig({
                   {
                     type: "string",
                     name: "icon",
-                    label: "Icon (Emoji)"
+                    label: "Icon (Font Awesome class, e.g., 'fas fa-home')"
                   },
                   {
                     type: "string",

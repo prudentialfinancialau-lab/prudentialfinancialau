@@ -6,7 +6,7 @@ const branch =
   process.env.HEAD ||
   "main";
 
-// TinaCMS Config - Updated with Font Awesome icons, lender list and map fields
+// TinaCMS Config - Multi-page setup with Font Awesome icons
 export default defineConfig({
   branch,
   clientId: "1f3442f9-93fd-4285-a485-f1fa4b91329a",
@@ -34,8 +34,11 @@ export default defineConfig({
             create: false,
             delete: false,
           },
-          router: () => {
-            return '/';
+          router: ({ document }) => {
+            if (document._sys.filename === "home") {
+              return '/';
+            }
+            return `/${document._sys.filename}`;
           },
         },
         fields: [
