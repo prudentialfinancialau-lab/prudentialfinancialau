@@ -1,5 +1,3 @@
-import { client } from '../../tina/__generated__/client';
-import { useTina } from 'tinacms/dist/react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -11,15 +9,36 @@ import Newsletter from '../components/Newsletter';
 import Footer from '../components/Footer';
 import { useEffect, useState } from 'react';
 
-function HomePageContent({ pageData }) {
-  // Pass data through useTina hook for visual editing
-  const { data } = useTina({
-    query: pageData.query,
-    variables: pageData.variables,
-    data: pageData.data,
-  });
+const API_URL = import.meta.env.VITE_API_URL || '';
 
-  const content = data.homePage;
+export default function HomePage() {
+  const [content, setContent] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`${API_URL}/api/content/home`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch content');
+        }
+        const data = await response.json();
+        setContent(data);
+        setLoading(false);
+      } catch (err) {
+        console.error('Error loading home page:', err);
+        setError(err);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) return <div className="flex items-center justify-center min-h-screen">Loading...</div>;
+  if (error) return <div className="flex items-center justify-center min-h-screen text-red-600">Error loading page: {error.message}</div>;
+  if (!content) return null;
 
   return (
     <>
@@ -34,32 +53,4 @@ function HomePageContent({ pageData }) {
       <Footer data={content.footer} />
     </>
   );
-}
-
-export default function HomePage() {
-  const [pageData, setPageData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await client.queries.homePage({ relativePath: 'index.json' });
-        setPageData(result);
-        setLoading(false);
-      } catch (err) {
-        console.error('Error loading home page:', err);
-        setError(err);
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error loading page: {error.message}</div>;
-  if (!pageData) return null;
-
-  return <HomePageContent pageData={pageData} />;
 }
