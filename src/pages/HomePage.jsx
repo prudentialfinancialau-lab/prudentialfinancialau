@@ -41,7 +41,7 @@ export default function HomePage() {
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error loading page: {error.message}</div>;
-  if (!pageData) return null;
+  if (!pageData || !data?.page) return null;
 
   const content = data.page;
 
