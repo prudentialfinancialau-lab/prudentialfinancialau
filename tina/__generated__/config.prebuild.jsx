@@ -49,7 +49,7 @@ var config_default = defineConfig({
               { type: "image", name: "heroImage", label: "Hero Image" }
             ]
           },
-          // About Section (home.json, about.json)
+          // About Section
           {
             type: "object",
             name: "about",
@@ -68,7 +68,7 @@ var config_default = defineConfig({
               { type: "image", name: "image", label: "Section Image" }
             ]
           },
-          // Help/Services Section (home.json, about.json)
+          // Services/Help Section
           {
             type: "object",
             name: "help",
@@ -92,7 +92,7 @@ var config_default = defineConfig({
               }
             ]
           },
-          // Calculator Section (home.json, lenders.json)
+          // Calculator Section
           {
             type: "object",
             name: "calculator",
@@ -102,7 +102,7 @@ var config_default = defineConfig({
               { type: "string", name: "description", label: "Description", ui: { component: "textarea" } }
             ]
           },
-          // Lenders Section (home.json, lenders.json)
+          // Lenders Section
           {
             type: "object",
             name: "lenders",
@@ -122,7 +122,7 @@ var config_default = defineConfig({
               }
             ]
           },
-          // Contact Section (home.json, contact.json)
+          // Contact Section
           {
             type: "object",
             name: "contact",
@@ -133,7 +133,7 @@ var config_default = defineConfig({
               { type: "string", name: "location", label: "Location Name" }
             ]
           },
-          // Newsletter Section (home.json only)
+          // Newsletter Section
           {
             type: "object",
             name: "newsletter",

@@ -6,7 +6,6 @@ const branch =
   process.env.HEAD ||
   "main";
 
-// TinaCMS Config - Single "page" collection matching all JSON files
 export default defineConfig({
   branch,
   clientId: "4283e962-a6ee-457f-b47a-23cc4a5ae779",
@@ -35,7 +34,6 @@ export default defineConfig({
             delete: false,
           },
           router: (props) => {
-            // Route based on filename
             if (props.document._sys.filename === 'home') return '/';
             if (props.document._sys.filename === 'about') return '/about';
             if (props.document._sys.filename === 'lenders') return '/lenders';
@@ -57,7 +55,7 @@ export default defineConfig({
               { type: "image", name: "heroImage", label: "Hero Image" },
             ],
           },
-          // About Section (home.json, about.json)
+          // About Section
           {
             type: "object",
             name: "about",
@@ -76,7 +74,7 @@ export default defineConfig({
               { type: "image", name: "image", label: "Section Image" },
             ],
           },
-          // Help/Services Section (home.json, about.json)
+          // Services/Help Section
           {
             type: "object",
             name: "help",
@@ -100,7 +98,7 @@ export default defineConfig({
               },
             ],
           },
-          // Calculator Section (home.json, lenders.json)
+          // Calculator Section
           {
             type: "object",
             name: "calculator",
@@ -110,7 +108,7 @@ export default defineConfig({
               { type: "string", name: "description", label: "Description", ui: { component: "textarea" } },
             ],
           },
-          // Lenders Section (home.json, lenders.json)
+          // Lenders Section
           {
             type: "object",
             name: "lenders",
@@ -130,7 +128,7 @@ export default defineConfig({
               },
             ],
           },
-          // Contact Section (home.json, contact.json)
+          // Contact Section
           {
             type: "object",
             name: "contact",
@@ -141,7 +139,7 @@ export default defineConfig({
               { type: "string", name: "location", label: "Location Name" },
             ],
           },
-          // Newsletter Section (home.json only)
+          // Newsletter Section
           {
             type: "object",
             name: "newsletter",
