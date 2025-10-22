@@ -1,4 +1,3 @@
-import { useTina } from 'tinacms/dist/react';
 import { client } from '../../tina/__generated__/client';
 import Header from '../components/Header';
 import About from '../components/About';
@@ -31,13 +30,7 @@ export default function AboutPage() {
   if (error) return <div>Error loading page: {error.message}</div>;
   if (!pageData) return null;
 
-  const { data } = useTina({
-    query: pageData.query,
-    variables: pageData.variables,
-    data: pageData.data,
-  });
-
-  const content = data.page;
+  const content = pageData.data.page;
 
   return (
     <>
