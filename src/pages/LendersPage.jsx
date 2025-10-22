@@ -2,7 +2,7 @@ import Header from '../components/Header';
 import Lenders from '../components/Lenders';
 import MortgageCalculator from '../components/MortgageCalculator';
 import Footer from '../components/Footer';
-import lendersContent from '../../../content/pages/lenders.json';
+import lendersContent from '../../content/pages/lenders.json';
 
 export default function LendersPage() {
   const content = lendersContent;

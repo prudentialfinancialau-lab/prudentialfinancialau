@@ -1,7 +1,7 @@
 import Header from '../components/Header';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
-import contactContent from '../../../content/pages/contact.json';
+import contactContent from '../../content/pages/contact.json';
 
 export default function ContactPage() {
   const content = contactContent;

@@ -7,7 +7,7 @@ import Lenders from '../components/Lenders';
 import Contact from '../components/Contact';
 import Newsletter from '../components/Newsletter';
 import Footer from '../components/Footer';
-import homeContent from '../../../content/pages/home.json';
+import homeContent from '../../content/pages/home.json';
 
 export default function HomePage() {
   const content = homeContent;
