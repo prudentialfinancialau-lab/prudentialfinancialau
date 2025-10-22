@@ -19,7 +19,7 @@ function HomePageContent({ pageData }) {
     data: pageData.data,
   });
 
-  const content = data.page;
+  const content = data.homePage;
 
   return (
     <>
@@ -44,7 +44,7 @@ export default function HomePage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await client.queries.page({ relativePath: 'home.json' });
+        const result = await client.queries.homePage({ relativePath: 'home.json' });
         setPageData(result);
         setLoading(false);
       } catch (err) {

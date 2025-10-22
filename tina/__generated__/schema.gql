@@ -54,12 +54,21 @@ type Query {
   collections: [Collection!]!
   node(id: String): Node!
   document(collection: String, relativePath: String): DocumentNode!
-  page(relativePath: String): Page!
-  pageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: PageFilter): PageConnection!
+  homePage(relativePath: String): HomePage!
+  homePageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: HomePageFilter): HomePageConnection!
+  aboutPage(relativePath: String): AboutPage!
+  aboutPageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: AboutPageFilter): AboutPageConnection!
+  lendersPage(relativePath: String): LendersPage!
+  lendersPageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: LendersPageFilter): LendersPageConnection!
+  contactPage(relativePath: String): ContactPage!
+  contactPageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: ContactPageFilter): ContactPageConnection!
 }
 
 input DocumentFilter {
-  page: PageFilter
+  homePage: HomePageFilter
+  aboutPage: AboutPageFilter
+  lendersPage: LendersPageFilter
+  contactPage: ContactPageFilter
 }
 
 type DocumentConnectionEdges {
@@ -85,9 +94,9 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = Page | Folder
+union DocumentNode = HomePage | AboutPage | LendersPage | ContactPage | Folder
 
-type PageHero {
+type HomePageHero {
   breadcrumb: String
   title: String
   buttonText: String
@@ -95,7 +104,7 @@ type PageHero {
   heroImage: String
 }
 
-type PageAbout {
+type HomePageAbout {
   label: String
   title: String
   paragraph1: String
@@ -109,48 +118,48 @@ type PageAbout {
   image: String
 }
 
-type PageHelpFeatures {
+type HomePageHelpFeatures {
   icon: String
   title: String
   description: String
 }
 
-type PageHelp {
+type HomePageHelp {
   title: String
   description: String
   statValue: String
   statLabel: String
   image: String
-  features: [PageHelpFeatures]
+  features: [HomePageHelpFeatures]
 }
 
-type PageCalculator {
+type HomePageCalculator {
   title: String
   description: String
 }
 
-type PageLendersLenderList {
+type HomePageLendersLenderList {
   name: String
   logo: String
 }
 
-type PageLenders {
+type HomePageLenders {
   title: String
   description: String
-  lenderList: [PageLendersLenderList]
+  lenderList: [HomePageLendersLenderList]
 }
 
-type PageContact {
+type HomePageContact {
   title: String
   mapUrl: String
   location: String
 }
 
-type PageNewsletter {
+type HomePageNewsletter {
   title: String
 }
 
-type PageHeader {
+type HomePageHeader {
   phone: String
   email: String
   logo: String
@@ -160,30 +169,30 @@ type PageHeader {
   youtubeUrl: String
 }
 
-type PageFooterAddress {
+type HomePageFooterAddress {
   line1: String
   line2: String
   line3: String
 }
 
-type PageFooter {
+type HomePageFooter {
   logo: String
   description: String
-  address: PageFooterAddress
+  address: HomePageFooterAddress
   email: String
   copyright: String
 }
 
-type Page implements Node & Document {
-  hero: PageHero
-  about: PageAbout
-  help: PageHelp
-  calculator: PageCalculator
-  lenders: PageLenders
-  contact: PageContact
-  newsletter: PageNewsletter
-  header: PageHeader
-  footer: PageFooter
+type HomePage implements Node & Document {
+  hero: HomePageHero
+  about: HomePageAbout
+  help: HomePageHelp
+  calculator: HomePageCalculator
+  lenders: HomePageLenders
+  contact: HomePageContact
+  newsletter: HomePageNewsletter
+  header: HomePageHeader
+  footer: HomePageFooter
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -203,7 +212,7 @@ input ImageFilter {
   in: [String]
 }
 
-input PageHeroFilter {
+input HomePageHeroFilter {
   breadcrumb: StringFilter
   title: StringFilter
   buttonText: StringFilter
@@ -211,7 +220,7 @@ input PageHeroFilter {
   heroImage: ImageFilter
 }
 
-input PageAboutFilter {
+input HomePageAboutFilter {
   label: StringFilter
   title: StringFilter
   paragraph1: StringFilter
@@ -225,48 +234,48 @@ input PageAboutFilter {
   image: ImageFilter
 }
 
-input PageHelpFeaturesFilter {
+input HomePageHelpFeaturesFilter {
   icon: StringFilter
   title: StringFilter
   description: StringFilter
 }
 
-input PageHelpFilter {
+input HomePageHelpFilter {
   title: StringFilter
   description: StringFilter
   statValue: StringFilter
   statLabel: StringFilter
   image: ImageFilter
-  features: PageHelpFeaturesFilter
+  features: HomePageHelpFeaturesFilter
 }
 
-input PageCalculatorFilter {
+input HomePageCalculatorFilter {
   title: StringFilter
   description: StringFilter
 }
 
-input PageLendersLenderListFilter {
+input HomePageLendersLenderListFilter {
   name: StringFilter
   logo: ImageFilter
 }
 
-input PageLendersFilter {
+input HomePageLendersFilter {
   title: StringFilter
   description: StringFilter
-  lenderList: PageLendersLenderListFilter
+  lenderList: HomePageLendersLenderListFilter
 }
 
-input PageContactFilter {
+input HomePageContactFilter {
   title: StringFilter
   mapUrl: StringFilter
   location: StringFilter
 }
 
-input PageNewsletterFilter {
+input HomePageNewsletterFilter {
   title: StringFilter
 }
 
-input PageHeaderFilter {
+input HomePageHeaderFilter {
   phone: StringFilter
   email: StringFilter
   logo: ImageFilter
@@ -276,71 +285,44 @@ input PageHeaderFilter {
   youtubeUrl: StringFilter
 }
 
-input PageFooterAddressFilter {
+input HomePageFooterAddressFilter {
   line1: StringFilter
   line2: StringFilter
   line3: StringFilter
 }
 
-input PageFooterFilter {
+input HomePageFooterFilter {
   logo: ImageFilter
   description: StringFilter
-  address: PageFooterAddressFilter
+  address: HomePageFooterAddressFilter
   email: StringFilter
   copyright: StringFilter
 }
 
-input PageFilter {
-  hero: PageHeroFilter
-  about: PageAboutFilter
-  help: PageHelpFilter
-  calculator: PageCalculatorFilter
-  lenders: PageLendersFilter
-  contact: PageContactFilter
-  newsletter: PageNewsletterFilter
-  header: PageHeaderFilter
-  footer: PageFooterFilter
+input HomePageFilter {
+  hero: HomePageHeroFilter
+  about: HomePageAboutFilter
+  help: HomePageHelpFilter
+  calculator: HomePageCalculatorFilter
+  lenders: HomePageLendersFilter
+  contact: HomePageContactFilter
+  newsletter: HomePageNewsletterFilter
+  header: HomePageHeaderFilter
+  footer: HomePageFooterFilter
 }
 
-type PageConnectionEdges {
+type HomePageConnectionEdges {
   cursor: String!
-  node: Page
+  node: HomePage
 }
 
-type PageConnection implements Connection {
+type HomePageConnection implements Connection {
   pageInfo: PageInfo!
   totalCount: Float!
-  edges: [PageConnectionEdges]
+  edges: [HomePageConnectionEdges]
 }
 
-type Mutation {
-  addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
-  updateDocument(collection: String, relativePath: String!, params: DocumentUpdateMutation!): DocumentNode!
-  deleteDocument(collection: String, relativePath: String!): DocumentNode!
-  createDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
-  createFolder(collection: String, relativePath: String!): DocumentNode!
-  updatePage(relativePath: String!, params: PageMutation!): Page!
-  createPage(relativePath: String!, params: PageMutation!): Page!
-}
-
-input DocumentUpdateMutation {
-  page: PageMutation
-  relativePath: String
-}
-
-input DocumentMutation {
-  page: PageMutation
-}
-
-input PageHeroMutation {
-  breadcrumb: String
-  title: String
-  buttonText: String
-  formTitle: String
-  heroImage: String
-}
-
-input PageAboutMutation {
+type AboutPageAbout {
   label: String
   title: String
   paragraph1: String
@@ -354,48 +336,22 @@ input PageAboutMutation {
   image: String
 }
 
-input PageHelpFeaturesMutation {
+type AboutPageHelpFeatures {
   icon: String
   title: String
   description: String
 }
 
-input PageHelpMutation {
+type AboutPageHelp {
   title: String
   description: String
   statValue: String
   statLabel: String
   image: String
-  features: [PageHelpFeaturesMutation]
+  features: [AboutPageHelpFeatures]
 }
 
-input PageCalculatorMutation {
-  title: String
-  description: String
-}
-
-input PageLendersLenderListMutation {
-  name: String
-  logo: String
-}
-
-input PageLendersMutation {
-  title: String
-  description: String
-  lenderList: [PageLendersLenderListMutation]
-}
-
-input PageContactMutation {
-  title: String
-  mapUrl: String
-  location: String
-}
-
-input PageNewsletterMutation {
-  title: String
-}
-
-input PageHeaderMutation {
+type AboutPageHeader {
   phone: String
   email: String
   logo: String
@@ -405,30 +361,566 @@ input PageHeaderMutation {
   youtubeUrl: String
 }
 
-input PageFooterAddressMutation {
+type AboutPageFooterAddress {
   line1: String
   line2: String
   line3: String
 }
 
-input PageFooterMutation {
+type AboutPageFooter {
   logo: String
   description: String
-  address: PageFooterAddressMutation
+  address: AboutPageFooterAddress
   email: String
   copyright: String
 }
 
-input PageMutation {
-  hero: PageHeroMutation
-  about: PageAboutMutation
-  help: PageHelpMutation
-  calculator: PageCalculatorMutation
-  lenders: PageLendersMutation
-  contact: PageContactMutation
-  newsletter: PageNewsletterMutation
-  header: PageHeaderMutation
-  footer: PageFooterMutation
+type AboutPage implements Node & Document {
+  about: AboutPageAbout
+  help: AboutPageHelp
+  header: AboutPageHeader
+  footer: AboutPageFooter
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input AboutPageAboutFilter {
+  label: StringFilter
+  title: StringFilter
+  paragraph1: StringFilter
+  paragraph2: StringFilter
+  quote: StringFilter
+  quoteAuthor: StringFilter
+  stat1Value: StringFilter
+  stat1Label: StringFilter
+  stat2Value: StringFilter
+  stat2Label: StringFilter
+  image: ImageFilter
+}
+
+input AboutPageHelpFeaturesFilter {
+  icon: StringFilter
+  title: StringFilter
+  description: StringFilter
+}
+
+input AboutPageHelpFilter {
+  title: StringFilter
+  description: StringFilter
+  statValue: StringFilter
+  statLabel: StringFilter
+  image: ImageFilter
+  features: AboutPageHelpFeaturesFilter
+}
+
+input AboutPageHeaderFilter {
+  phone: StringFilter
+  email: StringFilter
+  logo: ImageFilter
+  facebookUrl: StringFilter
+  twitterUrl: StringFilter
+  linkedinUrl: StringFilter
+  youtubeUrl: StringFilter
+}
+
+input AboutPageFooterAddressFilter {
+  line1: StringFilter
+  line2: StringFilter
+  line3: StringFilter
+}
+
+input AboutPageFooterFilter {
+  logo: ImageFilter
+  description: StringFilter
+  address: AboutPageFooterAddressFilter
+  email: StringFilter
+  copyright: StringFilter
+}
+
+input AboutPageFilter {
+  about: AboutPageAboutFilter
+  help: AboutPageHelpFilter
+  header: AboutPageHeaderFilter
+  footer: AboutPageFooterFilter
+}
+
+type AboutPageConnectionEdges {
+  cursor: String!
+  node: AboutPage
+}
+
+type AboutPageConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [AboutPageConnectionEdges]
+}
+
+type LendersPageLendersLenderList {
+  name: String
+  logo: String
+}
+
+type LendersPageLenders {
+  title: String
+  description: String
+  lenderList: [LendersPageLendersLenderList]
+}
+
+type LendersPageCalculator {
+  title: String
+  description: String
+}
+
+type LendersPageHeader {
+  phone: String
+  email: String
+  logo: String
+  facebookUrl: String
+  twitterUrl: String
+  linkedinUrl: String
+  youtubeUrl: String
+}
+
+type LendersPageFooterAddress {
+  line1: String
+  line2: String
+  line3: String
+}
+
+type LendersPageFooter {
+  logo: String
+  description: String
+  address: LendersPageFooterAddress
+  email: String
+  copyright: String
+}
+
+type LendersPage implements Node & Document {
+  lenders: LendersPageLenders
+  calculator: LendersPageCalculator
+  header: LendersPageHeader
+  footer: LendersPageFooter
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input LendersPageLendersLenderListFilter {
+  name: StringFilter
+  logo: ImageFilter
+}
+
+input LendersPageLendersFilter {
+  title: StringFilter
+  description: StringFilter
+  lenderList: LendersPageLendersLenderListFilter
+}
+
+input LendersPageCalculatorFilter {
+  title: StringFilter
+  description: StringFilter
+}
+
+input LendersPageHeaderFilter {
+  phone: StringFilter
+  email: StringFilter
+  logo: ImageFilter
+  facebookUrl: StringFilter
+  twitterUrl: StringFilter
+  linkedinUrl: StringFilter
+  youtubeUrl: StringFilter
+}
+
+input LendersPageFooterAddressFilter {
+  line1: StringFilter
+  line2: StringFilter
+  line3: StringFilter
+}
+
+input LendersPageFooterFilter {
+  logo: ImageFilter
+  description: StringFilter
+  address: LendersPageFooterAddressFilter
+  email: StringFilter
+  copyright: StringFilter
+}
+
+input LendersPageFilter {
+  lenders: LendersPageLendersFilter
+  calculator: LendersPageCalculatorFilter
+  header: LendersPageHeaderFilter
+  footer: LendersPageFooterFilter
+}
+
+type LendersPageConnectionEdges {
+  cursor: String!
+  node: LendersPage
+}
+
+type LendersPageConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [LendersPageConnectionEdges]
+}
+
+type ContactPageContact {
+  title: String
+  mapUrl: String
+  location: String
+}
+
+type ContactPageHeader {
+  phone: String
+  email: String
+  logo: String
+  facebookUrl: String
+  twitterUrl: String
+  linkedinUrl: String
+  youtubeUrl: String
+}
+
+type ContactPageFooterAddress {
+  line1: String
+  line2: String
+  line3: String
+}
+
+type ContactPageFooter {
+  logo: String
+  description: String
+  address: ContactPageFooterAddress
+  email: String
+  copyright: String
+}
+
+type ContactPage implements Node & Document {
+  contact: ContactPageContact
+  header: ContactPageHeader
+  footer: ContactPageFooter
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input ContactPageContactFilter {
+  title: StringFilter
+  mapUrl: StringFilter
+  location: StringFilter
+}
+
+input ContactPageHeaderFilter {
+  phone: StringFilter
+  email: StringFilter
+  logo: ImageFilter
+  facebookUrl: StringFilter
+  twitterUrl: StringFilter
+  linkedinUrl: StringFilter
+  youtubeUrl: StringFilter
+}
+
+input ContactPageFooterAddressFilter {
+  line1: StringFilter
+  line2: StringFilter
+  line3: StringFilter
+}
+
+input ContactPageFooterFilter {
+  logo: ImageFilter
+  description: StringFilter
+  address: ContactPageFooterAddressFilter
+  email: StringFilter
+  copyright: StringFilter
+}
+
+input ContactPageFilter {
+  contact: ContactPageContactFilter
+  header: ContactPageHeaderFilter
+  footer: ContactPageFooterFilter
+}
+
+type ContactPageConnectionEdges {
+  cursor: String!
+  node: ContactPage
+}
+
+type ContactPageConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [ContactPageConnectionEdges]
+}
+
+type Mutation {
+  addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
+  updateDocument(collection: String, relativePath: String!, params: DocumentUpdateMutation!): DocumentNode!
+  deleteDocument(collection: String, relativePath: String!): DocumentNode!
+  createDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
+  createFolder(collection: String, relativePath: String!): DocumentNode!
+  updateHomePage(relativePath: String!, params: HomePageMutation!): HomePage!
+  createHomePage(relativePath: String!, params: HomePageMutation!): HomePage!
+  updateAboutPage(relativePath: String!, params: AboutPageMutation!): AboutPage!
+  createAboutPage(relativePath: String!, params: AboutPageMutation!): AboutPage!
+  updateLendersPage(relativePath: String!, params: LendersPageMutation!): LendersPage!
+  createLendersPage(relativePath: String!, params: LendersPageMutation!): LendersPage!
+  updateContactPage(relativePath: String!, params: ContactPageMutation!): ContactPage!
+  createContactPage(relativePath: String!, params: ContactPageMutation!): ContactPage!
+}
+
+input DocumentUpdateMutation {
+  homePage: HomePageMutation
+  aboutPage: AboutPageMutation
+  lendersPage: LendersPageMutation
+  contactPage: ContactPageMutation
+  relativePath: String
+}
+
+input DocumentMutation {
+  homePage: HomePageMutation
+  aboutPage: AboutPageMutation
+  lendersPage: LendersPageMutation
+  contactPage: ContactPageMutation
+}
+
+input HomePageHeroMutation {
+  breadcrumb: String
+  title: String
+  buttonText: String
+  formTitle: String
+  heroImage: String
+}
+
+input HomePageAboutMutation {
+  label: String
+  title: String
+  paragraph1: String
+  paragraph2: String
+  quote: String
+  quoteAuthor: String
+  stat1Value: String
+  stat1Label: String
+  stat2Value: String
+  stat2Label: String
+  image: String
+}
+
+input HomePageHelpFeaturesMutation {
+  icon: String
+  title: String
+  description: String
+}
+
+input HomePageHelpMutation {
+  title: String
+  description: String
+  statValue: String
+  statLabel: String
+  image: String
+  features: [HomePageHelpFeaturesMutation]
+}
+
+input HomePageCalculatorMutation {
+  title: String
+  description: String
+}
+
+input HomePageLendersLenderListMutation {
+  name: String
+  logo: String
+}
+
+input HomePageLendersMutation {
+  title: String
+  description: String
+  lenderList: [HomePageLendersLenderListMutation]
+}
+
+input HomePageContactMutation {
+  title: String
+  mapUrl: String
+  location: String
+}
+
+input HomePageNewsletterMutation {
+  title: String
+}
+
+input HomePageHeaderMutation {
+  phone: String
+  email: String
+  logo: String
+  facebookUrl: String
+  twitterUrl: String
+  linkedinUrl: String
+  youtubeUrl: String
+}
+
+input HomePageFooterAddressMutation {
+  line1: String
+  line2: String
+  line3: String
+}
+
+input HomePageFooterMutation {
+  logo: String
+  description: String
+  address: HomePageFooterAddressMutation
+  email: String
+  copyright: String
+}
+
+input HomePageMutation {
+  hero: HomePageHeroMutation
+  about: HomePageAboutMutation
+  help: HomePageHelpMutation
+  calculator: HomePageCalculatorMutation
+  lenders: HomePageLendersMutation
+  contact: HomePageContactMutation
+  newsletter: HomePageNewsletterMutation
+  header: HomePageHeaderMutation
+  footer: HomePageFooterMutation
+}
+
+input AboutPageAboutMutation {
+  label: String
+  title: String
+  paragraph1: String
+  paragraph2: String
+  quote: String
+  quoteAuthor: String
+  stat1Value: String
+  stat1Label: String
+  stat2Value: String
+  stat2Label: String
+  image: String
+}
+
+input AboutPageHelpFeaturesMutation {
+  icon: String
+  title: String
+  description: String
+}
+
+input AboutPageHelpMutation {
+  title: String
+  description: String
+  statValue: String
+  statLabel: String
+  image: String
+  features: [AboutPageHelpFeaturesMutation]
+}
+
+input AboutPageHeaderMutation {
+  phone: String
+  email: String
+  logo: String
+  facebookUrl: String
+  twitterUrl: String
+  linkedinUrl: String
+  youtubeUrl: String
+}
+
+input AboutPageFooterAddressMutation {
+  line1: String
+  line2: String
+  line3: String
+}
+
+input AboutPageFooterMutation {
+  logo: String
+  description: String
+  address: AboutPageFooterAddressMutation
+  email: String
+  copyright: String
+}
+
+input AboutPageMutation {
+  about: AboutPageAboutMutation
+  help: AboutPageHelpMutation
+  header: AboutPageHeaderMutation
+  footer: AboutPageFooterMutation
+}
+
+input LendersPageLendersLenderListMutation {
+  name: String
+  logo: String
+}
+
+input LendersPageLendersMutation {
+  title: String
+  description: String
+  lenderList: [LendersPageLendersLenderListMutation]
+}
+
+input LendersPageCalculatorMutation {
+  title: String
+  description: String
+}
+
+input LendersPageHeaderMutation {
+  phone: String
+  email: String
+  logo: String
+  facebookUrl: String
+  twitterUrl: String
+  linkedinUrl: String
+  youtubeUrl: String
+}
+
+input LendersPageFooterAddressMutation {
+  line1: String
+  line2: String
+  line3: String
+}
+
+input LendersPageFooterMutation {
+  logo: String
+  description: String
+  address: LendersPageFooterAddressMutation
+  email: String
+  copyright: String
+}
+
+input LendersPageMutation {
+  lenders: LendersPageLendersMutation
+  calculator: LendersPageCalculatorMutation
+  header: LendersPageHeaderMutation
+  footer: LendersPageFooterMutation
+}
+
+input ContactPageContactMutation {
+  title: String
+  mapUrl: String
+  location: String
+}
+
+input ContactPageHeaderMutation {
+  phone: String
+  email: String
+  logo: String
+  facebookUrl: String
+  twitterUrl: String
+  linkedinUrl: String
+  youtubeUrl: String
+}
+
+input ContactPageFooterAddressMutation {
+  line1: String
+  line2: String
+  line3: String
+}
+
+input ContactPageFooterMutation {
+  logo: String
+  description: String
+  address: ContactPageFooterAddressMutation
+  email: String
+  copyright: String
+}
+
+input ContactPageMutation {
+  contact: ContactPageContactMutation
+  header: ContactPageHeaderMutation
+  footer: ContactPageFooterMutation
 }
 
 schema {

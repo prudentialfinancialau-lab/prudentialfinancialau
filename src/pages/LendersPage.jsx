@@ -13,7 +13,7 @@ function LendersPageContent({ pageData }) {
     data: pageData.data,
   });
 
-  const content = data.page;
+  const content = data.lendersPage;
 
   return (
     <>
@@ -33,7 +33,7 @@ export default function LendersPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await client.queries.page({ relativePath: 'lenders.json' });
+        const result = await client.queries.lendersPage({ relativePath: 'lenders.json' });
         setPageData(result);
         setLoading(false);
       } catch (err) {

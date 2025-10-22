@@ -82,8 +82,14 @@ export type Query = {
   collections: Array<Collection>;
   node: Node;
   document: DocumentNode;
-  page: Page;
-  pageConnection: PageConnection;
+  homePage: HomePage;
+  homePageConnection: HomePageConnection;
+  aboutPage: AboutPage;
+  aboutPageConnection: AboutPageConnection;
+  lendersPage: LendersPage;
+  lendersPageConnection: LendersPageConnection;
+  contactPage: ContactPage;
+  contactPageConnection: ContactPageConnection;
 };
 
 
@@ -108,22 +114,70 @@ export type QueryDocumentArgs = {
 };
 
 
-export type QueryPageArgs = {
+export type QueryHomePageArgs = {
   relativePath?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-export type QueryPageConnectionArgs = {
+export type QueryHomePageConnectionArgs = {
   before?: InputMaybe<Scalars['String']['input']>;
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Float']['input']>;
   last?: InputMaybe<Scalars['Float']['input']>;
   sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<PageFilter>;
+  filter?: InputMaybe<HomePageFilter>;
+};
+
+
+export type QueryAboutPageArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryAboutPageConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<AboutPageFilter>;
+};
+
+
+export type QueryLendersPageArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryLendersPageConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<LendersPageFilter>;
+};
+
+
+export type QueryContactPageArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryContactPageConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ContactPageFilter>;
 };
 
 export type DocumentFilter = {
-  page?: InputMaybe<PageFilter>;
+  homePage?: InputMaybe<HomePageFilter>;
+  aboutPage?: InputMaybe<AboutPageFilter>;
+  lendersPage?: InputMaybe<LendersPageFilter>;
+  contactPage?: InputMaybe<ContactPageFilter>;
 };
 
 export type DocumentConnectionEdges = {
@@ -163,10 +217,10 @@ export type CollectionDocumentsArgs = {
   folder?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type DocumentNode = Page | Folder;
+export type DocumentNode = HomePage | AboutPage | LendersPage | ContactPage | Folder;
 
-export type PageHero = {
-  __typename?: 'PageHero';
+export type HomePageHero = {
+  __typename?: 'HomePageHero';
   breadcrumb?: Maybe<Scalars['String']['output']>;
   title?: Maybe<Scalars['String']['output']>;
   buttonText?: Maybe<Scalars['String']['output']>;
@@ -174,8 +228,8 @@ export type PageHero = {
   heroImage?: Maybe<Scalars['String']['output']>;
 };
 
-export type PageAbout = {
-  __typename?: 'PageAbout';
+export type HomePageAbout = {
+  __typename?: 'HomePageAbout';
   label?: Maybe<Scalars['String']['output']>;
   title?: Maybe<Scalars['String']['output']>;
   paragraph1?: Maybe<Scalars['String']['output']>;
@@ -189,56 +243,56 @@ export type PageAbout = {
   image?: Maybe<Scalars['String']['output']>;
 };
 
-export type PageHelpFeatures = {
-  __typename?: 'PageHelpFeatures';
+export type HomePageHelpFeatures = {
+  __typename?: 'HomePageHelpFeatures';
   icon?: Maybe<Scalars['String']['output']>;
   title?: Maybe<Scalars['String']['output']>;
   description?: Maybe<Scalars['String']['output']>;
 };
 
-export type PageHelp = {
-  __typename?: 'PageHelp';
+export type HomePageHelp = {
+  __typename?: 'HomePageHelp';
   title?: Maybe<Scalars['String']['output']>;
   description?: Maybe<Scalars['String']['output']>;
   statValue?: Maybe<Scalars['String']['output']>;
   statLabel?: Maybe<Scalars['String']['output']>;
   image?: Maybe<Scalars['String']['output']>;
-  features?: Maybe<Array<Maybe<PageHelpFeatures>>>;
+  features?: Maybe<Array<Maybe<HomePageHelpFeatures>>>;
 };
 
-export type PageCalculator = {
-  __typename?: 'PageCalculator';
+export type HomePageCalculator = {
+  __typename?: 'HomePageCalculator';
   title?: Maybe<Scalars['String']['output']>;
   description?: Maybe<Scalars['String']['output']>;
 };
 
-export type PageLendersLenderList = {
-  __typename?: 'PageLendersLenderList';
+export type HomePageLendersLenderList = {
+  __typename?: 'HomePageLendersLenderList';
   name?: Maybe<Scalars['String']['output']>;
   logo?: Maybe<Scalars['String']['output']>;
 };
 
-export type PageLenders = {
-  __typename?: 'PageLenders';
+export type HomePageLenders = {
+  __typename?: 'HomePageLenders';
   title?: Maybe<Scalars['String']['output']>;
   description?: Maybe<Scalars['String']['output']>;
-  lenderList?: Maybe<Array<Maybe<PageLendersLenderList>>>;
+  lenderList?: Maybe<Array<Maybe<HomePageLendersLenderList>>>;
 };
 
-export type PageContact = {
-  __typename?: 'PageContact';
+export type HomePageContact = {
+  __typename?: 'HomePageContact';
   title?: Maybe<Scalars['String']['output']>;
   mapUrl?: Maybe<Scalars['String']['output']>;
   location?: Maybe<Scalars['String']['output']>;
 };
 
-export type PageNewsletter = {
-  __typename?: 'PageNewsletter';
+export type HomePageNewsletter = {
+  __typename?: 'HomePageNewsletter';
   title?: Maybe<Scalars['String']['output']>;
 };
 
-export type PageHeader = {
-  __typename?: 'PageHeader';
+export type HomePageHeader = {
+  __typename?: 'HomePageHeader';
   phone?: Maybe<Scalars['String']['output']>;
   email?: Maybe<Scalars['String']['output']>;
   logo?: Maybe<Scalars['String']['output']>;
@@ -248,33 +302,33 @@ export type PageHeader = {
   youtubeUrl?: Maybe<Scalars['String']['output']>;
 };
 
-export type PageFooterAddress = {
-  __typename?: 'PageFooterAddress';
+export type HomePageFooterAddress = {
+  __typename?: 'HomePageFooterAddress';
   line1?: Maybe<Scalars['String']['output']>;
   line2?: Maybe<Scalars['String']['output']>;
   line3?: Maybe<Scalars['String']['output']>;
 };
 
-export type PageFooter = {
-  __typename?: 'PageFooter';
+export type HomePageFooter = {
+  __typename?: 'HomePageFooter';
   logo?: Maybe<Scalars['String']['output']>;
   description?: Maybe<Scalars['String']['output']>;
-  address?: Maybe<PageFooterAddress>;
+  address?: Maybe<HomePageFooterAddress>;
   email?: Maybe<Scalars['String']['output']>;
   copyright?: Maybe<Scalars['String']['output']>;
 };
 
-export type Page = Node & Document & {
-  __typename?: 'Page';
-  hero?: Maybe<PageHero>;
-  about?: Maybe<PageAbout>;
-  help?: Maybe<PageHelp>;
-  calculator?: Maybe<PageCalculator>;
-  lenders?: Maybe<PageLenders>;
-  contact?: Maybe<PageContact>;
-  newsletter?: Maybe<PageNewsletter>;
-  header?: Maybe<PageHeader>;
-  footer?: Maybe<PageFooter>;
+export type HomePage = Node & Document & {
+  __typename?: 'HomePage';
+  hero?: Maybe<HomePageHero>;
+  about?: Maybe<HomePageAbout>;
+  help?: Maybe<HomePageHelp>;
+  calculator?: Maybe<HomePageCalculator>;
+  lenders?: Maybe<HomePageLenders>;
+  contact?: Maybe<HomePageContact>;
+  newsletter?: Maybe<HomePageNewsletter>;
+  header?: Maybe<HomePageHeader>;
+  footer?: Maybe<HomePageFooter>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
@@ -294,7 +348,7 @@ export type ImageFilter = {
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
-export type PageHeroFilter = {
+export type HomePageHeroFilter = {
   breadcrumb?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
   buttonText?: InputMaybe<StringFilter>;
@@ -302,7 +356,7 @@ export type PageHeroFilter = {
   heroImage?: InputMaybe<ImageFilter>;
 };
 
-export type PageAboutFilter = {
+export type HomePageAboutFilter = {
   label?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
   paragraph1?: InputMaybe<StringFilter>;
@@ -316,48 +370,48 @@ export type PageAboutFilter = {
   image?: InputMaybe<ImageFilter>;
 };
 
-export type PageHelpFeaturesFilter = {
+export type HomePageHelpFeaturesFilter = {
   icon?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
 };
 
-export type PageHelpFilter = {
+export type HomePageHelpFilter = {
   title?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
   statValue?: InputMaybe<StringFilter>;
   statLabel?: InputMaybe<StringFilter>;
   image?: InputMaybe<ImageFilter>;
-  features?: InputMaybe<PageHelpFeaturesFilter>;
+  features?: InputMaybe<HomePageHelpFeaturesFilter>;
 };
 
-export type PageCalculatorFilter = {
+export type HomePageCalculatorFilter = {
   title?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
 };
 
-export type PageLendersLenderListFilter = {
+export type HomePageLendersLenderListFilter = {
   name?: InputMaybe<StringFilter>;
   logo?: InputMaybe<ImageFilter>;
 };
 
-export type PageLendersFilter = {
+export type HomePageLendersFilter = {
   title?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
-  lenderList?: InputMaybe<PageLendersLenderListFilter>;
+  lenderList?: InputMaybe<HomePageLendersLenderListFilter>;
 };
 
-export type PageContactFilter = {
+export type HomePageContactFilter = {
   title?: InputMaybe<StringFilter>;
   mapUrl?: InputMaybe<StringFilter>;
   location?: InputMaybe<StringFilter>;
 };
 
-export type PageNewsletterFilter = {
+export type HomePageNewsletterFilter = {
   title?: InputMaybe<StringFilter>;
 };
 
-export type PageHeaderFilter = {
+export type HomePageHeaderFilter = {
   phone?: InputMaybe<StringFilter>;
   email?: InputMaybe<StringFilter>;
   logo?: InputMaybe<ImageFilter>;
@@ -367,43 +421,396 @@ export type PageHeaderFilter = {
   youtubeUrl?: InputMaybe<StringFilter>;
 };
 
-export type PageFooterAddressFilter = {
+export type HomePageFooterAddressFilter = {
   line1?: InputMaybe<StringFilter>;
   line2?: InputMaybe<StringFilter>;
   line3?: InputMaybe<StringFilter>;
 };
 
-export type PageFooterFilter = {
+export type HomePageFooterFilter = {
   logo?: InputMaybe<ImageFilter>;
   description?: InputMaybe<StringFilter>;
-  address?: InputMaybe<PageFooterAddressFilter>;
+  address?: InputMaybe<HomePageFooterAddressFilter>;
   email?: InputMaybe<StringFilter>;
   copyright?: InputMaybe<StringFilter>;
 };
 
-export type PageFilter = {
-  hero?: InputMaybe<PageHeroFilter>;
-  about?: InputMaybe<PageAboutFilter>;
-  help?: InputMaybe<PageHelpFilter>;
-  calculator?: InputMaybe<PageCalculatorFilter>;
-  lenders?: InputMaybe<PageLendersFilter>;
-  contact?: InputMaybe<PageContactFilter>;
-  newsletter?: InputMaybe<PageNewsletterFilter>;
-  header?: InputMaybe<PageHeaderFilter>;
-  footer?: InputMaybe<PageFooterFilter>;
+export type HomePageFilter = {
+  hero?: InputMaybe<HomePageHeroFilter>;
+  about?: InputMaybe<HomePageAboutFilter>;
+  help?: InputMaybe<HomePageHelpFilter>;
+  calculator?: InputMaybe<HomePageCalculatorFilter>;
+  lenders?: InputMaybe<HomePageLendersFilter>;
+  contact?: InputMaybe<HomePageContactFilter>;
+  newsletter?: InputMaybe<HomePageNewsletterFilter>;
+  header?: InputMaybe<HomePageHeaderFilter>;
+  footer?: InputMaybe<HomePageFooterFilter>;
 };
 
-export type PageConnectionEdges = {
-  __typename?: 'PageConnectionEdges';
+export type HomePageConnectionEdges = {
+  __typename?: 'HomePageConnectionEdges';
   cursor: Scalars['String']['output'];
-  node?: Maybe<Page>;
+  node?: Maybe<HomePage>;
 };
 
-export type PageConnection = Connection & {
-  __typename?: 'PageConnection';
+export type HomePageConnection = Connection & {
+  __typename?: 'HomePageConnection';
   pageInfo: PageInfo;
   totalCount: Scalars['Float']['output'];
-  edges?: Maybe<Array<Maybe<PageConnectionEdges>>>;
+  edges?: Maybe<Array<Maybe<HomePageConnectionEdges>>>;
+};
+
+export type AboutPageAbout = {
+  __typename?: 'AboutPageAbout';
+  label?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  paragraph1?: Maybe<Scalars['String']['output']>;
+  paragraph2?: Maybe<Scalars['String']['output']>;
+  quote?: Maybe<Scalars['String']['output']>;
+  quoteAuthor?: Maybe<Scalars['String']['output']>;
+  stat1Value?: Maybe<Scalars['String']['output']>;
+  stat1Label?: Maybe<Scalars['String']['output']>;
+  stat2Value?: Maybe<Scalars['String']['output']>;
+  stat2Label?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
+};
+
+export type AboutPageHelpFeatures = {
+  __typename?: 'AboutPageHelpFeatures';
+  icon?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+};
+
+export type AboutPageHelp = {
+  __typename?: 'AboutPageHelp';
+  title?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  statValue?: Maybe<Scalars['String']['output']>;
+  statLabel?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
+  features?: Maybe<Array<Maybe<AboutPageHelpFeatures>>>;
+};
+
+export type AboutPageHeader = {
+  __typename?: 'AboutPageHeader';
+  phone?: Maybe<Scalars['String']['output']>;
+  email?: Maybe<Scalars['String']['output']>;
+  logo?: Maybe<Scalars['String']['output']>;
+  facebookUrl?: Maybe<Scalars['String']['output']>;
+  twitterUrl?: Maybe<Scalars['String']['output']>;
+  linkedinUrl?: Maybe<Scalars['String']['output']>;
+  youtubeUrl?: Maybe<Scalars['String']['output']>;
+};
+
+export type AboutPageFooterAddress = {
+  __typename?: 'AboutPageFooterAddress';
+  line1?: Maybe<Scalars['String']['output']>;
+  line2?: Maybe<Scalars['String']['output']>;
+  line3?: Maybe<Scalars['String']['output']>;
+};
+
+export type AboutPageFooter = {
+  __typename?: 'AboutPageFooter';
+  logo?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  address?: Maybe<AboutPageFooterAddress>;
+  email?: Maybe<Scalars['String']['output']>;
+  copyright?: Maybe<Scalars['String']['output']>;
+};
+
+export type AboutPage = Node & Document & {
+  __typename?: 'AboutPage';
+  about?: Maybe<AboutPageAbout>;
+  help?: Maybe<AboutPageHelp>;
+  header?: Maybe<AboutPageHeader>;
+  footer?: Maybe<AboutPageFooter>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type AboutPageAboutFilter = {
+  label?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  paragraph1?: InputMaybe<StringFilter>;
+  paragraph2?: InputMaybe<StringFilter>;
+  quote?: InputMaybe<StringFilter>;
+  quoteAuthor?: InputMaybe<StringFilter>;
+  stat1Value?: InputMaybe<StringFilter>;
+  stat1Label?: InputMaybe<StringFilter>;
+  stat2Value?: InputMaybe<StringFilter>;
+  stat2Label?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
+};
+
+export type AboutPageHelpFeaturesFilter = {
+  icon?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+};
+
+export type AboutPageHelpFilter = {
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  statValue?: InputMaybe<StringFilter>;
+  statLabel?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
+  features?: InputMaybe<AboutPageHelpFeaturesFilter>;
+};
+
+export type AboutPageHeaderFilter = {
+  phone?: InputMaybe<StringFilter>;
+  email?: InputMaybe<StringFilter>;
+  logo?: InputMaybe<ImageFilter>;
+  facebookUrl?: InputMaybe<StringFilter>;
+  twitterUrl?: InputMaybe<StringFilter>;
+  linkedinUrl?: InputMaybe<StringFilter>;
+  youtubeUrl?: InputMaybe<StringFilter>;
+};
+
+export type AboutPageFooterAddressFilter = {
+  line1?: InputMaybe<StringFilter>;
+  line2?: InputMaybe<StringFilter>;
+  line3?: InputMaybe<StringFilter>;
+};
+
+export type AboutPageFooterFilter = {
+  logo?: InputMaybe<ImageFilter>;
+  description?: InputMaybe<StringFilter>;
+  address?: InputMaybe<AboutPageFooterAddressFilter>;
+  email?: InputMaybe<StringFilter>;
+  copyright?: InputMaybe<StringFilter>;
+};
+
+export type AboutPageFilter = {
+  about?: InputMaybe<AboutPageAboutFilter>;
+  help?: InputMaybe<AboutPageHelpFilter>;
+  header?: InputMaybe<AboutPageHeaderFilter>;
+  footer?: InputMaybe<AboutPageFooterFilter>;
+};
+
+export type AboutPageConnectionEdges = {
+  __typename?: 'AboutPageConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<AboutPage>;
+};
+
+export type AboutPageConnection = Connection & {
+  __typename?: 'AboutPageConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<AboutPageConnectionEdges>>>;
+};
+
+export type LendersPageLendersLenderList = {
+  __typename?: 'LendersPageLendersLenderList';
+  name?: Maybe<Scalars['String']['output']>;
+  logo?: Maybe<Scalars['String']['output']>;
+};
+
+export type LendersPageLenders = {
+  __typename?: 'LendersPageLenders';
+  title?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  lenderList?: Maybe<Array<Maybe<LendersPageLendersLenderList>>>;
+};
+
+export type LendersPageCalculator = {
+  __typename?: 'LendersPageCalculator';
+  title?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+};
+
+export type LendersPageHeader = {
+  __typename?: 'LendersPageHeader';
+  phone?: Maybe<Scalars['String']['output']>;
+  email?: Maybe<Scalars['String']['output']>;
+  logo?: Maybe<Scalars['String']['output']>;
+  facebookUrl?: Maybe<Scalars['String']['output']>;
+  twitterUrl?: Maybe<Scalars['String']['output']>;
+  linkedinUrl?: Maybe<Scalars['String']['output']>;
+  youtubeUrl?: Maybe<Scalars['String']['output']>;
+};
+
+export type LendersPageFooterAddress = {
+  __typename?: 'LendersPageFooterAddress';
+  line1?: Maybe<Scalars['String']['output']>;
+  line2?: Maybe<Scalars['String']['output']>;
+  line3?: Maybe<Scalars['String']['output']>;
+};
+
+export type LendersPageFooter = {
+  __typename?: 'LendersPageFooter';
+  logo?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  address?: Maybe<LendersPageFooterAddress>;
+  email?: Maybe<Scalars['String']['output']>;
+  copyright?: Maybe<Scalars['String']['output']>;
+};
+
+export type LendersPage = Node & Document & {
+  __typename?: 'LendersPage';
+  lenders?: Maybe<LendersPageLenders>;
+  calculator?: Maybe<LendersPageCalculator>;
+  header?: Maybe<LendersPageHeader>;
+  footer?: Maybe<LendersPageFooter>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type LendersPageLendersLenderListFilter = {
+  name?: InputMaybe<StringFilter>;
+  logo?: InputMaybe<ImageFilter>;
+};
+
+export type LendersPageLendersFilter = {
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  lenderList?: InputMaybe<LendersPageLendersLenderListFilter>;
+};
+
+export type LendersPageCalculatorFilter = {
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+};
+
+export type LendersPageHeaderFilter = {
+  phone?: InputMaybe<StringFilter>;
+  email?: InputMaybe<StringFilter>;
+  logo?: InputMaybe<ImageFilter>;
+  facebookUrl?: InputMaybe<StringFilter>;
+  twitterUrl?: InputMaybe<StringFilter>;
+  linkedinUrl?: InputMaybe<StringFilter>;
+  youtubeUrl?: InputMaybe<StringFilter>;
+};
+
+export type LendersPageFooterAddressFilter = {
+  line1?: InputMaybe<StringFilter>;
+  line2?: InputMaybe<StringFilter>;
+  line3?: InputMaybe<StringFilter>;
+};
+
+export type LendersPageFooterFilter = {
+  logo?: InputMaybe<ImageFilter>;
+  description?: InputMaybe<StringFilter>;
+  address?: InputMaybe<LendersPageFooterAddressFilter>;
+  email?: InputMaybe<StringFilter>;
+  copyright?: InputMaybe<StringFilter>;
+};
+
+export type LendersPageFilter = {
+  lenders?: InputMaybe<LendersPageLendersFilter>;
+  calculator?: InputMaybe<LendersPageCalculatorFilter>;
+  header?: InputMaybe<LendersPageHeaderFilter>;
+  footer?: InputMaybe<LendersPageFooterFilter>;
+};
+
+export type LendersPageConnectionEdges = {
+  __typename?: 'LendersPageConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<LendersPage>;
+};
+
+export type LendersPageConnection = Connection & {
+  __typename?: 'LendersPageConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<LendersPageConnectionEdges>>>;
+};
+
+export type ContactPageContact = {
+  __typename?: 'ContactPageContact';
+  title?: Maybe<Scalars['String']['output']>;
+  mapUrl?: Maybe<Scalars['String']['output']>;
+  location?: Maybe<Scalars['String']['output']>;
+};
+
+export type ContactPageHeader = {
+  __typename?: 'ContactPageHeader';
+  phone?: Maybe<Scalars['String']['output']>;
+  email?: Maybe<Scalars['String']['output']>;
+  logo?: Maybe<Scalars['String']['output']>;
+  facebookUrl?: Maybe<Scalars['String']['output']>;
+  twitterUrl?: Maybe<Scalars['String']['output']>;
+  linkedinUrl?: Maybe<Scalars['String']['output']>;
+  youtubeUrl?: Maybe<Scalars['String']['output']>;
+};
+
+export type ContactPageFooterAddress = {
+  __typename?: 'ContactPageFooterAddress';
+  line1?: Maybe<Scalars['String']['output']>;
+  line2?: Maybe<Scalars['String']['output']>;
+  line3?: Maybe<Scalars['String']['output']>;
+};
+
+export type ContactPageFooter = {
+  __typename?: 'ContactPageFooter';
+  logo?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  address?: Maybe<ContactPageFooterAddress>;
+  email?: Maybe<Scalars['String']['output']>;
+  copyright?: Maybe<Scalars['String']['output']>;
+};
+
+export type ContactPage = Node & Document & {
+  __typename?: 'ContactPage';
+  contact?: Maybe<ContactPageContact>;
+  header?: Maybe<ContactPageHeader>;
+  footer?: Maybe<ContactPageFooter>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type ContactPageContactFilter = {
+  title?: InputMaybe<StringFilter>;
+  mapUrl?: InputMaybe<StringFilter>;
+  location?: InputMaybe<StringFilter>;
+};
+
+export type ContactPageHeaderFilter = {
+  phone?: InputMaybe<StringFilter>;
+  email?: InputMaybe<StringFilter>;
+  logo?: InputMaybe<ImageFilter>;
+  facebookUrl?: InputMaybe<StringFilter>;
+  twitterUrl?: InputMaybe<StringFilter>;
+  linkedinUrl?: InputMaybe<StringFilter>;
+  youtubeUrl?: InputMaybe<StringFilter>;
+};
+
+export type ContactPageFooterAddressFilter = {
+  line1?: InputMaybe<StringFilter>;
+  line2?: InputMaybe<StringFilter>;
+  line3?: InputMaybe<StringFilter>;
+};
+
+export type ContactPageFooterFilter = {
+  logo?: InputMaybe<ImageFilter>;
+  description?: InputMaybe<StringFilter>;
+  address?: InputMaybe<ContactPageFooterAddressFilter>;
+  email?: InputMaybe<StringFilter>;
+  copyright?: InputMaybe<StringFilter>;
+};
+
+export type ContactPageFilter = {
+  contact?: InputMaybe<ContactPageContactFilter>;
+  header?: InputMaybe<ContactPageHeaderFilter>;
+  footer?: InputMaybe<ContactPageFooterFilter>;
+};
+
+export type ContactPageConnectionEdges = {
+  __typename?: 'ContactPageConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<ContactPage>;
+};
+
+export type ContactPageConnection = Connection & {
+  __typename?: 'ContactPageConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<ContactPageConnectionEdges>>>;
 };
 
 export type Mutation = {
@@ -413,8 +820,14 @@ export type Mutation = {
   deleteDocument: DocumentNode;
   createDocument: DocumentNode;
   createFolder: DocumentNode;
-  updatePage: Page;
-  createPage: Page;
+  updateHomePage: HomePage;
+  createHomePage: HomePage;
+  updateAboutPage: AboutPage;
+  createAboutPage: AboutPage;
+  updateLendersPage: LendersPage;
+  createLendersPage: LendersPage;
+  updateContactPage: ContactPage;
+  createContactPage: ContactPage;
 };
 
 
@@ -451,27 +864,69 @@ export type MutationCreateFolderArgs = {
 };
 
 
-export type MutationUpdatePageArgs = {
+export type MutationUpdateHomePageArgs = {
   relativePath: Scalars['String']['input'];
-  params: PageMutation;
+  params: HomePageMutation;
 };
 
 
-export type MutationCreatePageArgs = {
+export type MutationCreateHomePageArgs = {
   relativePath: Scalars['String']['input'];
-  params: PageMutation;
+  params: HomePageMutation;
+};
+
+
+export type MutationUpdateAboutPageArgs = {
+  relativePath: Scalars['String']['input'];
+  params: AboutPageMutation;
+};
+
+
+export type MutationCreateAboutPageArgs = {
+  relativePath: Scalars['String']['input'];
+  params: AboutPageMutation;
+};
+
+
+export type MutationUpdateLendersPageArgs = {
+  relativePath: Scalars['String']['input'];
+  params: LendersPageMutation;
+};
+
+
+export type MutationCreateLendersPageArgs = {
+  relativePath: Scalars['String']['input'];
+  params: LendersPageMutation;
+};
+
+
+export type MutationUpdateContactPageArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ContactPageMutation;
+};
+
+
+export type MutationCreateContactPageArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ContactPageMutation;
 };
 
 export type DocumentUpdateMutation = {
-  page?: InputMaybe<PageMutation>;
+  homePage?: InputMaybe<HomePageMutation>;
+  aboutPage?: InputMaybe<AboutPageMutation>;
+  lendersPage?: InputMaybe<LendersPageMutation>;
+  contactPage?: InputMaybe<ContactPageMutation>;
   relativePath?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type DocumentMutation = {
-  page?: InputMaybe<PageMutation>;
+  homePage?: InputMaybe<HomePageMutation>;
+  aboutPage?: InputMaybe<AboutPageMutation>;
+  lendersPage?: InputMaybe<LendersPageMutation>;
+  contactPage?: InputMaybe<ContactPageMutation>;
 };
 
-export type PageHeroMutation = {
+export type HomePageHeroMutation = {
   breadcrumb?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
   buttonText?: InputMaybe<Scalars['String']['input']>;
@@ -479,7 +934,7 @@ export type PageHeroMutation = {
   heroImage?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type PageAboutMutation = {
+export type HomePageAboutMutation = {
   label?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
   paragraph1?: InputMaybe<Scalars['String']['input']>;
@@ -493,48 +948,48 @@ export type PageAboutMutation = {
   image?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type PageHelpFeaturesMutation = {
+export type HomePageHelpFeaturesMutation = {
   icon?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type PageHelpMutation = {
+export type HomePageHelpMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
   statValue?: InputMaybe<Scalars['String']['input']>;
   statLabel?: InputMaybe<Scalars['String']['input']>;
   image?: InputMaybe<Scalars['String']['input']>;
-  features?: InputMaybe<Array<InputMaybe<PageHelpFeaturesMutation>>>;
+  features?: InputMaybe<Array<InputMaybe<HomePageHelpFeaturesMutation>>>;
 };
 
-export type PageCalculatorMutation = {
+export type HomePageCalculatorMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type PageLendersLenderListMutation = {
+export type HomePageLendersLenderListMutation = {
   name?: InputMaybe<Scalars['String']['input']>;
   logo?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type PageLendersMutation = {
+export type HomePageLendersMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
-  lenderList?: InputMaybe<Array<InputMaybe<PageLendersLenderListMutation>>>;
+  lenderList?: InputMaybe<Array<InputMaybe<HomePageLendersLenderListMutation>>>;
 };
 
-export type PageContactMutation = {
+export type HomePageContactMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   mapUrl?: InputMaybe<Scalars['String']['input']>;
   location?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type PageNewsletterMutation = {
+export type HomePageNewsletterMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type PageHeaderMutation = {
+export type HomePageHeaderMutation = {
   phone?: InputMaybe<Scalars['String']['input']>;
   email?: InputMaybe<Scalars['String']['input']>;
   logo?: InputMaybe<Scalars['String']['input']>;
@@ -544,55 +999,261 @@ export type PageHeaderMutation = {
   youtubeUrl?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type PageFooterAddressMutation = {
+export type HomePageFooterAddressMutation = {
   line1?: InputMaybe<Scalars['String']['input']>;
   line2?: InputMaybe<Scalars['String']['input']>;
   line3?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type PageFooterMutation = {
+export type HomePageFooterMutation = {
   logo?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
-  address?: InputMaybe<PageFooterAddressMutation>;
+  address?: InputMaybe<HomePageFooterAddressMutation>;
   email?: InputMaybe<Scalars['String']['input']>;
   copyright?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type PageMutation = {
-  hero?: InputMaybe<PageHeroMutation>;
-  about?: InputMaybe<PageAboutMutation>;
-  help?: InputMaybe<PageHelpMutation>;
-  calculator?: InputMaybe<PageCalculatorMutation>;
-  lenders?: InputMaybe<PageLendersMutation>;
-  contact?: InputMaybe<PageContactMutation>;
-  newsletter?: InputMaybe<PageNewsletterMutation>;
-  header?: InputMaybe<PageHeaderMutation>;
-  footer?: InputMaybe<PageFooterMutation>;
+export type HomePageMutation = {
+  hero?: InputMaybe<HomePageHeroMutation>;
+  about?: InputMaybe<HomePageAboutMutation>;
+  help?: InputMaybe<HomePageHelpMutation>;
+  calculator?: InputMaybe<HomePageCalculatorMutation>;
+  lenders?: InputMaybe<HomePageLendersMutation>;
+  contact?: InputMaybe<HomePageContactMutation>;
+  newsletter?: InputMaybe<HomePageNewsletterMutation>;
+  header?: InputMaybe<HomePageHeaderMutation>;
+  footer?: InputMaybe<HomePageFooterMutation>;
 };
 
-export type PagePartsFragment = { __typename: 'Page', hero?: { __typename: 'PageHero', breadcrumb?: string | null, title?: string | null, buttonText?: string | null, formTitle?: string | null, heroImage?: string | null } | null, about?: { __typename: 'PageAbout', label?: string | null, title?: string | null, paragraph1?: string | null, paragraph2?: string | null, quote?: string | null, quoteAuthor?: string | null, stat1Value?: string | null, stat1Label?: string | null, stat2Value?: string | null, stat2Label?: string | null, image?: string | null } | null, help?: { __typename: 'PageHelp', title?: string | null, description?: string | null, statValue?: string | null, statLabel?: string | null, image?: string | null, features?: Array<{ __typename: 'PageHelpFeatures', icon?: string | null, title?: string | null, description?: string | null } | null> | null } | null, calculator?: { __typename: 'PageCalculator', title?: string | null, description?: string | null } | null, lenders?: { __typename: 'PageLenders', title?: string | null, description?: string | null, lenderList?: Array<{ __typename: 'PageLendersLenderList', name?: string | null, logo?: string | null } | null> | null } | null, contact?: { __typename: 'PageContact', title?: string | null, mapUrl?: string | null, location?: string | null } | null, newsletter?: { __typename: 'PageNewsletter', title?: string | null } | null, header?: { __typename: 'PageHeader', phone?: string | null, email?: string | null, logo?: string | null, facebookUrl?: string | null, twitterUrl?: string | null, linkedinUrl?: string | null, youtubeUrl?: string | null } | null, footer?: { __typename: 'PageFooter', logo?: string | null, description?: string | null, email?: string | null, copyright?: string | null, address?: { __typename: 'PageFooterAddress', line1?: string | null, line2?: string | null, line3?: string | null } | null } | null };
+export type AboutPageAboutMutation = {
+  label?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  paragraph1?: InputMaybe<Scalars['String']['input']>;
+  paragraph2?: InputMaybe<Scalars['String']['input']>;
+  quote?: InputMaybe<Scalars['String']['input']>;
+  quoteAuthor?: InputMaybe<Scalars['String']['input']>;
+  stat1Value?: InputMaybe<Scalars['String']['input']>;
+  stat1Label?: InputMaybe<Scalars['String']['input']>;
+  stat2Value?: InputMaybe<Scalars['String']['input']>;
+  stat2Label?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
+};
 
-export type PageQueryVariables = Exact<{
+export type AboutPageHelpFeaturesMutation = {
+  icon?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type AboutPageHelpMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  statValue?: InputMaybe<Scalars['String']['input']>;
+  statLabel?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
+  features?: InputMaybe<Array<InputMaybe<AboutPageHelpFeaturesMutation>>>;
+};
+
+export type AboutPageHeaderMutation = {
+  phone?: InputMaybe<Scalars['String']['input']>;
+  email?: InputMaybe<Scalars['String']['input']>;
+  logo?: InputMaybe<Scalars['String']['input']>;
+  facebookUrl?: InputMaybe<Scalars['String']['input']>;
+  twitterUrl?: InputMaybe<Scalars['String']['input']>;
+  linkedinUrl?: InputMaybe<Scalars['String']['input']>;
+  youtubeUrl?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type AboutPageFooterAddressMutation = {
+  line1?: InputMaybe<Scalars['String']['input']>;
+  line2?: InputMaybe<Scalars['String']['input']>;
+  line3?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type AboutPageFooterMutation = {
+  logo?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  address?: InputMaybe<AboutPageFooterAddressMutation>;
+  email?: InputMaybe<Scalars['String']['input']>;
+  copyright?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type AboutPageMutation = {
+  about?: InputMaybe<AboutPageAboutMutation>;
+  help?: InputMaybe<AboutPageHelpMutation>;
+  header?: InputMaybe<AboutPageHeaderMutation>;
+  footer?: InputMaybe<AboutPageFooterMutation>;
+};
+
+export type LendersPageLendersLenderListMutation = {
+  name?: InputMaybe<Scalars['String']['input']>;
+  logo?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type LendersPageLendersMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  lenderList?: InputMaybe<Array<InputMaybe<LendersPageLendersLenderListMutation>>>;
+};
+
+export type LendersPageCalculatorMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type LendersPageHeaderMutation = {
+  phone?: InputMaybe<Scalars['String']['input']>;
+  email?: InputMaybe<Scalars['String']['input']>;
+  logo?: InputMaybe<Scalars['String']['input']>;
+  facebookUrl?: InputMaybe<Scalars['String']['input']>;
+  twitterUrl?: InputMaybe<Scalars['String']['input']>;
+  linkedinUrl?: InputMaybe<Scalars['String']['input']>;
+  youtubeUrl?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type LendersPageFooterAddressMutation = {
+  line1?: InputMaybe<Scalars['String']['input']>;
+  line2?: InputMaybe<Scalars['String']['input']>;
+  line3?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type LendersPageFooterMutation = {
+  logo?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  address?: InputMaybe<LendersPageFooterAddressMutation>;
+  email?: InputMaybe<Scalars['String']['input']>;
+  copyright?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type LendersPageMutation = {
+  lenders?: InputMaybe<LendersPageLendersMutation>;
+  calculator?: InputMaybe<LendersPageCalculatorMutation>;
+  header?: InputMaybe<LendersPageHeaderMutation>;
+  footer?: InputMaybe<LendersPageFooterMutation>;
+};
+
+export type ContactPageContactMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  mapUrl?: InputMaybe<Scalars['String']['input']>;
+  location?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ContactPageHeaderMutation = {
+  phone?: InputMaybe<Scalars['String']['input']>;
+  email?: InputMaybe<Scalars['String']['input']>;
+  logo?: InputMaybe<Scalars['String']['input']>;
+  facebookUrl?: InputMaybe<Scalars['String']['input']>;
+  twitterUrl?: InputMaybe<Scalars['String']['input']>;
+  linkedinUrl?: InputMaybe<Scalars['String']['input']>;
+  youtubeUrl?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ContactPageFooterAddressMutation = {
+  line1?: InputMaybe<Scalars['String']['input']>;
+  line2?: InputMaybe<Scalars['String']['input']>;
+  line3?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ContactPageFooterMutation = {
+  logo?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  address?: InputMaybe<ContactPageFooterAddressMutation>;
+  email?: InputMaybe<Scalars['String']['input']>;
+  copyright?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ContactPageMutation = {
+  contact?: InputMaybe<ContactPageContactMutation>;
+  header?: InputMaybe<ContactPageHeaderMutation>;
+  footer?: InputMaybe<ContactPageFooterMutation>;
+};
+
+export type HomePagePartsFragment = { __typename: 'HomePage', hero?: { __typename: 'HomePageHero', breadcrumb?: string | null, title?: string | null, buttonText?: string | null, formTitle?: string | null, heroImage?: string | null } | null, about?: { __typename: 'HomePageAbout', label?: string | null, title?: string | null, paragraph1?: string | null, paragraph2?: string | null, quote?: string | null, quoteAuthor?: string | null, stat1Value?: string | null, stat1Label?: string | null, stat2Value?: string | null, stat2Label?: string | null, image?: string | null } | null, help?: { __typename: 'HomePageHelp', title?: string | null, description?: string | null, statValue?: string | null, statLabel?: string | null, image?: string | null, features?: Array<{ __typename: 'HomePageHelpFeatures', icon?: string | null, title?: string | null, description?: string | null } | null> | null } | null, calculator?: { __typename: 'HomePageCalculator', title?: string | null, description?: string | null } | null, lenders?: { __typename: 'HomePageLenders', title?: string | null, description?: string | null, lenderList?: Array<{ __typename: 'HomePageLendersLenderList', name?: string | null, logo?: string | null } | null> | null } | null, contact?: { __typename: 'HomePageContact', title?: string | null, mapUrl?: string | null, location?: string | null } | null, newsletter?: { __typename: 'HomePageNewsletter', title?: string | null } | null, header?: { __typename: 'HomePageHeader', phone?: string | null, email?: string | null, logo?: string | null, facebookUrl?: string | null, twitterUrl?: string | null, linkedinUrl?: string | null, youtubeUrl?: string | null } | null, footer?: { __typename: 'HomePageFooter', logo?: string | null, description?: string | null, email?: string | null, copyright?: string | null, address?: { __typename: 'HomePageFooterAddress', line1?: string | null, line2?: string | null, line3?: string | null } | null } | null };
+
+export type AboutPagePartsFragment = { __typename: 'AboutPage', about?: { __typename: 'AboutPageAbout', label?: string | null, title?: string | null, paragraph1?: string | null, paragraph2?: string | null, quote?: string | null, quoteAuthor?: string | null, stat1Value?: string | null, stat1Label?: string | null, stat2Value?: string | null, stat2Label?: string | null, image?: string | null } | null, help?: { __typename: 'AboutPageHelp', title?: string | null, description?: string | null, statValue?: string | null, statLabel?: string | null, image?: string | null, features?: Array<{ __typename: 'AboutPageHelpFeatures', icon?: string | null, title?: string | null, description?: string | null } | null> | null } | null, header?: { __typename: 'AboutPageHeader', phone?: string | null, email?: string | null, logo?: string | null, facebookUrl?: string | null, twitterUrl?: string | null, linkedinUrl?: string | null, youtubeUrl?: string | null } | null, footer?: { __typename: 'AboutPageFooter', logo?: string | null, description?: string | null, email?: string | null, copyright?: string | null, address?: { __typename: 'AboutPageFooterAddress', line1?: string | null, line2?: string | null, line3?: string | null } | null } | null };
+
+export type LendersPagePartsFragment = { __typename: 'LendersPage', lenders?: { __typename: 'LendersPageLenders', title?: string | null, description?: string | null, lenderList?: Array<{ __typename: 'LendersPageLendersLenderList', name?: string | null, logo?: string | null } | null> | null } | null, calculator?: { __typename: 'LendersPageCalculator', title?: string | null, description?: string | null } | null, header?: { __typename: 'LendersPageHeader', phone?: string | null, email?: string | null, logo?: string | null, facebookUrl?: string | null, twitterUrl?: string | null, linkedinUrl?: string | null, youtubeUrl?: string | null } | null, footer?: { __typename: 'LendersPageFooter', logo?: string | null, description?: string | null, email?: string | null, copyright?: string | null, address?: { __typename: 'LendersPageFooterAddress', line1?: string | null, line2?: string | null, line3?: string | null } | null } | null };
+
+export type ContactPagePartsFragment = { __typename: 'ContactPage', contact?: { __typename: 'ContactPageContact', title?: string | null, mapUrl?: string | null, location?: string | null } | null, header?: { __typename: 'ContactPageHeader', phone?: string | null, email?: string | null, logo?: string | null, facebookUrl?: string | null, twitterUrl?: string | null, linkedinUrl?: string | null, youtubeUrl?: string | null } | null, footer?: { __typename: 'ContactPageFooter', logo?: string | null, description?: string | null, email?: string | null, copyright?: string | null, address?: { __typename: 'ContactPageFooterAddress', line1?: string | null, line2?: string | null, line3?: string | null } | null } | null };
+
+export type HomePageQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type PageQuery = { __typename?: 'Query', page: { __typename: 'Page', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'PageHero', breadcrumb?: string | null, title?: string | null, buttonText?: string | null, formTitle?: string | null, heroImage?: string | null } | null, about?: { __typename: 'PageAbout', label?: string | null, title?: string | null, paragraph1?: string | null, paragraph2?: string | null, quote?: string | null, quoteAuthor?: string | null, stat1Value?: string | null, stat1Label?: string | null, stat2Value?: string | null, stat2Label?: string | null, image?: string | null } | null, help?: { __typename: 'PageHelp', title?: string | null, description?: string | null, statValue?: string | null, statLabel?: string | null, image?: string | null, features?: Array<{ __typename: 'PageHelpFeatures', icon?: string | null, title?: string | null, description?: string | null } | null> | null } | null, calculator?: { __typename: 'PageCalculator', title?: string | null, description?: string | null } | null, lenders?: { __typename: 'PageLenders', title?: string | null, description?: string | null, lenderList?: Array<{ __typename: 'PageLendersLenderList', name?: string | null, logo?: string | null } | null> | null } | null, contact?: { __typename: 'PageContact', title?: string | null, mapUrl?: string | null, location?: string | null } | null, newsletter?: { __typename: 'PageNewsletter', title?: string | null } | null, header?: { __typename: 'PageHeader', phone?: string | null, email?: string | null, logo?: string | null, facebookUrl?: string | null, twitterUrl?: string | null, linkedinUrl?: string | null, youtubeUrl?: string | null } | null, footer?: { __typename: 'PageFooter', logo?: string | null, description?: string | null, email?: string | null, copyright?: string | null, address?: { __typename: 'PageFooterAddress', line1?: string | null, line2?: string | null, line3?: string | null } | null } | null } };
+export type HomePageQuery = { __typename?: 'Query', homePage: { __typename: 'HomePage', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'HomePageHero', breadcrumb?: string | null, title?: string | null, buttonText?: string | null, formTitle?: string | null, heroImage?: string | null } | null, about?: { __typename: 'HomePageAbout', label?: string | null, title?: string | null, paragraph1?: string | null, paragraph2?: string | null, quote?: string | null, quoteAuthor?: string | null, stat1Value?: string | null, stat1Label?: string | null, stat2Value?: string | null, stat2Label?: string | null, image?: string | null } | null, help?: { __typename: 'HomePageHelp', title?: string | null, description?: string | null, statValue?: string | null, statLabel?: string | null, image?: string | null, features?: Array<{ __typename: 'HomePageHelpFeatures', icon?: string | null, title?: string | null, description?: string | null } | null> | null } | null, calculator?: { __typename: 'HomePageCalculator', title?: string | null, description?: string | null } | null, lenders?: { __typename: 'HomePageLenders', title?: string | null, description?: string | null, lenderList?: Array<{ __typename: 'HomePageLendersLenderList', name?: string | null, logo?: string | null } | null> | null } | null, contact?: { __typename: 'HomePageContact', title?: string | null, mapUrl?: string | null, location?: string | null } | null, newsletter?: { __typename: 'HomePageNewsletter', title?: string | null } | null, header?: { __typename: 'HomePageHeader', phone?: string | null, email?: string | null, logo?: string | null, facebookUrl?: string | null, twitterUrl?: string | null, linkedinUrl?: string | null, youtubeUrl?: string | null } | null, footer?: { __typename: 'HomePageFooter', logo?: string | null, description?: string | null, email?: string | null, copyright?: string | null, address?: { __typename: 'HomePageFooterAddress', line1?: string | null, line2?: string | null, line3?: string | null } | null } | null } };
 
-export type PageConnectionQueryVariables = Exact<{
+export type HomePageConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Float']['input']>;
   last?: InputMaybe<Scalars['Float']['input']>;
   sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<PageFilter>;
+  filter?: InputMaybe<HomePageFilter>;
 }>;
 
 
-export type PageConnectionQuery = { __typename?: 'Query', pageConnection: { __typename?: 'PageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PageConnectionEdges', cursor: string, node?: { __typename: 'Page', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'PageHero', breadcrumb?: string | null, title?: string | null, buttonText?: string | null, formTitle?: string | null, heroImage?: string | null } | null, about?: { __typename: 'PageAbout', label?: string | null, title?: string | null, paragraph1?: string | null, paragraph2?: string | null, quote?: string | null, quoteAuthor?: string | null, stat1Value?: string | null, stat1Label?: string | null, stat2Value?: string | null, stat2Label?: string | null, image?: string | null } | null, help?: { __typename: 'PageHelp', title?: string | null, description?: string | null, statValue?: string | null, statLabel?: string | null, image?: string | null, features?: Array<{ __typename: 'PageHelpFeatures', icon?: string | null, title?: string | null, description?: string | null } | null> | null } | null, calculator?: { __typename: 'PageCalculator', title?: string | null, description?: string | null } | null, lenders?: { __typename: 'PageLenders', title?: string | null, description?: string | null, lenderList?: Array<{ __typename: 'PageLendersLenderList', name?: string | null, logo?: string | null } | null> | null } | null, contact?: { __typename: 'PageContact', title?: string | null, mapUrl?: string | null, location?: string | null } | null, newsletter?: { __typename: 'PageNewsletter', title?: string | null } | null, header?: { __typename: 'PageHeader', phone?: string | null, email?: string | null, logo?: string | null, facebookUrl?: string | null, twitterUrl?: string | null, linkedinUrl?: string | null, youtubeUrl?: string | null } | null, footer?: { __typename: 'PageFooter', logo?: string | null, description?: string | null, email?: string | null, copyright?: string | null, address?: { __typename: 'PageFooterAddress', line1?: string | null, line2?: string | null, line3?: string | null } | null } | null } | null } | null> | null } };
+export type HomePageConnectionQuery = { __typename?: 'Query', homePageConnection: { __typename?: 'HomePageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'HomePageConnectionEdges', cursor: string, node?: { __typename: 'HomePage', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'HomePageHero', breadcrumb?: string | null, title?: string | null, buttonText?: string | null, formTitle?: string | null, heroImage?: string | null } | null, about?: { __typename: 'HomePageAbout', label?: string | null, title?: string | null, paragraph1?: string | null, paragraph2?: string | null, quote?: string | null, quoteAuthor?: string | null, stat1Value?: string | null, stat1Label?: string | null, stat2Value?: string | null, stat2Label?: string | null, image?: string | null } | null, help?: { __typename: 'HomePageHelp', title?: string | null, description?: string | null, statValue?: string | null, statLabel?: string | null, image?: string | null, features?: Array<{ __typename: 'HomePageHelpFeatures', icon?: string | null, title?: string | null, description?: string | null } | null> | null } | null, calculator?: { __typename: 'HomePageCalculator', title?: string | null, description?: string | null } | null, lenders?: { __typename: 'HomePageLenders', title?: string | null, description?: string | null, lenderList?: Array<{ __typename: 'HomePageLendersLenderList', name?: string | null, logo?: string | null } | null> | null } | null, contact?: { __typename: 'HomePageContact', title?: string | null, mapUrl?: string | null, location?: string | null } | null, newsletter?: { __typename: 'HomePageNewsletter', title?: string | null } | null, header?: { __typename: 'HomePageHeader', phone?: string | null, email?: string | null, logo?: string | null, facebookUrl?: string | null, twitterUrl?: string | null, linkedinUrl?: string | null, youtubeUrl?: string | null } | null, footer?: { __typename: 'HomePageFooter', logo?: string | null, description?: string | null, email?: string | null, copyright?: string | null, address?: { __typename: 'HomePageFooterAddress', line1?: string | null, line2?: string | null, line3?: string | null } | null } | null } | null } | null> | null } };
 
-export const PagePartsFragmentDoc = gql`
-    fragment PageParts on Page {
+export type AboutPageQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type AboutPageQuery = { __typename?: 'Query', aboutPage: { __typename: 'AboutPage', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, about?: { __typename: 'AboutPageAbout', label?: string | null, title?: string | null, paragraph1?: string | null, paragraph2?: string | null, quote?: string | null, quoteAuthor?: string | null, stat1Value?: string | null, stat1Label?: string | null, stat2Value?: string | null, stat2Label?: string | null, image?: string | null } | null, help?: { __typename: 'AboutPageHelp', title?: string | null, description?: string | null, statValue?: string | null, statLabel?: string | null, image?: string | null, features?: Array<{ __typename: 'AboutPageHelpFeatures', icon?: string | null, title?: string | null, description?: string | null } | null> | null } | null, header?: { __typename: 'AboutPageHeader', phone?: string | null, email?: string | null, logo?: string | null, facebookUrl?: string | null, twitterUrl?: string | null, linkedinUrl?: string | null, youtubeUrl?: string | null } | null, footer?: { __typename: 'AboutPageFooter', logo?: string | null, description?: string | null, email?: string | null, copyright?: string | null, address?: { __typename: 'AboutPageFooterAddress', line1?: string | null, line2?: string | null, line3?: string | null } | null } | null } };
+
+export type AboutPageConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<AboutPageFilter>;
+}>;
+
+
+export type AboutPageConnectionQuery = { __typename?: 'Query', aboutPageConnection: { __typename?: 'AboutPageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'AboutPageConnectionEdges', cursor: string, node?: { __typename: 'AboutPage', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, about?: { __typename: 'AboutPageAbout', label?: string | null, title?: string | null, paragraph1?: string | null, paragraph2?: string | null, quote?: string | null, quoteAuthor?: string | null, stat1Value?: string | null, stat1Label?: string | null, stat2Value?: string | null, stat2Label?: string | null, image?: string | null } | null, help?: { __typename: 'AboutPageHelp', title?: string | null, description?: string | null, statValue?: string | null, statLabel?: string | null, image?: string | null, features?: Array<{ __typename: 'AboutPageHelpFeatures', icon?: string | null, title?: string | null, description?: string | null } | null> | null } | null, header?: { __typename: 'AboutPageHeader', phone?: string | null, email?: string | null, logo?: string | null, facebookUrl?: string | null, twitterUrl?: string | null, linkedinUrl?: string | null, youtubeUrl?: string | null } | null, footer?: { __typename: 'AboutPageFooter', logo?: string | null, description?: string | null, email?: string | null, copyright?: string | null, address?: { __typename: 'AboutPageFooterAddress', line1?: string | null, line2?: string | null, line3?: string | null } | null } | null } | null } | null> | null } };
+
+export type LendersPageQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type LendersPageQuery = { __typename?: 'Query', lendersPage: { __typename: 'LendersPage', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, lenders?: { __typename: 'LendersPageLenders', title?: string | null, description?: string | null, lenderList?: Array<{ __typename: 'LendersPageLendersLenderList', name?: string | null, logo?: string | null } | null> | null } | null, calculator?: { __typename: 'LendersPageCalculator', title?: string | null, description?: string | null } | null, header?: { __typename: 'LendersPageHeader', phone?: string | null, email?: string | null, logo?: string | null, facebookUrl?: string | null, twitterUrl?: string | null, linkedinUrl?: string | null, youtubeUrl?: string | null } | null, footer?: { __typename: 'LendersPageFooter', logo?: string | null, description?: string | null, email?: string | null, copyright?: string | null, address?: { __typename: 'LendersPageFooterAddress', line1?: string | null, line2?: string | null, line3?: string | null } | null } | null } };
+
+export type LendersPageConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<LendersPageFilter>;
+}>;
+
+
+export type LendersPageConnectionQuery = { __typename?: 'Query', lendersPageConnection: { __typename?: 'LendersPageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'LendersPageConnectionEdges', cursor: string, node?: { __typename: 'LendersPage', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, lenders?: { __typename: 'LendersPageLenders', title?: string | null, description?: string | null, lenderList?: Array<{ __typename: 'LendersPageLendersLenderList', name?: string | null, logo?: string | null } | null> | null } | null, calculator?: { __typename: 'LendersPageCalculator', title?: string | null, description?: string | null } | null, header?: { __typename: 'LendersPageHeader', phone?: string | null, email?: string | null, logo?: string | null, facebookUrl?: string | null, twitterUrl?: string | null, linkedinUrl?: string | null, youtubeUrl?: string | null } | null, footer?: { __typename: 'LendersPageFooter', logo?: string | null, description?: string | null, email?: string | null, copyright?: string | null, address?: { __typename: 'LendersPageFooterAddress', line1?: string | null, line2?: string | null, line3?: string | null } | null } | null } | null } | null> | null } };
+
+export type ContactPageQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type ContactPageQuery = { __typename?: 'Query', contactPage: { __typename: 'ContactPage', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, contact?: { __typename: 'ContactPageContact', title?: string | null, mapUrl?: string | null, location?: string | null } | null, header?: { __typename: 'ContactPageHeader', phone?: string | null, email?: string | null, logo?: string | null, facebookUrl?: string | null, twitterUrl?: string | null, linkedinUrl?: string | null, youtubeUrl?: string | null } | null, footer?: { __typename: 'ContactPageFooter', logo?: string | null, description?: string | null, email?: string | null, copyright?: string | null, address?: { __typename: 'ContactPageFooterAddress', line1?: string | null, line2?: string | null, line3?: string | null } | null } | null } };
+
+export type ContactPageConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ContactPageFilter>;
+}>;
+
+
+export type ContactPageConnectionQuery = { __typename?: 'Query', contactPageConnection: { __typename?: 'ContactPageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ContactPageConnectionEdges', cursor: string, node?: { __typename: 'ContactPage', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, contact?: { __typename: 'ContactPageContact', title?: string | null, mapUrl?: string | null, location?: string | null } | null, header?: { __typename: 'ContactPageHeader', phone?: string | null, email?: string | null, logo?: string | null, facebookUrl?: string | null, twitterUrl?: string | null, linkedinUrl?: string | null, youtubeUrl?: string | null } | null, footer?: { __typename: 'ContactPageFooter', logo?: string | null, description?: string | null, email?: string | null, copyright?: string | null, address?: { __typename: 'ContactPageFooterAddress', line1?: string | null, line2?: string | null, line3?: string | null } | null } | null } | null } | null> | null } };
+
+export const HomePagePartsFragmentDoc = gql`
+    fragment HomePageParts on HomePage {
   __typename
   hero {
     __typename
@@ -680,9 +1341,142 @@ export const PagePartsFragmentDoc = gql`
   }
 }
     `;
-export const PageDocument = gql`
-    query page($relativePath: String!) {
-  page(relativePath: $relativePath) {
+export const AboutPagePartsFragmentDoc = gql`
+    fragment AboutPageParts on AboutPage {
+  __typename
+  about {
+    __typename
+    label
+    title
+    paragraph1
+    paragraph2
+    quote
+    quoteAuthor
+    stat1Value
+    stat1Label
+    stat2Value
+    stat2Label
+    image
+  }
+  help {
+    __typename
+    title
+    description
+    statValue
+    statLabel
+    image
+    features {
+      __typename
+      icon
+      title
+      description
+    }
+  }
+  header {
+    __typename
+    phone
+    email
+    logo
+    facebookUrl
+    twitterUrl
+    linkedinUrl
+    youtubeUrl
+  }
+  footer {
+    __typename
+    logo
+    description
+    address {
+      __typename
+      line1
+      line2
+      line3
+    }
+    email
+    copyright
+  }
+}
+    `;
+export const LendersPagePartsFragmentDoc = gql`
+    fragment LendersPageParts on LendersPage {
+  __typename
+  lenders {
+    __typename
+    title
+    description
+    lenderList {
+      __typename
+      name
+      logo
+    }
+  }
+  calculator {
+    __typename
+    title
+    description
+  }
+  header {
+    __typename
+    phone
+    email
+    logo
+    facebookUrl
+    twitterUrl
+    linkedinUrl
+    youtubeUrl
+  }
+  footer {
+    __typename
+    logo
+    description
+    address {
+      __typename
+      line1
+      line2
+      line3
+    }
+    email
+    copyright
+  }
+}
+    `;
+export const ContactPagePartsFragmentDoc = gql`
+    fragment ContactPageParts on ContactPage {
+  __typename
+  contact {
+    __typename
+    title
+    mapUrl
+    location
+  }
+  header {
+    __typename
+    phone
+    email
+    logo
+    facebookUrl
+    twitterUrl
+    linkedinUrl
+    youtubeUrl
+  }
+  footer {
+    __typename
+    logo
+    description
+    address {
+      __typename
+      line1
+      line2
+      line3
+    }
+    email
+    copyright
+  }
+}
+    `;
+export const HomePageDocument = gql`
+    query homePage($relativePath: String!) {
+  homePage(relativePath: $relativePath) {
     ... on Document {
       _sys {
         filename
@@ -695,13 +1489,13 @@ export const PageDocument = gql`
       }
       id
     }
-    ...PageParts
+    ...HomePageParts
   }
 }
-    ${PagePartsFragmentDoc}`;
-export const PageConnectionDocument = gql`
-    query pageConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: PageFilter) {
-  pageConnection(
+    ${HomePagePartsFragmentDoc}`;
+export const HomePageConnectionDocument = gql`
+    query homePageConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: HomePageFilter) {
+  homePageConnection(
     before: $before
     after: $after
     first: $first
@@ -731,20 +1525,209 @@ export const PageConnectionDocument = gql`
           }
           id
         }
-        ...PageParts
+        ...HomePageParts
       }
     }
   }
 }
-    ${PagePartsFragmentDoc}`;
+    ${HomePagePartsFragmentDoc}`;
+export const AboutPageDocument = gql`
+    query aboutPage($relativePath: String!) {
+  aboutPage(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...AboutPageParts
+  }
+}
+    ${AboutPagePartsFragmentDoc}`;
+export const AboutPageConnectionDocument = gql`
+    query aboutPageConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: AboutPageFilter) {
+  aboutPageConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...AboutPageParts
+      }
+    }
+  }
+}
+    ${AboutPagePartsFragmentDoc}`;
+export const LendersPageDocument = gql`
+    query lendersPage($relativePath: String!) {
+  lendersPage(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...LendersPageParts
+  }
+}
+    ${LendersPagePartsFragmentDoc}`;
+export const LendersPageConnectionDocument = gql`
+    query lendersPageConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: LendersPageFilter) {
+  lendersPageConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...LendersPageParts
+      }
+    }
+  }
+}
+    ${LendersPagePartsFragmentDoc}`;
+export const ContactPageDocument = gql`
+    query contactPage($relativePath: String!) {
+  contactPage(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ContactPageParts
+  }
+}
+    ${ContactPagePartsFragmentDoc}`;
+export const ContactPageConnectionDocument = gql`
+    query contactPageConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ContactPageFilter) {
+  contactPageConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ContactPageParts
+      }
+    }
+  }
+}
+    ${ContactPagePartsFragmentDoc}`;
 export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) => Promise<R>
   export function getSdk<C>(requester: Requester<C>) {
     return {
-      page(variables: PageQueryVariables, options?: C): Promise<{data: PageQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PageQueryVariables, query: string}> {
-        return requester<{data: PageQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PageQueryVariables, query: string}, PageQueryVariables>(PageDocument, variables, options);
+      homePage(variables: HomePageQueryVariables, options?: C): Promise<{data: HomePageQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomePageQueryVariables, query: string}> {
+        return requester<{data: HomePageQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomePageQueryVariables, query: string}, HomePageQueryVariables>(HomePageDocument, variables, options);
       },
-    pageConnection(variables?: PageConnectionQueryVariables, options?: C): Promise<{data: PageConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PageConnectionQueryVariables, query: string}> {
-        return requester<{data: PageConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PageConnectionQueryVariables, query: string}, PageConnectionQueryVariables>(PageConnectionDocument, variables, options);
+    homePageConnection(variables?: HomePageConnectionQueryVariables, options?: C): Promise<{data: HomePageConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomePageConnectionQueryVariables, query: string}> {
+        return requester<{data: HomePageConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomePageConnectionQueryVariables, query: string}, HomePageConnectionQueryVariables>(HomePageConnectionDocument, variables, options);
+      },
+    aboutPage(variables: AboutPageQueryVariables, options?: C): Promise<{data: AboutPageQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: AboutPageQueryVariables, query: string}> {
+        return requester<{data: AboutPageQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: AboutPageQueryVariables, query: string}, AboutPageQueryVariables>(AboutPageDocument, variables, options);
+      },
+    aboutPageConnection(variables?: AboutPageConnectionQueryVariables, options?: C): Promise<{data: AboutPageConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: AboutPageConnectionQueryVariables, query: string}> {
+        return requester<{data: AboutPageConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: AboutPageConnectionQueryVariables, query: string}, AboutPageConnectionQueryVariables>(AboutPageConnectionDocument, variables, options);
+      },
+    lendersPage(variables: LendersPageQueryVariables, options?: C): Promise<{data: LendersPageQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LendersPageQueryVariables, query: string}> {
+        return requester<{data: LendersPageQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LendersPageQueryVariables, query: string}, LendersPageQueryVariables>(LendersPageDocument, variables, options);
+      },
+    lendersPageConnection(variables?: LendersPageConnectionQueryVariables, options?: C): Promise<{data: LendersPageConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LendersPageConnectionQueryVariables, query: string}> {
+        return requester<{data: LendersPageConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LendersPageConnectionQueryVariables, query: string}, LendersPageConnectionQueryVariables>(LendersPageConnectionDocument, variables, options);
+      },
+    contactPage(variables: ContactPageQueryVariables, options?: C): Promise<{data: ContactPageQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ContactPageQueryVariables, query: string}> {
+        return requester<{data: ContactPageQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ContactPageQueryVariables, query: string}, ContactPageQueryVariables>(ContactPageDocument, variables, options);
+      },
+    contactPageConnection(variables?: ContactPageConnectionQueryVariables, options?: C): Promise<{data: ContactPageConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ContactPageConnectionQueryVariables, query: string}> {
+        return requester<{data: ContactPageConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ContactPageConnectionQueryVariables, query: string}, ContactPageConnectionQueryVariables>(ContactPageConnectionDocument, variables, options);
       }
     };
   }

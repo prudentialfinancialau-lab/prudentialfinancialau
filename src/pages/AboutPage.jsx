@@ -13,7 +13,7 @@ function AboutPageContent({ pageData }) {
     data: pageData.data,
   });
 
-  const content = data.page;
+  const content = data.aboutPage;
 
   return (
     <>
@@ -33,7 +33,7 @@ export default function AboutPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await client.queries.page({ relativePath: 'about.json' });
+        const result = await client.queries.aboutPage({ relativePath: 'about.json' });
         setPageData(result);
         setLoading(false);
       } catch (err) {

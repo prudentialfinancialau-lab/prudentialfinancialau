@@ -12,7 +12,7 @@ function ContactPageContent({ pageData }) {
     data: pageData.data,
   });
 
-  const content = data.page;
+  const content = data.contactPage;
 
   return (
     <>
@@ -31,7 +31,7 @@ export default function ContactPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await client.queries.page({ relativePath: 'contact.json' });
+        const result = await client.queries.contactPage({ relativePath: 'contact.json' });
         setPageData(result);
         setLoading(false);
       } catch (err) {
