@@ -32,16 +32,16 @@ export default function HomePage() {
     fetchData();
   }, []);
 
+  // Pass data through useTina hook for visual editing (must be called unconditionally)
+  const { data } = useTina({
+    query: pageData?.query || '',
+    variables: pageData?.variables || {},
+    data: pageData?.data || {},
+  });
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error loading page: {error.message}</div>;
   if (!pageData) return null;
-
-  // Pass data through useTina hook for visual editing
-  const { data } = useTina({
-    query: pageData.query,
-    variables: pageData.variables,
-    data: pageData.data,
-  });
 
   const content = data.page;
 
