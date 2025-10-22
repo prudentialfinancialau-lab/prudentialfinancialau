@@ -11,6 +11,31 @@ import Newsletter from '../components/Newsletter';
 import Footer from '../components/Footer';
 import { useEffect, useState } from 'react';
 
+function HomePageContent({ pageData }) {
+  // Pass data through useTina hook for visual editing
+  const { data } = useTina({
+    query: pageData.query,
+    variables: pageData.variables,
+    data: pageData.data,
+  });
+
+  const content = data.page;
+
+  return (
+    <>
+      <Header data={content.header} />
+      <Hero data={content.hero} />
+      <About data={content.about} />
+      <Help data={content.help} />
+      <MortgageCalculator data={content.calculator} />
+      <Lenders data={content.lenders} />
+      <Contact data={content.contact} />
+      <Newsletter data={content.newsletter} />
+      <Footer data={content.footer} />
+    </>
+  );
+}
+
 export default function HomePage() {
   const [pageData, setPageData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -32,30 +57,9 @@ export default function HomePage() {
     fetchData();
   }, []);
 
-  // Pass data through useTina hook for visual editing (must be called unconditionally)
-  const { data } = useTina({
-    query: pageData?.query || '',
-    variables: pageData?.variables || {},
-    data: pageData?.data || {},
-  });
-
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error loading page: {error.message}</div>;
-  if (!pageData || !data?.page) return null;
+  if (!pageData) return null;
 
-  const content = data.page;
-
-  return (
-    <>
-      <Header data={content.header} />
-      <Hero data={content.hero} />
-      <About data={content.about} />
-      <Help data={content.help} />
-      <MortgageCalculator data={content.calculator} />
-      <Lenders data={content.lenders} />
-      <Contact data={content.contact} />
-      <Newsletter data={content.newsletter} />
-      <Footer data={content.footer} />
-    </>
-  );
+  return <HomePageContent pageData={pageData} />;
 }

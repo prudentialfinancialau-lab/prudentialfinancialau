@@ -5,6 +5,24 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import { useEffect, useState } from 'react';
 
+function ContactPageContent({ pageData }) {
+  const { data } = useTina({
+    query: pageData.query,
+    variables: pageData.variables,
+    data: pageData.data,
+  });
+
+  const content = data.page;
+
+  return (
+    <>
+      <Header data={content.header} />
+      <Contact data={content.contact} />
+      <Footer data={content.footer} />
+    </>
+  );
+}
+
 export default function ContactPage() {
   const [pageData, setPageData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -26,24 +44,9 @@ export default function ContactPage() {
     fetchData();
   }, []);
 
-  // Pass data through useTina hook for visual editing (must be called unconditionally)
-  const { data } = useTina({
-    query: pageData?.query || '',
-    variables: pageData?.variables || {},
-    data: pageData?.data || {},
-  });
-
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error loading page: {error.message}</div>;
-  if (!pageData || !data?.page) return null;
+  if (!pageData) return null;
 
-  const content = data.page;
-
-  return (
-    <>
-      <Header data={content.header} />
-      <Contact data={content.contact} />
-      <Footer data={content.footer} />
-    </>
-  );
+  return <ContactPageContent pageData={pageData} />;
 }

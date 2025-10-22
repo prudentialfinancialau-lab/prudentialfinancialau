@@ -6,6 +6,25 @@ import Help from '../components/Help';
 import Footer from '../components/Footer';
 import { useEffect, useState } from 'react';
 
+function AboutPageContent({ pageData }) {
+  const { data } = useTina({
+    query: pageData.query,
+    variables: pageData.variables,
+    data: pageData.data,
+  });
+
+  const content = data.page;
+
+  return (
+    <>
+      <Header data={content.header} />
+      <About data={content.about} />
+      <Help data={content.help} />
+      <Footer data={content.footer} />
+    </>
+  );
+}
+
 export default function AboutPage() {
   const [pageData, setPageData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -27,25 +46,9 @@ export default function AboutPage() {
     fetchData();
   }, []);
 
-  // Pass data through useTina hook for visual editing (must be called unconditionally)
-  const { data } = useTina({
-    query: pageData?.query || '',
-    variables: pageData?.variables || {},
-    data: pageData?.data || {},
-  });
-
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error loading page: {error.message}</div>;
-  if (!pageData || !data?.page) return null;
+  if (!pageData) return null;
 
-  const content = data.page;
-
-  return (
-    <>
-      <Header data={content.header} />
-      <About data={content.about} />
-      <Help data={content.help} />
-      <Footer data={content.footer} />
-    </>
-  );
+  return <AboutPageContent pageData={pageData} />;
 }
