@@ -1,37 +1,10 @@
-import { useEffect, useState } from 'react';
-import client from '../../tina/__generated__/client';
 import Header from '../components/Header';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import contactContent from '../../../content/pages/contact.json';
 
 export default function ContactPage() {
-  const [content, setContent] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function loadContent() {
-      try {
-        const result = await client.queries.contact({ relativePath: 'contact.json' });
-        setContent(result.data.contact);
-      } catch (error) {
-        console.error('Error loading contact page content:', error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    loadContent();
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-500 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading...</p>
-        </div>
-      </div>
-    );
-  }
+  const content = contactContent;
 
   if (!content) return null;
 
