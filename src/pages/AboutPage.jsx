@@ -1,13 +1,43 @@
+import { useTina } from 'tinacms/dist/react';
+import { client } from '../../tina/__generated__/client';
 import Header from '../components/Header';
 import About from '../components/About';
 import Help from '../components/Help';
 import Footer from '../components/Footer';
-import aboutContent from '../../content/pages/about.json';
+import { useEffect, useState } from 'react';
 
 export default function AboutPage() {
-  const content = aboutContent;
+  const [pageData, setPageData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  if (!content) return null;
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await client.queries.page({ relativePath: 'about.json' });
+        setPageData(result);
+        setLoading(false);
+      } catch (err) {
+        console.error('Error loading about page:', err);
+        setError(err);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error loading page: {error.message}</div>;
+  if (!pageData) return null;
+
+  const { data } = useTina({
+    query: pageData.query,
+    variables: pageData.variables,
+    data: pageData.data,
+  });
+
+  const content = data.page;
 
   return (
     <>
