@@ -1,8 +1,8 @@
 import express from 'express';
 import cors from 'cors';
-import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { connectDB, getPageContent, updatePageContent } from './db.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -11,6 +11,9 @@ const PORT = process.env.PORT || 5173;
 const AUTH_TOKEN = process.env.ADMIN_TOKEN || 'admin-secret-token-12345';
 
 const app = express();
+
+// Connect to MongoDB
+await connectDB();
 
 // Middleware
 app.use(cors());
@@ -37,9 +40,13 @@ app.get('/api/content/:page', async (req, res) => {
       return res.status(404).json({ error: 'Page not found' });
     }
 
-    const contentPath = path.join(__dirname, '../content', page, 'index.json');
-    const content = await fs.readFile(contentPath, 'utf-8');
-    res.json(JSON.parse(content));
+    const content = await getPageContent(page);
+
+    if (!content) {
+      return res.status(404).json({ error: 'Page content not found' });
+    }
+
+    res.json(content);
   } catch (error) {
     res.status(500).json({ error: 'Failed to read content', message: error.message });
   }
@@ -55,14 +62,7 @@ app.put('/api/content/:page', authenticate, async (req, res) => {
       return res.status(404).json({ error: 'Page not found' });
     }
 
-    const contentPath = path.join(__dirname, '../content', page, 'index.json');
-
-    // Write the new content
-    await fs.writeFile(
-      contentPath,
-      JSON.stringify(req.body, null, 2),
-      'utf-8'
-    );
+    await updatePageContent(page, req.body);
 
     res.json({ success: true, message: 'Content updated successfully' });
   } catch (error) {
