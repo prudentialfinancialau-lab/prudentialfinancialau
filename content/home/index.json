@@ -1,0 +1,172 @@
+{
+  "hero": {
+    "breadcrumb": "Home / Independent Mortgage Brokers",
+    "title": "Your Trusted Independent Mortgage Broker",
+    "buttonText": "Get Started",
+    "formTitle": "Calculate Your Mortgage",
+    "heroImage": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop"
+  },
+  "about": {
+    "label": "About Us",
+    "title": "We Work For You, Not The Banks",
+    "paragraph1": "We act as independent mortgage brokers – meaning, we work for you and not the banks. We connect clients with the right lender, the right loan, and the right rate – tailored specifically to your needs.",
+    "paragraph2": "From application to settlement, we handle all the paperwork, follow-ups and communication with the lender. Whether you're a first home buyer, investor, or refinancing, we provide clear, unbiased guidance that's trustworthy.",
+    "quote": "We negotiate rates on your behalf and help you avoid costly mistakes, saving you both time and money throughout the entire mortgage process.",
+    "quoteAuthor": "Prudential Financial Team",
+    "stat1Value": "1000+",
+    "stat1Label": "Happy Clients",
+    "stat2Value": "100%",
+    "stat2Label": "Independent Advice",
+    "image": "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&h=600&fit=crop"
+  },
+  "help": {
+    "title": "What We Do For You",
+    "description": "As independent mortgage brokers, we compare loans from multiple lenders and provide expert guidance throughout your entire mortgage journey.",
+    "statValue": "50+",
+    "statLabel": "Lender Partnerships",
+    "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
+    "features": [
+      {
+        "icon": "fas fa-home",
+        "title": "First Home Buyers",
+        "description": "Expert guidance for your first property purchase with tailored loan options and government grants."
+      },
+      {
+        "icon": "fas fa-chart-line",
+        "title": "Property Investors",
+        "description": "Specialized investment loan solutions to maximize returns and build your property portfolio."
+      },
+      {
+        "icon": "fas fa-dollar-sign",
+        "title": "Refinancers",
+        "description": "Save money by refinancing to a better rate or access equity for your next investment."
+      },
+      {
+        "icon": "fas fa-briefcase",
+        "title": "Self-Employed Borrowers",
+        "description": "Flexible loan solutions designed specifically for business owners and contractors."
+      },
+      {
+        "icon": "fas fa-search",
+        "title": "Compare Multiple Lenders",
+        "description": "We compare multiple home loan products to find the right option for your budget and lifestyle."
+      },
+      {
+        "icon": "fas fa-handshake",
+        "title": "Independent Expert Advice",
+        "description": "Clear, unbiased guidance from application to settlement, handling all paperwork and lender communication."
+      }
+    ]
+  },
+  "calculator": {
+    "title": "Mortgage Calculator",
+    "description": "Calculate your home loan repayments with our Australian mortgage calculator. Get instant estimates for principal and interest or interest-only loans."
+  },
+  "lenders": {
+    "title": "Our Lenders",
+    "description": "We compare hundreds of loans for you from our network of lenders.",
+    "lenderList": [
+      {
+        "name": "Commonwealth",
+        "logo": "/suncorp-logo-png_seeklogo-133577.png"
+      },
+      {
+        "name": "Westpac"
+      },
+      {
+        "name": "ANZ"
+      },
+      {
+        "name": "NAB"
+      },
+      {
+        "name": "St.George"
+      },
+      {
+        "name": "Adelaide Bank"
+      },
+      {
+        "name": "AFG"
+      },
+      {
+        "name": "AMP"
+      },
+      {
+        "name": "BankSA"
+      },
+      {
+        "name": "Bank of Melb"
+      },
+      {
+        "name": "Beyond Bank"
+      },
+      {
+        "name": "Macquarie"
+      },
+      {
+        "name": "Greater"
+      },
+      {
+        "name": "Heritage"
+      },
+      {
+        "name": "Mortgage Choice"
+      },
+      {
+        "name": "NAB Broker"
+      },
+      {
+        "name": "Liberty"
+      },
+      {
+        "name": "BOQ"
+      },
+      {
+        "name": "RACQ"
+      },
+      {
+        "name": "Teachers Mutual"
+      },
+      {
+        "name": "Newcastle Permanent"
+      },
+      {
+        "name": "P&N Bank"
+      },
+      {
+        "name": "Police Bank"
+      },
+      {
+        "name": "IMB"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact With Us",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1645564932666!5m2!1sen!2s",
+    "location": "New York, NY, USA"
+  },
+  "newsletter": {
+    "title": "Get Expert Mortgage Advice Today"
+  },
+  "header": {
+    "phone": "+1 (855) 933-9318",
+    "email": "info@prudentialfinancial.com.au",
+    "logo": "/logo.svg",
+    "facebookUrl": "https://facebook.com",
+    "twitterUrl": "https://twitter.com",
+    "linkedinUrl": "https://linkedin.com",
+    "youtubeUrl": "https://youtube.com"
+  },
+  "footer": {
+    "logo": "/logo.svg",
+    "description": "Prudential Financial is your trusted independent mortgage broker. We work for you, not the banks, connecting you with the right lender, loan, and rate tailored to your needs.",
+    "address": {
+      "line1": "1250 US-46 Unit 205",
+      "line2": "Parsippany NJ 07054",
+      "line3": "United States of America"
+    },
+    "email": "info@prudentialfinancial.com.au",
+    "copyright": "© 2025 Prudential Financial. All Rights Reserved."
+  }
+}

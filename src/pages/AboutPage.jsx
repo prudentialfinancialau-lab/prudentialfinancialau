@@ -33,7 +33,7 @@ export default function AboutPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await client.queries.aboutPage({ relativePath: 'about.json' });
+        const result = await client.queries.aboutPage({ relativePath: 'index.json' });
         setPageData(result);
         setLoading(false);
       } catch (err) {

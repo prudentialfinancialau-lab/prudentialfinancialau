@@ -31,7 +31,7 @@ export default function ContactPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await client.queries.contactPage({ relativePath: 'contact.json' });
+        const result = await client.queries.contactPage({ relativePath: 'index.json' });
         setPageData(result);
         setLoading(false);
       } catch (err) {

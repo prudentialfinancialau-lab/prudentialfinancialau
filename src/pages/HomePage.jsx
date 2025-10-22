@@ -44,7 +44,7 @@ export default function HomePage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await client.queries.homePage({ relativePath: 'home.json' });
+        const result = await client.queries.homePage({ relativePath: 'index.json' });
         setPageData(result);
         setLoading(false);
       } catch (err) {

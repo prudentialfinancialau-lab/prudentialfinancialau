@@ -84,11 +84,11 @@ export default defineConfig({
   },
   schema: {
     collections: [
-      // HOME PAGE COLLECTION
+      // HOME PAGE COLLECTION (separate directory)
       {
         name: "homePage",
         label: "Home Page",
-        path: "content/pages",
+        path: "content/home",
         format: "json",
         ui: {
           allowedActions: {
@@ -96,9 +96,6 @@ export default defineConfig({
             delete: false,
           },
           router: () => '/',
-        },
-        match: {
-          include: "home"
         },
         fields: [
           {
@@ -186,11 +183,11 @@ export default defineConfig({
         ],
       },
 
-      // ABOUT PAGE COLLECTION
+      // ABOUT PAGE COLLECTION (separate directory)
       {
         name: "aboutPage",
         label: "About Page",
-        path: "content/pages",
+        path: "content/about",
         format: "json",
         ui: {
           allowedActions: {
@@ -198,9 +195,6 @@ export default defineConfig({
             delete: false,
           },
           router: () => '/about',
-        },
-        match: {
-          include: "about"
         },
         fields: [
           {
@@ -230,11 +224,11 @@ export default defineConfig({
         ],
       },
 
-      // LENDERS PAGE COLLECTION
+      // LENDERS PAGE COLLECTION (separate directory)
       {
         name: "lendersPage",
         label: "Lenders Page",
-        path: "content/pages",
+        path: "content/lenders",
         format: "json",
         ui: {
           allowedActions: {
@@ -242,9 +236,6 @@ export default defineConfig({
             delete: false,
           },
           router: () => '/lenders',
-        },
-        match: {
-          include: "lenders"
         },
         fields: [
           {
@@ -290,11 +281,11 @@ export default defineConfig({
         ],
       },
 
-      // CONTACT PAGE COLLECTION
+      // CONTACT PAGE COLLECTION (separate directory)
       {
         name: "contactPage",
         label: "Contact Page",
-        path: "content/pages",
+        path: "content/contact",
         format: "json",
         ui: {
           allowedActions: {
@@ -302,9 +293,6 @@ export default defineConfig({
             delete: false,
           },
           router: () => '/contact',
-        },
-        match: {
-          include: "contact"
         },
         fields: [
           {

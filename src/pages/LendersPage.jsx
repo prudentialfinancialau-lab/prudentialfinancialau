@@ -33,7 +33,7 @@ export default function LendersPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await client.queries.lendersPage({ relativePath: 'lenders.json' });
+        const result = await client.queries.lendersPage({ relativePath: 'index.json' });
         setPageData(result);
         setLoading(false);
       } catch (err) {
