@@ -1,4 +1,5 @@
 import { client } from '../../tina/__generated__/client';
+import { useTina } from 'tinacms/dist/react';
 import Header from '../components/Header';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
@@ -29,7 +30,14 @@ export default function ContactPage() {
   if (error) return <div>Error loading page: {error.message}</div>;
   if (!pageData) return null;
 
-  const content = pageData.data.page;
+  // Pass data through useTina hook for visual editing
+  const { data } = useTina({
+    query: pageData.query,
+    variables: pageData.variables,
+    data: pageData.data,
+  });
+
+  const content = data.page;
 
   return (
     <>
