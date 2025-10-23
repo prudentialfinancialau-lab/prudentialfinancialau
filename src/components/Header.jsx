@@ -51,7 +51,7 @@ const Header = ({ data = {} }) => {
           <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             <Link to="/" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Home</Link>
             <Link to="/about" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">About Us</Link>
-            <Link to="/lenders" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Our Lenders</Link>
+            <Link to="/services" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Our Services</Link>
             <Link to="/contact" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Contact Us</Link>
           </nav>
 
@@ -80,7 +80,7 @@ const Header = ({ data = {} }) => {
           <nav className="flex flex-col p-4 space-y-1">
             <Link to="/" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Home</Link>
             <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">About Us</Link>
-            <Link to="/lenders" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Our Lenders</Link>
+            <Link to="/services" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Our Services</Link>
             <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Contact Us</Link>
           </nav>
         </div>

@@ -1,0 +1,185 @@
+{
+  "serviceTypes": {
+    "introText": "You're in great hands",
+    "services": [
+      {
+        "name": "Home Loans",
+        "image": "https://via.placeholder.com/1200x400?text=Home+Loans",
+        "header": {
+          "title": "Looking for a home loan?",
+          "description": "With our expertise and extensive knowledge of the mortgage market, we diligently navigate the intricacies to find you the most competitive rates and advantageous loan structures available. Our commitment is to help you achieve your homeownership dreams by securing the most suitable home loan for your individual needs."
+        },
+        "content": [
+          {
+            "title": "Home Loans",
+            "paragraphs": [
+              "Whether it be for your first home, upgrading to accommodate your growing family, or empty nest syndrome has set in and it's time to downsize, we will help you compare simply and choose wisely… it's what we do!"
+            ]
+          }
+        ],
+        "subServices": [
+          {
+            "title": "First Home Buyer",
+            "description": "Buying your first home is a big step. But with us by your side to help you understand and navigate the home loan process, you'll feel completely at ease.",
+            "learnMore": true
+          },
+          {
+            "title": "Property Investment",
+            "description": "Whether you're looking at capital growth or rental income, property investment may be a great way to increase your wealth over a long period. We'll understand your goals and demonstrate how you can get the most out of your investment loan.",
+            "learnMore": true
+          },
+          {
+            "title": "Refinance",
+            "description": "Choosing a loan from a financial institution and locking in a repayment term is a very big decision, but it doesn't have to be a lifetime one! We understand that your financial circumstances change over time. That's why we're here to help you re-evaluate your current loan to ensure you're still getting the right deal for your circumstances.",
+            "learnMore": true
+          },
+          {
+            "title": "Self Employed",
+            "description": "When it comes to finance approval, there are extra challenges that the self-employed must navigate to obtain adequate finance. As specialists in the self-employed finance space, we're here to help…",
+            "learnMore": true
+          },
+          {
+            "title": "Debt Consolidation",
+            "description": "There are many benefits to debt consolidation. With debt consolidation, you can simplify your debt into one loan and one monthly repayment, while simultaneously saving money on paying interest.",
+            "learnMore": true
+          },
+          {
+            "title": "Credit Impaired",
+            "description": "Whether it's your current circumstance or you've been affected in the past, obtaining a loan when you're credit impaired comes with many challenges. But we're here to support you through the loan process and source a range options tailored to your unique circumstance.",
+            "learnMore": true
+          }
+        ]
+      },
+      {
+        "name": "SMSF Loans",
+        "image": "https://via.placeholder.com/1200x400?text=SMSF+Loans",
+        "header": {
+          "title": "Buy property in your Self Managed Super Fund",
+          "subtitle": "Unlock your SMSF's potential!",
+          "description": "Are you looking to take control of your superannuation fund and make strategic investments for your future? Our SMSF loans are designed to help you do just that. If you're thinking about using your self-managed super fund (SMSF) to invest, we're here to assist!"
+        },
+        "content": [
+          {
+            "title": "What is an SMSF Loan?",
+            "paragraphs": [
+              "A Self-Managed Superannuation Fund (SMSF) loan is a specialised lending product designed to assist SMSF trustees in purchasing property, including residential and commercial real estate. It's a powerful financial tool that allows you to leverage your superannuation assets to invest in property and other approved assets, helping you grow your retirement wealth.",
+              "Unlike traditional funds, an SMSF allows you to invest in a wider range of assets, including residential and commercial properties, as well as shares and bonds. We understand that managing your own super fund requires unique finance solutions, and we're here to provide the expertise and support you need."
+            ]
+          },
+          {
+            "title": "What can you use a SMSF loan for:",
+            "paragraphs": [
+              "SMSF loans can be used for various investment opportunities, including:",
+              "Residential Property: Invest in residential real estate, diversifying your SMSF's asset portfolio.",
+              "Commercial Property: Acquire commercial properties, potentially generating rental income for your fund.",
+              "Property Development: Fund property development projects within your SMSF's investment strategy."
+            ]
+          }
+        ],
+        "benefitsTitle": "SMSF loans can help you:",
+        "benefits": [
+          "Grow your SMSF wealth",
+          "Gain investment flexibility",
+          "Fast track your retirement",
+          "Access tax benefits",
+          "Take control of your superannuation"
+        ]
+      },
+      {
+        "name": "Commercial Loans",
+        "image": "https://via.placeholder.com/1200x400?text=Commercial+Loans",
+        "header": {
+          "title": "Commercial Loans",
+          "description": "Whether you're purchasing commercial property, expanding your business, or refinancing existing loans, we have the expertise to secure the right commercial loan for your business needs."
+        },
+        "content": [
+          {
+            "paragraphs": [
+              "Commercial loans are designed to help businesses acquire property, equipment, or working capital. We work with a wide range of commercial lenders to find competitive rates and flexible terms that suit your business structure and cash flow requirements."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Personal Loans",
+        "image": "https://via.placeholder.com/1200x400?text=Personal+Loans",
+        "header": {
+          "title": "Personal Loans",
+          "description": "Sometimes you need funds for personal reasons - whether it's consolidating debt, funding a wedding, or covering unexpected expenses. Our personal loan solutions offer flexibility and competitive rates."
+        },
+        "content": [
+          {
+            "paragraphs": [
+              "Personal loans can provide you with the funds you need quickly and efficiently. We'll compare options from multiple lenders to ensure you get the best rate and repayment terms for your situation."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Vehicle Loans",
+        "image": "https://via.placeholder.com/1200x400?text=Vehicle+Loans",
+        "header": {
+          "title": "Vehicle Loans",
+          "description": "Looking to purchase a new or used vehicle? We can help you secure competitive vehicle finance with flexible repayment options that fit your budget."
+        },
+        "content": [
+          {
+            "paragraphs": [
+              "Whether you're buying a car, motorcycle, caravan, or commercial vehicle, we'll help you compare loan options from multiple lenders to find the best deal. Our vehicle loan specialists will guide you through the process from application to approval."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "lenders": {
+    "title": "Our Lenders",
+    "description": "We compare hundreds of loans for you from our network of lenders.",
+    "lenderList": [
+      {"name": "Commonwealth", "logo": "/suncorp-logo-png_seeklogo-133577.png"},
+      {"name": "Westpac"},
+      {"name": "ANZ"},
+      {"name": "NAB"},
+      {"name": "St.George"},
+      {"name": "Adelaide Bank"},
+      {"name": "AFG"},
+      {"name": "AMP"},
+      {"name": "BankSA"},
+      {"name": "Bank of Melb"},
+      {"name": "Beyond Bank"},
+      {"name": "Macquarie"},
+      {"name": "Greater"},
+      {"name": "Heritage"},
+      {"name": "Mortgage Choice"},
+      {"name": "NAB Broker"},
+      {"name": "Liberty"},
+      {"name": "BOQ"},
+      {"name": "RACQ"},
+      {"name": "Teachers Mutual"},
+      {"name": "Newcastle Permanent"},
+      {"name": "P&N Bank"},
+      {"name": "Police Bank"},
+      {"name": "IMB"}
+    ]
+  },
+  "header": {
+    "phone": "03 8555 4063",
+    "email": "info@prudentialfinancial.com.au",
+    "logo": "/logo.svg",
+    "facebookUrl": "https://facebook.com",
+    "twitterUrl": "https://twitter.com",
+    "linkedinUrl": "https://linkedin.com",
+    "youtubeUrl": "https://youtube.com"
+  },
+  "footer": {
+    "logo": "/logo.svg",
+    "description": "Prudential Financial is your trusted independent mortgage broker. We work for you, not the banks, connecting you with the right lender, loan, and rate tailored to your needs.",
+    "address": {
+      "line1": "Suite 9, 622 Ferntree Gully Road",
+      "line2": "Wheelers Hill VIC 3150",
+      "line3": "Australia"
+    },
+    "email": "info@prudentialfinancial.com.au",
+    "copyright": "© 2025 Prudential Financial. All Rights Reserved."
+  }
+}

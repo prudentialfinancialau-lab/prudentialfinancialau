@@ -1,43 +1,59 @@
-# Prudential Financial Australia - Website with Custom Admin
+# Prudential Financial Australia - Website with Payload CMS
 
-A modern mortgage broker website built with React + Vite, featuring a custom admin panel for content management and MongoDB for persistent storage on Vercel.
+A modern mortgage broker website built with React + Vite, featuring Payload CMS for content management and MongoDB for persistent storage.
+
+## 🎉 Now Using Payload CMS!
+
+This project has been migrated from TinaCMS to **Payload CMS v3** - a modern, self-hosted headless CMS with a powerful admin interface.
 
 ## Features
 
 - **4 Separate Pages**: Home, About, Lenders, Contact
-- **Custom Admin Panel**: Edit all content through `/admin` interface
+- **Payload CMS Admin Panel**: Professional admin interface at `/admin`
 - **Persistent Storage**: MongoDB Atlas for permanent content saves
-- **Vercel Ready**: Fully configured for serverless deployment
-- **Token Authentication**: Secure admin access
-- **Image & Text Editing**: Full content management capabilities
+- **User Authentication**: Secure email/password authentication
+- **Media Management**: Upload and manage images through Payload
+- **RESTful API**: Automatic API generation for all content
+- **Type-Safe**: Auto-generated TypeScript types
+- **Self-Hosted**: Full control over your CMS and data
 
 ## Tech Stack
 
 - **Frontend**: React 19, React Router v7, Tailwind CSS
 - **Build Tool**: Vite
-- **Backend**: Express.js (serverless functions on Vercel)
-- **Database**: MongoDB Atlas (free tier)
-- **Deployment**: Vercel
-- **Authentication**: Token-based admin access
+- **CMS**: Payload CMS v3 (Beta)
+- **Backend**: Express.js with Payload integration
+- **Database**: MongoDB Atlas with Mongoose
+- **Authentication**: Payload built-in auth system
+- **Rich Text**: Lexical editor
 
 ## Quick Start
 
-### Local Development
+### First Time Setup
 
 1. **Install dependencies**
    ```bash
    npm install
    ```
 
-2. **Run development server**
+2. **Run data migration** (migrates existing TinaCMS content to Payload)
+   ```bash
+   npm run migrate
+   ```
+
+3. **Start development server**
    ```bash
    npm run dev
    ```
 
-3. **Access the app**
-   - Website: http://localhost:5173
+4. **Create admin user**
+   - Visit: http://localhost:5173/admin
+   - Create your first user account
+   - Log in and start editing content
+
+5. **View the website**
+   - Frontend: http://localhost:5173
    - Admin Panel: http://localhost:5173/admin
-   - Default Token: `admin-secret-token-12345`
 
 ### Production Build
 
@@ -45,6 +61,9 @@ A modern mortgage broker website built with React + Vite, featuring a custom adm
 npm run build
 npm run start
 ```
+
+📖 **See [QUICK_START.md](./QUICK_START.md) for detailed setup instructions**
+📚 **See [PAYLOAD_MIGRATION.md](./PAYLOAD_MIGRATION.md) for migration details**
 
 ## Deployment to Vercel
 

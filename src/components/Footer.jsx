@@ -44,31 +44,32 @@ const Footer = ({ data = {} }) => {
           <div>
             <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Quick Links</h4>
             <ul className="space-y-1.5 sm:space-y-2">
-              <li><a href="#home" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Home</a></li>
-              <li><a href="#about" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">About Us</a></li>
-              <li><a href="#loan-facilities" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Our Loan Facilities</a></li>
-              <li><a href="#contact" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Contact Us</a></li>
+              <li><a href="/" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Home</a></li>
+              <li><a href="/about" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">About Us</a></li>
+              <li><a href="/services" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Our Services</a></li>
+              <li><a href="/contact" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Contact Us</a></li>
             </ul>
           </div>
 
-          {/* Loan Facilities */}
+          {/* Services */}
           <div>
-            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Loan Facilities</h4>
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Our Services</h4>
             <ul className="space-y-1.5 sm:space-y-2">
-              <li><a href="#loan-facilities" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">First Home Buyers</a></li>
-              <li><a href="#loan-facilities" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Property Investors</a></li>
-              <li><a href="#loan-facilities" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Refinancing</a></li>
-              <li><a href="#loan-facilities" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Self-Employed Loans</a></li>
+              <li><a href="/services" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Home Loans</a></li>
+              <li><a href="/services" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">SMSF Loans</a></li>
+              <li><a href="/services" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Commercial Loans</a></li>
+              <li><a href="/services" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Personal Loans</a></li>
+              <li><a href="/services" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Vehicle Loans</a></li>
             </ul>
           </div>
 
-          {/* Resources */}
+          {/* Contact */}
           <div>
-            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Resources</h4>
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Contact</h4>
             <ul className="space-y-1.5 sm:space-y-2">
-              <li><a href="#calculator" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Mortgage Calculator</a></li>
-              <li><a href="#lenders" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Our Lenders</a></li>
-              <li><a href="#contact" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Get Expert Advice</a></li>
+              <li><a href="tel:0385554063" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">03 8555 4063</a></li>
+              <li><a href="mailto:info@prudentialfinancial.com.au" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base break-all">info@prudentialfinancial.com.au</a></li>
+              <li><a href="/contact" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Get In Touch</a></li>
             </ul>
           </div>
         </div>

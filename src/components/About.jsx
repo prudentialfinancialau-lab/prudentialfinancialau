@@ -17,30 +17,15 @@ const About = ({ data = {} }) => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
           {/* Left Image Section */}
-          <div className="relative">
+          <div>
             <img
               src={image}
-              alt="Happy family"
+              alt="Finance consultation"
               className="rounded-xl sm:rounded-2xl shadow-xl w-full h-64 sm:h-80 md:h-96 object-cover"
               onError={(e) => {
                 e.target.src = 'https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&h=600&fit=crop';
               }}
             />
-
-            {/* Quote Card Overlay */}
-            <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 md:bottom-8 md:left-8 md:right-8 bg-emerald-500 text-white p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl shadow-2xl">
-              <p className="text-sm sm:text-base md:text-lg italic mb-3 sm:mb-4 leading-relaxed">
-                "{quote}"
-              </p>
-              <div className="flex items-center justify-between">
-                <p className="font-semibold text-xs sm:text-sm md:text-base">- {quoteAuthor}</p>
-                <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clipRule="evenodd" />
-                  </svg>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Right Content Section */}

@@ -1,66 +1,87 @@
 {
   "hero": {
     "breadcrumb": "Home / Independent Mortgage Brokers",
-    "title": "Your Trusted Independent Mortgage Broker",
+    "title": "Get Your Loan Fast – Tailored to Your Exact Requirements",
+    "content": "We design a custom loan that fits your unique needs, so you get approved quickly and move forward with confidence. No delays, no compromises, just the right finance, fast.",
     "buttonText": "Get Started",
-    "formTitle": "Calculate Your Mortgage",
-    "heroImage": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop"
+    "formTitle": "Connect with us",
+    "heroImage": "/images/hero.jpeg"
   },
   "about": {
     "label": "About Us",
-    "title": "We Work For You, Not The Banks",
-    "paragraph1": "We act as independent mortgage brokers – meaning, we work for you and not the banks. We connect clients with the right lender, the right loan, and the right rate – tailored specifically to your needs.",
-    "paragraph2": "From application to settlement, we handle all the paperwork, follow-ups and communication with the lender. Whether you're a first home buyer, investor, or refinancing, we provide clear, unbiased guidance that's trustworthy.",
-    "quote": "We negotiate rates on your behalf and help you avoid costly mistakes, saving you both time and money throughout the entire mortgage process.",
-    "quoteAuthor": "Prudential Financial Team",
+    "title": "Your trusted local finance expert is here to turn your goals into reality.",
+    "paragraph1": "From your first home to commercial property, investment opportunities, or business funding—we'll guide you to discover, compare, and secure the perfect loan tailored just for you.",
+    "paragraph2": "",
+    "quote": "",
+    "quoteAuthor": "",
     "stat1Value": "1000+",
     "stat1Label": "Happy Clients",
     "stat2Value": "100%",
     "stat2Label": "Independent Advice",
-    "image": "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&h=600&fit=crop"
+    "image": "/images/about.jpeg"
   },
   "help": {
     "title": "What We Do For You",
-    "description": "As independent mortgage brokers, we compare loans from multiple lenders and provide expert guidance throughout your entire mortgage journey.",
+    "description": "As independent mortgage brokers, we work for you, not the banks—comparing loans from multiple lenders to deliver the right loan, rate, and lender tailored to your needs, with expert guidance from start to finish.",
     "statValue": "50+",
     "statLabel": "Lender Partnerships",
-    "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
+    "image": "/images/help.jpeg",
     "features": [
       {
         "icon": "fas fa-home",
         "title": "First Home Buyers",
-        "description": "Expert guidance for your first property purchase with tailored loan options and government grants."
+        "description": "Personalized support to secure your first property, unlocking the best loan options and government grants to fit your budget and lifestyle."
       },
       {
         "icon": "fas fa-chart-line",
         "title": "Property Investors",
-        "description": "Specialized investment loan solutions to maximize returns and build your property portfolio."
+        "description": "Custom investment loans designed to boost your returns and grow your portfolio, sourced from the right lenders for your goals."
       },
       {
         "icon": "fas fa-dollar-sign",
         "title": "Refinancers",
-        "description": "Save money by refinancing to a better rate or access equity for your next investment."
+        "description": "Refinance smarter to lock in lower rates, cut costs, or tap into equity—saving you time and money with our negotiated deals."
       },
       {
         "icon": "fas fa-briefcase",
         "title": "Self-Employed Borrowers",
-        "description": "Flexible loan solutions designed specifically for business owners and contractors."
+        "description": "Flexible, tailored financing for business owners and contractors, avoiding pitfalls and matching you with lenders who understand your situation."
       },
       {
         "icon": "fas fa-search",
         "title": "Compare Multiple Lenders",
-        "description": "We compare multiple home loan products to find the right option for your budget and lifestyle."
+        "description": "We scan a wide range of home loan products to pinpoint the ideal match for your finances and way of life."
       },
       {
         "icon": "fas fa-handshake",
         "title": "Independent Expert Advice",
-        "description": "Clear, unbiased guidance from application to settlement, handling all paperwork and lender communication."
+        "description": "Unbiased, trustworthy direction every step of the way—from application to settlement—managing paperwork, follow-ups, and all lender interactions."
       }
     ]
   },
   "calculator": {
     "title": "Mortgage Calculator",
     "description": "Calculate your home loan repayments with our Australian mortgage calculator. Get instant estimates for principal and interest or interest-only loans."
+  },
+  "benefits": {
+    "title": "",
+    "features": [
+      {
+        "icon": "fas fa-chart-line",
+        "title": "Compare Rates",
+        "description": "Shop 50+ Lenders in Seconds. We instantly compare live rates from over 50 trusted lenders to secure the sharpest deal for your unique situation."
+      },
+      {
+        "icon": "fas fa-dollar-sign",
+        "title": "Save Money",
+        "description": "Thousands Back in Your Pocket. Our seasoned brokers negotiate directly with lenders to slash your interest costs and keep more money where it belongs—with you."
+      },
+      {
+        "icon": "fas fa-hand-holding-usd",
+        "title": "Free Service",
+        "description": "Zero Cost to You. Our expert help comes at no charge. Lenders pay us, so you get premium guidance without ever touching your wallet."
+      }
+    ]
   },
   "lenders": {
     "title": "Our Lenders",
@@ -142,15 +163,15 @@
     ]
   },
   "contact": {
-    "title": "Contact With Us",
-    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1645564932666!5m2!1sen!2s",
-    "location": "New York, NY, USA"
+    "title": "Contact Us",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3147.8397865753835!2d145.18889931539958!3d-37.90429797973935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad63f48c9a7f6c9%3A0x5045675218ce7e0!2s622%20Ferntree%20Gully%20Rd%2C%20Wheelers%20Hill%20VIC%203150%2C%20Australia!5e0!3m2!1sen!2s!4v1645564932666!5m2!1sen!2s",
+    "location": "Suite 9, 622 Ferntree Gully Road, Wheelers Hill VIC 3150, Australia"
   },
   "newsletter": {
     "title": "Get Expert Mortgage Advice Today"
   },
   "header": {
-    "phone": "+1 (855) 933-9318",
+    "phone": "03 8555 4063",
     "email": "info@prudentialfinancial.com.au",
     "logo": "/logo.svg",
     "facebookUrl": "https://facebook.com",
@@ -162,9 +183,9 @@
     "logo": "/logo.svg",
     "description": "Prudential Financial is your trusted independent mortgage broker. We work for you, not the banks, connecting you with the right lender, loan, and rate tailored to your needs.",
     "address": {
-      "line1": "1250 US-46 Unit 205",
-      "line2": "Parsippany NJ 07054",
-      "line3": "United States of America"
+      "line1": "Suite 9, 622 Ferntree Gully Road",
+      "line2": "Wheelers Hill VIC 3150",
+      "line3": "Australia"
     },
     "email": "info@prudentialfinancial.com.au",
     "copyright": "© 2025 Prudential Financial. All Rights Reserved."

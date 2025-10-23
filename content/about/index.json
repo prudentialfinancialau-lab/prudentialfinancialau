@@ -1,58 +1,176 @@
 {
-  "about": {
-    "label": "About Us",
-    "title": "We Work For You, Not The Banks",
-    "paragraph1": "We act as independent mortgage brokers – meaning, we work for you and not the banks. We connect clients with the right lender, the right loan, and the right rate – tailored specifically to your needs.",
-    "paragraph2": "From application to settlement, we handle all the paperwork, follow-ups and communication with the lender. Whether you're a first home buyer, investor, or refinancing, we provide clear, unbiased guidance that's trustworthy.",
-    "quote": "We negotiate rates on your behalf and help you avoid costly mistakes, saving you both time and money throughout the entire mortgage process.",
-    "quoteAuthor": "Prudential Financial Team",
-    "stat1Value": "1000+",
-    "stat1Label": "Happy Clients",
-    "stat2Value": "100%",
-    "stat2Label": "Independent Advice",
-    "image": "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&h=600&fit=crop"
+  "content": {
+    "sections": [
+      {
+        "title": "About Us",
+        "paragraphs": [
+          "We are your local, independent mortgage brokers – proudly working for you, not the banks. Based in Wheelers Hill, we've built a reputation for trust, transparency, and results by putting our clients' financial futures first.",
+          "Unlike bank-employed lenders, we're not tied to any single institution. This means we can access over 50 lenders, including major banks, credit unions, and specialist financiers, to find the perfect loan match for your unique situation — whether you're buying your first home, growing an investment portfolio, or refinancing to save."
+        ]
+      },
+      {
+        "title": "Why Choose Us?",
+        "list": [
+          {
+            "title": "Truly Independent",
+            "description": "No sales targets, no hidden agendas — just honest advice."
+          },
+          {
+            "title": "Local Knowledge",
+            "description": "Deep understanding of Melbourne's property market and Victorian lending landscape."
+          },
+          {
+            "title": "Tailored Solutions",
+            "description": "Every loan is custom-built around your goals, budget, and lifestyle."
+          },
+          {
+            "title": "Proven Expertise",
+            "description": "Years of experience helping hundreds of Australians secure smarter finance."
+          },
+          {
+            "title": "No Cost to You",
+            "description": "Our service is 100% free — lenders pay us when we place your loan."
+          }
+        ],
+        "paragraphs": [
+          "We don't just find you a loan. We partner with you through every step — from pre-approval to settlement — handling the complexity so you can focus on what matters: your future."
+        ]
+      },
+      {
+        "title": "What We Do",
+        "features": [
+          {
+            "icon": "🔍",
+            "title": "Compare Loans from Multiple Lenders",
+            "description": "We scan 50+ lenders to compare thousands of home loan products, ensuring you get the best rate and structure for your budget and lifestyle — not just today, but for years to come."
+          },
+          {
+            "icon": "🤝",
+            "title": "Provide Guidance Throughout the Process",
+            "description": "From your first call to settlement day, we manage all paperwork, lender follow-ups, and communication. No stress, no surprises — just a smooth, efficient journey."
+          },
+          {
+            "icon": "💡",
+            "title": "Offer Independent Expert Advice",
+            "description": "Whether you're a first-home buyer, property investor, or refinancing, we deliver clear, unbiased, trustworthy guidance backed by industry knowledge and real-world experience."
+          },
+          {
+            "icon": "⏳",
+            "title": "Save Your Time and Money",
+            "description": "We negotiate directly with lenders to secure lower rates and better terms. Plus, we help you avoid costly mistakes like overpaying interest or choosing the wrong loan features."
+          }
+        ]
+      },
+      {
+        "title": "Who We Help",
+        "clients": [
+          {
+            "icon": "🏠",
+            "title": "First-Home Buyers",
+            "description": "Step confidently into homeownership with personalized loan options, government grant assistance (like FHOG), and simple explanations of every step. We make the complex feel easy."
+          },
+          {
+            "icon": "📈",
+            "title": "Property Investors",
+            "description": "Grow your wealth with specialized investment loans, tax-effective structures, and strategies to maximize rental yield and capital growth. We help you build a profitable portfolio."
+          },
+          {
+            "icon": "🔄",
+            "title": "Refinancers",
+            "description": "Unlock lower rates, reduce repayments, or access equity for renovations, investments, or debt consolidation. Our sharp negotiations save you thousands over the life of your loan."
+          },
+          {
+            "icon": "👔",
+            "title": "Self-Employed & Business Owners",
+            "description": "Flexible lending solutions designed for contractors, freelancers, and business owners — even with variable income or complex financials. We know how to present your case strongly."
+          },
+          {
+            "icon": "🏗️",
+            "title": "Construction & Renovation Loans",
+            "description": "From knock-down rebuilds to home improvements, we structure progress payment loans with ease, keeping your project on track and on budget."
+          }
+        ]
+      },
+      {
+        "title": "Why Wheelers Hill Chooses Us",
+        "testimonials": [
+          {
+            "quote": "They took the time to understand my goals and found a loan the bank never offered me. Saved me over $1,200 a year!",
+            "author": "Sarah T., First-Home Buyer, Wheelers Hill"
+          },
+          {
+            "quote": "As a self-employed tradie, getting approved was tough — until I met this team. Fast, fair, and no nonsense.",
+            "author": "Michael R., Business Owner, Glen Waverley"
+          }
+        ]
+      },
+      {
+        "cta": {
+          "title": "Ready to Get Started?",
+          "description": "Let's find your perfect loan — fast, free, and stress-free.",
+          "contact": [
+            {
+              "icon": "📞",
+              "label": "Call",
+              "value": "03 8555 4063"
+            },
+            {
+              "icon": "📱",
+              "label": "Mobile",
+              "value": "0431 045 666"
+            },
+            {
+              "icon": "📍",
+              "label": "Visit",
+              "value": "Suite 9, 622 Ferntree Gully Road, Wheelers Hill VIC 3150"
+            }
+          ]
+        }
+      }
+    ]
   },
-  "help": {
-    "title": "What We Do For You",
-    "description": "As independent mortgage brokers, we compare loans from multiple lenders and provide expert guidance throughout your entire mortgage journey.",
-    "statValue": "50+",
-    "statLabel": "Lender Partnerships",
-    "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
-    "features": [
+  "team": {
+    "title": "Our Team",
+    "members": [
       {
-        "icon": "fas fa-home",
-        "title": "First Home Buyers",
-        "description": "Expert guidance for your first property purchase with tailored loan options and government grants."
+        "name": "Sumith Jayasuriya",
+        "title": "Principle Partner",
+        "image": "https://espeeaccountants.com.au/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-11-at-08.14.13-e1757565688885.jpeg"
       },
       {
-        "icon": "fas fa-chart-line",
-        "title": "Property Investors",
-        "description": "Specialized investment loan solutions to maximize returns and build your property portfolio."
+        "name": "Ying Yu",
+        "title": "Managing partner",
+        "image": "https://espeeaccountants.com.au/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-11-at-11.00.55-e1757566913735.jpeg"
       },
       {
-        "icon": "fas fa-dollar-sign",
-        "title": "Refinancers",
-        "description": "Save money by refinancing to a better rate or access equity for your next investment."
+        "name": "Thavinya Udagedara",
+        "title": "Mortgage/loan writer",
+        "image": "https://espeeaccountants.com.au/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-11-at-08.14.09-e1757565815676.jpeg"
       },
       {
-        "icon": "fas fa-briefcase",
-        "title": "Self-Employed Borrowers",
-        "description": "Flexible loan solutions designed specifically for business owners and contractors."
+        "name": "Rukshala Fernando",
+        "title": "Senior Accountant",
+        "image": "https://espeeaccountants.com.au/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-11-at-08.14.12-e1757565885841.jpeg"
       },
       {
-        "icon": "fas fa-search",
-        "title": "Compare Multiple Lenders",
-        "description": "We compare multiple home loan products to find the right option for your budget and lifestyle."
+        "name": "Imasha Wijayarathne",
+        "title": "Accountant",
+        "image": "https://espeeaccountants.com.au/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-11-at-08.14.10-1-1-e1757566011527.jpeg"
       },
       {
-        "icon": "fas fa-handshake",
-        "title": "Independent Expert Advice",
-        "description": "Clear, unbiased guidance from application to settlement, handling all paperwork and lender communication."
+        "name": "Rasandi Pathirannahe",
+        "title": "Accountant",
+        "image": "https://espeeaccountants.com.au/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-11-at-08.14.11-e1757566041638.jpeg"
+      },
+      {
+        "name": "Christine Kern",
+        "title": "Manager Admin/reception",
+        "image": "https://espeeaccountants.com.au/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-11-at-08.14.11-1-e1757566105129.jpeg"
       }
     ]
   },
   "header": {
-    "phone": "+1 (855) 933-9318",
+    "phone": "03 8555 4063",
     "email": "info@prudentialfinancial.com.au",
     "logo": "/logo.svg",
     "facebookUrl": "https://facebook.com",
@@ -64,9 +182,9 @@
     "logo": "/logo.svg",
     "description": "Prudential Financial is your trusted independent mortgage broker. We work for you, not the banks, connecting you with the right lender, loan, and rate tailored to your needs.",
     "address": {
-      "line1": "1250 US-46 Unit 205",
-      "line2": "Parsippany NJ 07054",
-      "line3": "United States of America"
+      "line1": "Suite 9, 622 Ferntree Gully Road",
+      "line2": "Wheelers Hill VIC 3150",
+      "line3": "Australia"
     },
     "email": "info@prudentialfinancial.com.au",
     "copyright": "© 2025 Prudential Financial. All Rights Reserved."

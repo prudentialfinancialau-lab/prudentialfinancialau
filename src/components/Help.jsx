@@ -44,21 +44,15 @@ const Help = ({ data = {} }) => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
           {/* Left Image */}
-          <div className="relative">
+          <div>
             <img
               src={image}
-              alt="Couple moving"
+              alt="Finance consultation"
               className="rounded-xl sm:rounded-2xl shadow-xl w-full h-64 sm:h-80 md:h-96 lg:h-full object-cover"
               onError={(e) => {
                 e.target.src = 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop';
               }}
             />
-
-            {/* Stats Card */}
-            <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 md:bottom-8 md:left-8 bg-emerald-500 text-white px-6 sm:px-7 md:px-8 py-4 sm:py-5 md:py-6 rounded-lg sm:rounded-xl shadow-2xl">
-              <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2">{statValue}</div>
-              <p className="text-xs sm:text-sm font-medium">{statLabel}</p>
-            </div>
           </div>
 
           {/* Right Content */}

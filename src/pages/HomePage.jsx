@@ -3,42 +3,14 @@ import Hero from '../components/Hero';
 import About from '../components/About';
 import Help from '../components/Help';
 import MortgageCalculator from '../components/MortgageCalculator';
+import Benefits from '../components/Benefits';
 import Lenders from '../components/Lenders';
 import Contact from '../components/Contact';
 import Newsletter from '../components/Newsletter';
 import Footer from '../components/Footer';
-import { useEffect, useState } from 'react';
-
-const API_URL = import.meta.env.VITE_API_URL || '';
+import content from '../../content/home/index.json';
 
 export default function HomePage() {
-  const [content, setContent] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(`${API_URL}/api/content/home`);
-        if (!response.ok) {
-          throw new Error('Failed to fetch content');
-        }
-        const data = await response.json();
-        setContent(data);
-        setLoading(false);
-      } catch (err) {
-        console.error('Error loading home page:', err);
-        setError(err);
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  if (loading) return <div className="flex items-center justify-center min-h-screen">Loading...</div>;
-  if (error) return <div className="flex items-center justify-center min-h-screen text-red-600">Error loading page: {error.message}</div>;
-  if (!content) return null;
 
   return (
     <>
@@ -47,6 +19,7 @@ export default function HomePage() {
       <About data={content.about} />
       <Help data={content.help} />
       <MortgageCalculator data={content.calculator} />
+      <Benefits data={content.benefits} />
       <Lenders data={content.lenders} />
       <Contact data={content.contact} />
       <Newsletter data={content.newsletter} />

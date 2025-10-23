@@ -283,27 +283,6 @@ const MortgageCalculator = ({ data = {} }) => {
             </div>
           </div>
         </div>
-
-        {/* Info Cards */}
-        <div className="grid md:grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-10 md:mt-12">
-          <div className="bg-white rounded-lg p-5 sm:p-6 shadow-md">
-            <div className="text-3xl mb-3">🏡</div>
-            <h4 className="font-bold text-gray-900 mb-2 text-base sm:text-lg">Compare Rates</h4>
-            <p className="text-gray-600 text-sm">We compare rates from 50+ lenders to find you the best deal.</p>
-          </div>
-
-          <div className="bg-white rounded-lg p-5 sm:p-6 shadow-md">
-            <div className="text-3xl mb-3">💰</div>
-            <h4 className="font-bold text-gray-900 mb-2 text-base sm:text-lg">Save Money</h4>
-            <p className="text-gray-600 text-sm">Our expert brokers negotiate better rates to save you thousands.</p>
-          </div>
-
-          <div className="bg-white rounded-lg p-5 sm:p-6 shadow-md">
-            <div className="text-3xl mb-3">✅</div>
-            <h4 className="font-bold text-gray-900 mb-2 text-base sm:text-lg">Free Service</h4>
-            <p className="text-gray-600 text-sm">No fees for you - we're paid by the lenders, not our clients.</p>
-          </div>
-        </div>
       </div>
     </section>
   );
