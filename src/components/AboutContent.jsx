@@ -31,8 +31,12 @@ const AboutContent = ({ data = {} }) => {
                   <ul className="space-y-4 sm:space-y-5 mb-8">
                     {section.list.map((item, itemIndex) => (
                       <li key={itemIndex} className="flex items-start bg-white rounded-lg p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="flex-shrink-0 w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center mr-4 mt-0.5">
-                          <span className="text-white font-bold text-lg">✓</span>
+                        <div className="flex-shrink-0 w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mr-4 mt-0.5">
+                          {item.icon && item.icon.startsWith('fa') ? (
+                            <i className={`${item.icon} text-emerald-600 text-xl`}></i>
+                          ) : (
+                            <span className="text-2xl">{item.icon || '✓'}</span>
+                          )}
                         </div>
                         <div>
                           <strong className="text-gray-900 block mb-1.5 text-lg sm:text-xl">{item.title}</strong>
@@ -50,7 +54,11 @@ const AboutContent = ({ data = {} }) => {
                     <div key={fIndex} className="bg-white rounded-xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
                       <div className="flex items-start gap-4">
                         <div className="flex-shrink-0 w-14 h-14 bg-emerald-100 rounded-full flex items-center justify-center">
-                          <span className="text-3xl">{feature.icon}</span>
+                          {feature.icon && feature.icon.startsWith('fa') ? (
+                            <i className={`${feature.icon} text-emerald-600 text-2xl`}></i>
+                          ) : (
+                            <span className="text-3xl">{feature.icon}</span>
+                          )}
                         </div>
                         <div>
                           <h4 className="font-bold text-gray-900 mb-3 text-lg sm:text-xl">{feature.title}</h4>
@@ -68,7 +76,11 @@ const AboutContent = ({ data = {} }) => {
                     <div key={cIndex} className="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-xl p-6 sm:p-7 shadow-lg hover:shadow-xl transition-all hover:scale-105 border border-emerald-200">
                       <div className="text-center mb-4">
                         <div className="inline-flex w-16 h-16 bg-white rounded-full items-center justify-center shadow-md mb-3">
-                          <span className="text-4xl">{client.icon}</span>
+                          {client.icon && client.icon.startsWith('fa') ? (
+                            <i className={`${client.icon} text-emerald-600 text-3xl`}></i>
+                          ) : (
+                            <span className="text-4xl">{client.icon}</span>
+                          )}
                         </div>
                         <h4 className="font-bold text-gray-900 text-lg sm:text-xl">{client.title}</h4>
                       </div>
@@ -109,7 +121,11 @@ const AboutContent = ({ data = {} }) => {
                   <div className="space-y-3 bg-white/10 backdrop-blur-sm rounded-xl p-6">
                     {section.cta.contact.map((item, cIndex) => (
                       <p key={cIndex} className="text-white font-semibold text-base sm:text-lg flex items-center justify-center gap-3">
-                        <span className="text-2xl">{item.icon}</span>
+                        {item.icon && item.icon.startsWith('fa') ? (
+                          <i className={`${item.icon} text-xl`}></i>
+                        ) : (
+                          <span className="text-2xl">{item.icon}</span>
+                        )}
                         <span>{item.label}: {item.value}</span>
                       </p>
                     ))}

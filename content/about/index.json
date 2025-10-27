@@ -12,22 +12,27 @@
         "title": "Why Choose Us?",
         "list": [
           {
+            "icon": "fas fa-bullseye",
             "title": "Truly Independent",
             "description": "No sales targets, no hidden agendas — just honest advice."
           },
           {
+            "icon": "fas fa-map-marker-alt",
             "title": "Local Knowledge",
             "description": "Deep understanding of Melbourne's property market and Victorian lending landscape."
           },
           {
+            "icon": "fas fa-magic",
             "title": "Tailored Solutions",
             "description": "Every loan is custom-built around your goals, budget, and lifestyle."
           },
           {
+            "icon": "fas fa-trophy",
             "title": "Proven Expertise",
             "description": "Years of experience helping hundreds of Australians secure smarter finance."
           },
           {
+            "icon": "fas fa-gift",
             "title": "No Cost to You",
             "description": "Our service is 100% free — lenders pay us when we place your loan."
           }
@@ -40,22 +45,22 @@
         "title": "What We Do",
         "features": [
           {
-            "icon": "🔍",
+            "icon": "fas fa-search",
             "title": "Compare Loans from Multiple Lenders",
             "description": "We scan 50+ lenders to compare thousands of home loan products, ensuring you get the best rate and structure for your budget and lifestyle — not just today, but for years to come."
           },
           {
-            "icon": "🤝",
+            "icon": "fas fa-handshake",
             "title": "Provide Guidance Throughout the Process",
             "description": "From your first call to settlement day, we manage all paperwork, lender follow-ups, and communication. No stress, no surprises — just a smooth, efficient journey."
           },
           {
-            "icon": "💡",
+            "icon": "fas fa-lightbulb",
             "title": "Offer Independent Expert Advice",
             "description": "Whether you're a first-home buyer, property investor, or refinancing, we deliver clear, unbiased, trustworthy guidance backed by industry knowledge and real-world experience."
           },
           {
-            "icon": "⏳",
+            "icon": "fas fa-clock",
             "title": "Save Your Time and Money",
             "description": "We negotiate directly with lenders to secure lower rates and better terms. Plus, we help you avoid costly mistakes like overpaying interest or choosing the wrong loan features."
           }
@@ -65,27 +70,27 @@
         "title": "Who We Help",
         "clients": [
           {
-            "icon": "🏠",
+            "icon": "fas fa-home",
             "title": "First-Home Buyers",
             "description": "Step confidently into homeownership with personalized loan options, government grant assistance (like FHOG), and simple explanations of every step. We make the complex feel easy."
           },
           {
-            "icon": "📈",
+            "icon": "fas fa-chart-line",
             "title": "Property Investors",
             "description": "Grow your wealth with specialized investment loans, tax-effective structures, and strategies to maximize rental yield and capital growth. We help you build a profitable portfolio."
           },
           {
-            "icon": "🔄",
+            "icon": "fas fa-sync-alt",
             "title": "Refinancers",
             "description": "Unlock lower rates, reduce repayments, or access equity for renovations, investments, or debt consolidation. Our sharp negotiations save you thousands over the life of your loan."
           },
           {
-            "icon": "👔",
+            "icon": "fas fa-briefcase",
             "title": "Self-Employed & Business Owners",
             "description": "Flexible lending solutions designed for contractors, freelancers, and business owners — even with variable income or complex financials. We know how to present your case strongly."
           },
           {
-            "icon": "🏗️",
+            "icon": "fas fa-hard-hat",
             "title": "Construction & Renovation Loans",
             "description": "From knock-down rebuilds to home improvements, we structure progress payment loans with ease, keeping your project on track and on budget."
           }
@@ -110,17 +115,17 @@
           "description": "Let's find your perfect loan — fast, free, and stress-free.",
           "contact": [
             {
-              "icon": "📞",
+              "icon": "fas fa-phone",
               "label": "Call",
               "value": "03 8555 4063"
             },
             {
-              "icon": "📱",
+              "icon": "fas fa-mobile-alt",
               "label": "Mobile",
               "value": "0431 045 666"
             },
             {
-              "icon": "📍",
+              "icon": "fas fa-map-marker-alt",
               "label": "Visit",
               "value": "Suite 9, 622 Ferntree Gully Road, Wheelers Hill VIC 3150"
             }
@@ -134,38 +139,28 @@
     "members": [
       {
         "name": "Sumith Jayasuriya",
-        "title": "Principle Partner",
+        "title": "Director",
         "image": "https://espeeaccountants.com.au/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-11-at-08.14.13-e1757565688885.jpeg"
       },
       {
         "name": "Ying Yu",
-        "title": "Managing partner",
+        "title": "Consultant",
         "image": "https://espeeaccountants.com.au/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-11-at-11.00.55-e1757566913735.jpeg"
       },
       {
         "name": "Thavinya Udagedara",
-        "title": "Mortgage/loan writer",
+        "title": "Loan Writer",
         "image": "https://espeeaccountants.com.au/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-11-at-08.14.09-e1757565815676.jpeg"
       },
       {
+        "name": "Sarah Agahi",
+        "title": "Mortgage Support Officer",
+        "image": "https://espeeaccountants.com.au/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-11-at-11.02.30-e1757567073968.jpeg"
+      },
+      {
         "name": "Rukshala Fernando",
-        "title": "Senior Accountant",
+        "title": "Consultant",
         "image": "https://espeeaccountants.com.au/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-11-at-08.14.12-e1757565885841.jpeg"
-      },
-      {
-        "name": "Imasha Wijayarathne",
-        "title": "Accountant",
-        "image": "https://espeeaccountants.com.au/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-11-at-08.14.10-1-1-e1757566011527.jpeg"
-      },
-      {
-        "name": "Rasandi Pathirannahe",
-        "title": "Accountant",
-        "image": "https://espeeaccountants.com.au/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-11-at-08.14.11-e1757566041638.jpeg"
-      },
-      {
-        "name": "Christine Kern",
-        "title": "Manager Admin/reception",
-        "image": "https://espeeaccountants.com.au/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-11-at-08.14.11-1-e1757566105129.jpeg"
       }
     ]
   },

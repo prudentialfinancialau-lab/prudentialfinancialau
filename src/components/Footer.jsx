@@ -68,7 +68,7 @@ const Footer = ({ data = {} }) => {
             <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Contact</h4>
             <ul className="space-y-1.5 sm:space-y-2">
               <li><a href="tel:0385554063" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">03 8555 4063</a></li>
-              <li><a href="mailto:info@prudentialfinancial.com.au" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base break-all">info@prudentialfinancial.com.au</a></li>
+              <li><a href="mailto:info@prudentialfinancial.com.au" className="text-gray-400 hover:text-emerald-500 transition-colors text-xs sm:text-sm break-words">info@prudentialfinancial.com.au</a></li>
               <li><a href="/contact" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Get In Touch</a></li>
             </ul>
           </div>

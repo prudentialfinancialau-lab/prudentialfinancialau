@@ -3,7 +3,7 @@ const About = ({ data = {} }) => {
   const label = data?.label || 'About Our Company';
   const title = data?.title || 'Why Should You Choose Us?';
   const paragraph1 = data?.paragraph1 || 'Sed porttitor lectus nibh. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.';
-  const paragraph2 = data?.paragraph2 || 'Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat.';
+  const paragraph2 = data?.paragraph2 || '';
   const quote = data?.quote || 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec velit neque, auctor sit amet aliquam vel.';
   const quoteAuthor = data?.quoteAuthor || 'John Doe, President';
   const stat1Value = data?.stat1Value || '20+';
@@ -39,9 +39,11 @@ const About = ({ data = {} }) => {
             <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
               {paragraph1}
             </p>
-            <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
-              {paragraph2}
-            </p>
+            {paragraph2 && (
+              <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
+                {paragraph2}
+              </p>
+            )}
 
             {/* Stats Grid */}
             <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-8">
