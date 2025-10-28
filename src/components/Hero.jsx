@@ -7,7 +7,7 @@ const Hero = ({ data = {} }) => {
   const heroImage = data?.heroImage || 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop';
 
   return (
-    <section id="home" className="relative bg-gradient-to-r from-gray-50 to-white py-10 sm:py-16 md:py-20">
+    <section id="home" className="relative bg-gradient-to-r from-gray-50 to-white py-6 sm:py-10 md:py-12">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}

@@ -13,7 +13,7 @@ const Newsletter = ({ data = {} }) => {
   };
 
   return (
-    <section className="py-10 sm:py-12 md:py-16 bg-emerald-500">
+    <section className="py-6 sm:py-8 md:py-10 bg-emerald-500">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
           <div className="text-white text-center md:text-left">

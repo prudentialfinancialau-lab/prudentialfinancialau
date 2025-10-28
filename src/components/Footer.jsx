@@ -13,7 +13,7 @@ const Footer = ({ data = {} }) => {
   const copyright = data?.copyright || '© 2025 Prudential Financial. All Rights Reserved.';
 
   return (
-    <footer className="bg-gray-900 text-white py-10 sm:py-12 md:py-16">
+    <footer className="bg-gray-900 text-white py-6 sm:py-8 md:py-10">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 mb-8 sm:mb-10 md:mb-12">
           {/* Logo and Description */}
