@@ -14,7 +14,7 @@ const Header = ({ data = {} }) => {
   const youtubeUrl = data?.youtubeUrl || 'https://youtube.com';
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <header className="bg-white shadow-md border-b-4 border-emerald-500 sticky top-0 z-50">
       {/* Top Contact Bar */}
       <div className="bg-gray-900 text-white py-2 text-xs sm:text-sm">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
