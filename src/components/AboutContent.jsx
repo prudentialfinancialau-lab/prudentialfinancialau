@@ -19,7 +19,7 @@ const AboutContent = ({ data = {} }) => {
               {section.paragraphs && (
                 <div className="max-w-4xl mx-auto mb-8 sm:mb-12">
                   {section.paragraphs.map((paragraph, pIndex) => (
-                    <p key={pIndex} className="text-gray-600 mb-5 leading-relaxed text-base sm:text-lg">
+                    <p key={pIndex} className="text-gray-600 text-justify mb-5 leading-relaxed text-base sm:text-lg text-justify">
                       {paragraph}
                     </p>
                   ))}
@@ -40,7 +40,7 @@ const AboutContent = ({ data = {} }) => {
                         </div>
                         <div>
                           <strong className="text-gray-900 block mb-1.5 text-lg sm:text-xl">{item.title}</strong>
-                          <span className="text-gray-600 text-sm sm:text-base leading-relaxed">{item.description}</span>
+                          <span className="text-gray-600 text-justify text-sm sm:text-base leading-relaxed">{item.description}</span>
                         </div>
                       </li>
                     ))}
@@ -62,7 +62,7 @@ const AboutContent = ({ data = {} }) => {
                         </div>
                         <div>
                           <h4 className="font-bold text-gray-900 mb-3 text-lg sm:text-xl">{feature.title}</h4>
-                          <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{feature.description}</p>
+                          <p className="text-gray-600 text-justify text-sm sm:text-base leading-relaxed">{feature.description}</p>
                         </div>
                       </div>
                     </div>
@@ -84,7 +84,7 @@ const AboutContent = ({ data = {} }) => {
                         </div>
                         <h4 className="font-bold text-gray-900 text-lg sm:text-xl">{client.title}</h4>
                       </div>
-                      <p className="text-gray-700 text-sm sm:text-base leading-relaxed text-center">{client.description}</p>
+                      <p className="text-gray-700 text-justify text-sm sm:text-base leading-relaxed text-center">{client.description}</p>
                     </div>
                   ))}
                 </div>
@@ -101,7 +101,7 @@ const AboutContent = ({ data = {} }) => {
                           </div>
                         </div>
                         <div>
-                          <p className="text-gray-700 italic mb-4 text-base sm:text-lg leading-relaxed">
+                          <p className="text-gray-700 italic mb-4 text-base sm:text-lg text-justify leading-relaxed text-justify">
                             {testimonial.quote}
                           </p>
                           <p className="text-gray-900 font-bold text-sm sm:text-base">
@@ -117,10 +117,10 @@ const AboutContent = ({ data = {} }) => {
               {section.cta && (
                 <div className="max-w-3xl mx-auto bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl p-8 sm:p-10 text-center shadow-2xl">
                   <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">{section.cta.title}</h3>
-                  <p className="text-emerald-50 mb-8 text-base sm:text-lg">{section.cta.description}</p>
+                  <p className="text-emerald-50 mb-8 text-base sm:text-lg text-justify">{section.cta.description}</p>
                   <div className="space-y-3 bg-white/10 backdrop-blur-sm rounded-xl p-6">
                     {section.cta.contact.map((item, cIndex) => (
-                      <p key={cIndex} className="text-white font-semibold text-base sm:text-lg flex items-center justify-center gap-3">
+                      <p key={cIndex} className="text-white font-semibold text-base sm:text-lg text-justify flex items-center justify-center gap-3">
                         {item.icon && item.icon.startsWith('fa') ? (
                           <i className={`${item.icon} text-xl`}></i>
                         ) : (

@@ -20,7 +20,7 @@ const Benefits = ({ data = {} }) => {
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
                 {feature.title}
               </h3>
-              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 text-justify leading-relaxed">
                 {feature.description}
               </p>
             </div>

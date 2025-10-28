@@ -22,7 +22,7 @@ const Lenders = ({ data = {} }) => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-8 sm:mb-10 md:mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">{title}</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
+          <p className="text-gray-600 text-justify max-w-2xl mx-auto text-sm sm:text-base">
             {description}
           </p>
         </div>
@@ -50,7 +50,7 @@ const Lenders = ({ data = {} }) => {
                     </span>
                   </div>
                 )}
-                <p className="text-xs text-gray-600 font-medium line-clamp-2">{lender.name}</p>
+                <p className="text-xs text-gray-600 text-justify font-medium line-clamp-2">{lender.name}</p>
               </div>
             </div>
           ))}

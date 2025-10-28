@@ -60,7 +60,7 @@ const Help = ({ data = {} }) => {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
               {title}
             </h2>
-            <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
+            <p className="text-gray-600 text-justify mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
               {description}
             </p>
 
@@ -75,7 +75,7 @@ const Help = ({ data = {} }) => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-0.5 sm:mb-1 text-sm sm:text-base">{feature.title}</h4>
-                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{feature.description}</p>
+                    <p className="text-xs sm:text-sm text-gray-600 text-justify leading-relaxed">{feature.description}</p>
                   </div>
                 </div>
               ))}

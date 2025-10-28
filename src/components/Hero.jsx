@@ -19,7 +19,7 @@ const Hero = ({ data = {} }) => {
               {title}
             </h1>
             {content && (
-              <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
+              <p className="text-base sm:text-lg text-justify text-gray-600 text-justify mb-4 sm:mb-6 leading-relaxed">
                 {content}
               </p>
             )}

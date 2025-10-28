@@ -31,7 +31,7 @@ const Team = ({ data = {} }) => {
                   {member.name}
                 </h3>
                 {member.title && (
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-gray-600 text-justify">
                     {member.title}
                   </p>
                 )}

@@ -36,11 +36,11 @@ const About = ({ data = {} }) => {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
               {title}
             </h2>
-            <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
+            <p className="text-gray-600 text-justify mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
               {paragraph1}
             </p>
             {paragraph2 && (
-              <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
+              <p className="text-gray-600 text-justify mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
                 {paragraph2}
               </p>
             )}

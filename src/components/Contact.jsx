@@ -190,7 +190,7 @@ const Contact = ({ data = {} }) => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-emerald-500 text-white px-6 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg hover:bg-emerald-600 transition-colors uppercase tracking-wide"
+                className="w-full bg-emerald-500 text-white px-6 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg text-justify hover:bg-emerald-600 transition-colors uppercase tracking-wide"
               >
                 SUBMIT
               </button>

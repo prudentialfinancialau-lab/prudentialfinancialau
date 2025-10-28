@@ -53,7 +53,7 @@ const ServiceTypes = ({ data = {} }) => {
                     </p>
                   )}
                   {services[expandedService].header.description && (
-                    <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
+                    <p className="text-gray-600 text-justify text-base sm:text-lg text-justify leading-relaxed">
                       {services[expandedService].header.description}
                     </p>
                   )}
@@ -83,7 +83,7 @@ const ServiceTypes = ({ data = {} }) => {
                     </h4>
                   )}
                   {section.paragraphs && section.paragraphs.map((para, pIndex) => (
-                    <p key={pIndex} className="text-gray-600 mb-4 leading-relaxed text-base sm:text-lg">
+                    <p key={pIndex} className="text-gray-600 text-justify mb-4 leading-relaxed text-base sm:text-lg text-justify">
                       {para}
                     </p>
                   ))}
@@ -96,7 +96,7 @@ const ServiceTypes = ({ data = {} }) => {
                   {services[expandedService].subServices.map((sub, subIndex) => (
                     <div key={subIndex} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
                       <h5 className="text-xl font-bold text-gray-900 mb-3">{sub.title}</h5>
-                      <p className="text-gray-600 text-sm leading-relaxed mb-4">{sub.description}</p>
+                      <p className="text-gray-600 text-justify text-sm leading-relaxed mb-4">{sub.description}</p>
                       {sub.learnMore && (
                         <button className="text-emerald-600 font-semibold hover:text-emerald-700 text-sm">
                           Learn More →
