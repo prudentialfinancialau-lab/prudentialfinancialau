@@ -44,7 +44,7 @@ const Contact = ({ data = {} }) => {
   ];
 
   return (
-    <section id="contact" className="py-12 sm:py-16 md:py-20 bg-gray-900">
+    <section id="contact" className="py-6 sm:py-8 md:py-10 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
           {/* Left - Contact Form */}

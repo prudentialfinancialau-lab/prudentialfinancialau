@@ -18,7 +18,7 @@ const Lenders = ({ data = {} }) => {
   const lenders = data?.lenderList || defaultLenders;
 
   return (
-    <section id="lenders" className="py-12 sm:py-16 md:py-20 bg-white">
+    <section id="lenders" className="py-6 sm:py-8 md:py-10 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-8 sm:mb-10 md:mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">{title}</h2>

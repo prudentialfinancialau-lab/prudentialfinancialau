@@ -92,7 +92,7 @@ const MortgageCalculator = ({ data = {} }) => {
   };
 
   return (
-    <section id="calculator" className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-emerald-50 to-white">
+    <section id="calculator" className="py-6 sm:py-8 md:py-10 bg-gradient-to-br from-emerald-50 to-white">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-10 md:mb-12">

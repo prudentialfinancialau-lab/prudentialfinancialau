@@ -8,7 +8,7 @@ const AboutContent = ({ data = {} }) => {
         const bgColor = index % 2 === 0 ? 'bg-white' : 'bg-gray-50';
 
         return (
-          <section key={index} className={`py-12 sm:py-16 md:py-20 ${bgColor}`}>
+          <section key={index} className={`py-6 sm:py-8 md:py-10 ${bgColor}`}>
             <div className="max-w-7xl mx-auto px-4">
               {section.title && (
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 sm:mb-10 text-center">

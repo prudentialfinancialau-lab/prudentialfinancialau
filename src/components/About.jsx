@@ -13,7 +13,7 @@ const About = ({ data = {} }) => {
   const image = data?.image || 'https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&h=600&fit=crop';
 
   return (
-    <section id="about" className="py-12 sm:py-16 md:py-20 bg-white">
+    <section id="about" className="py-6 sm:py-8 md:py-10 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
           {/* Left Image Section */}

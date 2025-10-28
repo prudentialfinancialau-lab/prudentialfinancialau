@@ -3,7 +3,7 @@ const Team = ({ data = {} }) => {
   const members = data?.members || [];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
+    <section className="py-6 sm:py-8 md:py-10 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
         {title && (
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-10 sm:mb-14 text-center">

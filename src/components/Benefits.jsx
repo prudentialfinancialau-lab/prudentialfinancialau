@@ -3,7 +3,7 @@ const Benefits = ({ data = {} }) => {
   const features = data?.features || [];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-white">
+    <section className="py-6 sm:py-8 md:py-10 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         {title && (
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">

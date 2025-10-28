@@ -11,7 +11,7 @@ const ServiceTypes = ({ data = {} }) => {
   };
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-white">
+    <section className="py-6 sm:py-8 md:py-10 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         {/* Intro Text */}
         {introText && (
