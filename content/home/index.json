@@ -173,14 +173,14 @@
   "header": {
     "phone": "03 8555 4063",
     "email": "info@prudentialfinancial.com.au",
-    "logo": "/logo.svg",
+    "logo": "/logo-prudential.png",
     "facebookUrl": "https://facebook.com",
     "twitterUrl": "https://twitter.com",
     "linkedinUrl": "https://linkedin.com",
     "youtubeUrl": "https://youtube.com"
   },
   "footer": {
-    "logo": "/logo.svg",
+    "logo": "/logo-prudential.png",
     "description": "Prudential Financial is your trusted independent mortgage broker. We work for you, not the banks, connecting you with the right lender, loan, and rate tailored to your needs.",
     "address": {
       "line1": "Suite 9, 622 Ferntree Gully Road",
