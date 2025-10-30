@@ -36,7 +36,7 @@ const Lenders = ({ data = {} }) => {
             >
               <div className="text-center">
                 {lender.logo ? (
-                  <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 mx-auto mb-1.5 sm:mb-2 flex items-center justify-center">
+                  <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 mx-auto flex items-center justify-center">
                     <img
                       src={lender.logo}
                       alt={lender.name}
@@ -44,13 +44,12 @@ const Lenders = ({ data = {} }) => {
                     />
                   </div>
                 ) : (
-                  <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 bg-gray-100 rounded-lg mx-auto mb-1.5 sm:mb-2 flex items-center justify-center">
+                  <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 bg-gray-100 rounded-lg mx-auto flex items-center justify-center">
                     <span className="text-xl sm:text-2xl font-bold text-gray-400">
                       {lender.name.charAt(0)}
                     </span>
                   </div>
                 )}
-                <p className="text-xs text-gray-600 text-justify font-medium line-clamp-2">{lender.name}</p>
               </div>
             </div>
           ))}
