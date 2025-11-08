@@ -21,32 +21,32 @@
           {
             "title": "First Home Buyer",
             "description": "Buying your first home is a big step. But with us by your side to help you understand and navigate the home loan process, you'll feel completely at ease.",
-            "learnMore": true
+            "learnMoreText": "Learn More →"
           },
           {
             "title": "Property Investment",
             "description": "Whether you're looking at capital growth or rental income, property investment may be a great way to increase your wealth over a long period. We'll understand your goals and demonstrate how you can get the most out of your investment loan.",
-            "learnMore": true
+            "learnMoreText": "Learn More →"
           },
           {
             "title": "Refinance",
             "description": "Choosing a loan from a financial institution and locking in a repayment term is a very big decision, but it doesn't have to be a lifetime one! We understand that your financial circumstances change over time. That's why we're here to help you re-evaluate your current loan to ensure you're still getting the right deal for your circumstances.",
-            "learnMore": true
+            "learnMoreText": "Learn More →"
           },
           {
             "title": "Self Employed",
             "description": "When it comes to finance approval, there are extra challenges that the self-employed must navigate to obtain adequate finance. As specialists in the self-employed finance space, we're here to help…",
-            "learnMore": true
+            "learnMoreText": "Learn More →"
           },
           {
             "title": "Debt Consolidation",
             "description": "There are many benefits to debt consolidation. With debt consolidation, you can simplify your debt into one loan and one monthly repayment, while simultaneously saving money on paying interest.",
-            "learnMore": true
+            "learnMoreText": "Learn More →"
           },
           {
             "title": "Credit Impaired",
             "description": "Whether it's your current circumstance or you've been affected in the past, obtaining a loan when you're credit impaired comes with many challenges. But we're here to support you through the loan process and source a range options tailored to your unique circumstance.",
-            "learnMore": true
+            "learnMoreText": "Learn More →"
           }
         ]
       },
@@ -167,7 +167,13 @@
     "facebookUrl": "https://facebook.com",
     "twitterUrl": "https://twitter.com",
     "linkedinUrl": "https://linkedin.com",
-    "youtubeUrl": "https://youtube.com"
+    "youtubeUrl": "https://youtube.com",
+    "menuItems": [
+      { "label": "Home", "url": "/" },
+      { "label": "About Us", "url": "/about" },
+      { "label": "Our Services", "url": "/services" },
+      { "label": "Contact Us", "url": "/contact" }
+    ]
   },
   "footer": {
     "logo": "/logo-prudential.png",
@@ -178,6 +184,34 @@
       "line3": "Australia"
     },
     "email": "info@prudentialfinancial.com.au",
+    "phone": "03 8555 4063",
+    "facebookUrl": "https://facebook.com",
+    "twitterUrl": "https://twitter.com",
+    "linkedinUrl": "https://linkedin.com",
+    "instagramUrl": "https://instagram.com",
+    "quickLinks": [
+      { "label": "Home", "url": "/" },
+      { "label": "About Us", "url": "/about" },
+      { "label": "Our Services", "url": "/services" },
+      { "label": "Contact Us", "url": "/contact" }
+    ],
+    "services": [
+      { "label": "Home Loans", "url": "/services" },
+      { "label": "SMSF Loans", "url": "/services" },
+      { "label": "Commercial Loans", "url": "/services" },
+      { "label": "Personal Loans", "url": "/services" },
+      { "label": "Vehicle Loans", "url": "/services" }
+    ],
+    "termsText": "Terms & Conditions",
+    "termsUrl": "#",
+    "paymentLogos": [
+      { "name": "Visa", "image": "/images/payment-visa.png" },
+      { "name": "Mastercard", "image": "/images/payment-mastercard.png" },
+      { "name": "Amex", "image": "/images/payment-amex.png" }
+    ],
+    "quickLinksTitle": "Quick Links",
+    "servicesTitle": "Our Services",
+    "contactTitle": "Contact",
     "copyright": "© 2025 Prudential Financial. All Rights Reserved."
   }
 }

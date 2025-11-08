@@ -97,9 +97,9 @@ const ServiceTypes = ({ data = {} }) => {
                     <div key={subIndex} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
                       <h5 className="text-xl font-bold text-gray-900 mb-3">{sub.title}</h5>
                       <p className="text-gray-600 text-justify text-sm leading-relaxed mb-4">{sub.description}</p>
-                      {sub.learnMore && (
+                      {sub.learnMoreText && (
                         <button className="text-emerald-600 font-semibold hover:text-emerald-700 text-sm">
-                          Learn More →
+                          {sub.learnMoreText}
                         </button>
                       )}
                     </div>

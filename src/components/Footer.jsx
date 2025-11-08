@@ -10,7 +10,44 @@ const Footer = ({ data = {} }) => {
   const addressLine3 = typeof address === 'object' ? (address?.line3 || 'United States of America') : 'United States of America';
 
   const email = data?.email || 'support@domain.com';
+  const phone = data?.phone || '03 8555 4063';
   const copyright = data?.copyright || '© 2025 Prudential Financial. All Rights Reserved.';
+
+  // Social media links
+  const facebookUrl = data?.facebookUrl || 'https://facebook.com';
+  const twitterUrl = data?.twitterUrl || 'https://twitter.com';
+  const linkedinUrl = data?.linkedinUrl || 'https://linkedin.com';
+  const instagramUrl = data?.instagramUrl || 'https://instagram.com';
+
+  // Navigation links
+  const quickLinks = data?.quickLinks || [
+    { label: 'Home', url: '/' },
+    { label: 'About Us', url: '/about' },
+    { label: 'Our Services', url: '/services' },
+    { label: 'Contact Us', url: '/contact' }
+  ];
+
+  const services = data?.services || [
+    { label: 'Home Loans', url: '/services' },
+    { label: 'SMSF Loans', url: '/services' },
+    { label: 'Commercial Loans', url: '/services' },
+    { label: 'Personal Loans', url: '/services' },
+    { label: 'Vehicle Loans', url: '/services' }
+  ];
+
+  const termsText = data?.termsText || 'Terms & Conditions';
+  const termsUrl = data?.termsUrl || '#';
+
+  const paymentLogos = data?.paymentLogos || [
+    { name: 'Visa', image: '/images/payment-visa.png' },
+    { name: 'Mastercard', image: '/images/payment-mastercard.png' },
+    { name: 'Amex', image: '/images/payment-amex.png' }
+  ];
+
+  // Footer section titles
+  const quickLinksTitle = data?.quickLinksTitle || 'Quick Links';
+  const servicesTitle = data?.servicesTitle || 'Our Services';
+  const contactTitle = data?.contactTitle || 'Contact';
 
   return (
     <footer className="bg-gray-900 text-white py-6 sm:py-8 md:py-10">
@@ -25,16 +62,16 @@ const Footer = ({ data = {} }) => {
               {description}
             </p>
             <div className="flex gap-3 sm:gap-4">
-              <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-500 transition-colors text-sm sm:text-base">
+              <a href={facebookUrl} target="_blank" rel="noopener noreferrer" className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-500 transition-colors text-sm sm:text-base">
                 <i className="fab fa-facebook-f"></i>
               </a>
-              <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-500 transition-colors text-sm sm:text-base">
+              <a href={twitterUrl} target="_blank" rel="noopener noreferrer" className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-500 transition-colors text-sm sm:text-base">
                 <i className="fab fa-twitter"></i>
               </a>
-              <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-500 transition-colors text-sm sm:text-base">
+              <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-500 transition-colors text-sm sm:text-base">
                 <i className="fab fa-linkedin-in"></i>
               </a>
-              <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-500 transition-colors text-sm sm:text-base">
+              <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-500 transition-colors text-sm sm:text-base">
                 <i className="fab fa-instagram"></i>
               </a>
             </div>
@@ -42,33 +79,30 @@ const Footer = ({ data = {} }) => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-base sm:text-lg text-justify font-semibold mb-3 sm:mb-4">Quick Links</h4>
+            <h4 className="text-base sm:text-lg text-justify font-semibold mb-3 sm:mb-4">{quickLinksTitle}</h4>
             <ul className="space-y-1.5 sm:space-y-2">
-              <li><a href="/" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Home</a></li>
-              <li><a href="/about" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">About Us</a></li>
-              <li><a href="/services" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Our Services</a></li>
-              <li><a href="/contact" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Contact Us</a></li>
+              {quickLinks.map((link, index) => (
+                <li key={index}><a href={link.url} className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">{link.label}</a></li>
+              ))}
             </ul>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="text-base sm:text-lg text-justify font-semibold mb-3 sm:mb-4">Our Services</h4>
+            <h4 className="text-base sm:text-lg text-justify font-semibold mb-3 sm:mb-4">{servicesTitle}</h4>
             <ul className="space-y-1.5 sm:space-y-2">
-              <li><a href="/services" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Home Loans</a></li>
-              <li><a href="/services" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">SMSF Loans</a></li>
-              <li><a href="/services" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Commercial Loans</a></li>
-              <li><a href="/services" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Personal Loans</a></li>
-              <li><a href="/services" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Vehicle Loans</a></li>
+              {services.map((service, index) => (
+                <li key={index}><a href={service.url} className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">{service.label}</a></li>
+              ))}
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="text-base sm:text-lg text-justify font-semibold mb-3 sm:mb-4">Contact</h4>
+            <h4 className="text-base sm:text-lg text-justify font-semibold mb-3 sm:mb-4">{contactTitle}</h4>
             <ul className="space-y-1.5 sm:space-y-2">
-              <li><a href="tel:0385554063" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">03 8555 4063</a></li>
-              <li><a href="mailto:info@prudentialfinancial.com.au" className="text-gray-400 hover:text-emerald-500 transition-colors text-xs sm:text-sm break-words">info@prudentialfinancial.com.au</a></li>
+              <li><a href={`tel:${phone.replace(/\s/g, '')}`} className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">{phone}</a></li>
+              <li><a href={`mailto:${email}`} className="text-gray-400 hover:text-emerald-500 transition-colors text-xs sm:text-sm break-words">{email}</a></li>
               <li><a href="/contact" className="text-gray-400 hover:text-emerald-500 transition-colors text-sm sm:text-base">Get In Touch</a></li>
             </ul>
           </div>
@@ -86,7 +120,7 @@ const Footer = ({ data = {} }) => {
               <p className="text-gray-400">{email}</p>
             </div>
             <div>
-              <p className="text-gray-400">Terms & Conditions</p>
+              <a href={termsUrl} className="text-gray-400 hover:text-emerald-500 transition-colors">{termsText}</a>
             </div>
           </div>
         </div>
@@ -97,9 +131,15 @@ const Footer = ({ data = {} }) => {
             {copyright}
           </p>
           <div className="flex gap-2">
-            <img src="/images/payment-visa.png" alt="Visa" className="h-6 sm:h-8 bg-white rounded px-1.5 sm:px-2" onError={(e) => e.target.style.display = 'none'} />
-            <img src="/images/payment-mastercard.png" alt="Mastercard" className="h-6 sm:h-8 bg-white rounded px-1.5 sm:px-2" onError={(e) => e.target.style.display = 'none'} />
-            <img src="/images/payment-amex.png" alt="Amex" className="h-6 sm:h-8 bg-white rounded px-1.5 sm:px-2" onError={(e) => e.target.style.display = 'none'} />
+            {paymentLogos.map((logo, index) => (
+              <img
+                key={index}
+                src={logo.image}
+                alt={logo.name}
+                className="h-6 sm:h-8 bg-white rounded px-1.5 sm:px-2"
+                onError={(e) => e.target.style.display = 'none'}
+              />
+            ))}
           </div>
         </div>
       </div>

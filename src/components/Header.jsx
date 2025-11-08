@@ -13,6 +13,14 @@ const Header = ({ data = {} }) => {
   const linkedinUrl = data?.linkedinUrl || 'https://linkedin.com';
   const youtubeUrl = data?.youtubeUrl || 'https://youtube.com';
 
+  // Navigation menu items
+  const menuItems = data?.menuItems || [
+    { label: 'Home', url: '/' },
+    { label: 'About Us', url: '/about' },
+    { label: 'Our Services', url: '/services' },
+    { label: 'Contact Us', url: '/contact' }
+  ];
+
   return (
     <header className="bg-white shadow-md border-b-4 border-emerald-500 sticky top-0 z-50">
       {/* Top Contact Bar */}
@@ -49,10 +57,9 @@ const Header = ({ data = {} }) => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Home</Link>
-            <Link to="/about" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">About Us</Link>
-            <Link to="/services" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Our Services</Link>
-            <Link to="/contact" className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">Contact Us</Link>
+            {menuItems.map((item, index) => (
+              <Link key={index} to={item.url} className="text-gray-700 hover:text-emerald-500 font-medium transition-colors">{item.label}</Link>
+            ))}
           </nav>
 
           {/* Mobile Menu Button */}
@@ -78,10 +85,9 @@ const Header = ({ data = {} }) => {
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
           <nav className="flex flex-col p-4 space-y-1">
-            <Link to="/" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Home</Link>
-            <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">About Us</Link>
-            <Link to="/services" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Our Services</Link>
-            <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">Contact Us</Link>
+            {menuItems.map((item, index) => (
+              <Link key={index} to={item.url} onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-emerald-500 hover:bg-gray-50 px-4 py-3 rounded-md transition-colors">{item.label}</Link>
+            ))}
           </nav>
         </div>
       )}

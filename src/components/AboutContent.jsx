@@ -130,7 +130,9 @@ const AboutContent = ({ data = {} }) => {
                       </p>
                     ))}
                   </div>
-                  <p className="text-emerald-50 text-sm mt-6">Free Consultation | No Obligation | Local Experts</p>
+                  {section.cta.tagline && (
+                    <p className="text-emerald-50 text-sm mt-6">{section.cta.tagline}</p>
+                  )}
                 </div>
               )}
             </div>

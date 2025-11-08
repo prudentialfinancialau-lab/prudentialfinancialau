@@ -18,6 +18,20 @@ const Contact = ({ data = {} }) => {
   const mapUrl = data?.mapUrl || 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1645564932666!5m2!1sen!2s';
   const location = data?.location || 'New York, NY, USA';
 
+  // Form labels
+  const labels = data?.labels || {
+    firstName: 'First name *',
+    lastName: 'Last name *',
+    phone: '+614 XX XXX XXX',
+    email: 'Email *',
+    suburb: 'Suburb *',
+    postcode: 'Postcode *',
+    state: 'State *:',
+    purpose: 'Purpose *:',
+    comments: 'Additional comments?',
+    submit: 'SUBMIT'
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Contact form submitted:', formData);
@@ -59,7 +73,7 @@ const Contact = ({ data = {} }) => {
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleChange}
-                  placeholder="First name *"
+                  placeholder={labels.firstName}
                   required
                   className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-white text-gray-900 text-sm sm:text-base border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 placeholder-gray-400"
                 />
@@ -72,7 +86,7 @@ const Contact = ({ data = {} }) => {
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleChange}
-                  placeholder="Last name *"
+                  placeholder={labels.lastName}
                   required
                   className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-white text-gray-900 text-sm sm:text-base border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 placeholder-gray-400"
                 />
@@ -85,7 +99,7 @@ const Contact = ({ data = {} }) => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="+614 XX XXX XXX"
+                  placeholder={labels.phone}
                   className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-white text-gray-900 text-sm sm:text-base border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 placeholder-gray-400"
                 />
               </div>
@@ -97,7 +111,7 @@ const Contact = ({ data = {} }) => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="Email *"
+                  placeholder={labels.email}
                   required
                   className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-white text-gray-900 text-sm sm:text-base border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 placeholder-gray-400"
                 />
@@ -111,7 +125,7 @@ const Contact = ({ data = {} }) => {
                     name="suburb"
                     value={formData.suburb}
                     onChange={handleChange}
-                    placeholder="Suburb *"
+                    placeholder={labels.suburb}
                     required
                     className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-white text-gray-900 text-sm sm:text-base border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 placeholder-gray-400"
                   />
@@ -122,7 +136,7 @@ const Contact = ({ data = {} }) => {
                     name="postcode"
                     value={formData.postcode}
                     onChange={handleChange}
-                    placeholder="Postcode *"
+                    placeholder={labels.postcode}
                     required
                     className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-white text-gray-900 text-sm sm:text-base border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 placeholder-gray-400"
                   />
@@ -145,7 +159,7 @@ const Contact = ({ data = {} }) => {
                     paddingRight: '2.5rem'
                   }}
                 >
-                  <option value="">State *:</option>
+                  <option value="">{labels.state}</option>
                   {states.map(state => (
                     <option key={state} value={state}>{state}</option>
                   ))}
@@ -168,7 +182,7 @@ const Contact = ({ data = {} }) => {
                     paddingRight: '2.5rem'
                   }}
                 >
-                  <option value="">Purpose *:</option>
+                  <option value="">{labels.purpose}</option>
                   {purposes.map(purpose => (
                     <option key={purpose} value={purpose}>{purpose}</option>
                   ))}
@@ -181,7 +195,7 @@ const Contact = ({ data = {} }) => {
                   name="comments"
                   value={formData.comments}
                   onChange={handleChange}
-                  placeholder="Additional comments?"
+                  placeholder={labels.comments}
                   rows="4"
                   className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-white text-gray-900 text-sm sm:text-base border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 placeholder-gray-400 resize-none"
                 ></textarea>
@@ -192,7 +206,7 @@ const Contact = ({ data = {} }) => {
                 type="submit"
                 className="w-full bg-emerald-500 text-white px-6 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg text-justify hover:bg-emerald-600 transition-colors uppercase tracking-wide"
               >
-                SUBMIT
+                {labels.submit}
               </button>
             </form>
           </div>

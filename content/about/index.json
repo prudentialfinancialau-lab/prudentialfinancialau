@@ -129,7 +129,8 @@
               "label": "Visit",
               "value": "Suite 9, 622 Ferntree Gully Road, Wheelers Hill VIC 3150"
             }
-          ]
+          ],
+          "tagline": "Free Consultation | No Obligation | Local Experts"
         }
       }
     ]
@@ -171,7 +172,13 @@
     "facebookUrl": "https://facebook.com",
     "twitterUrl": "https://twitter.com",
     "linkedinUrl": "https://linkedin.com",
-    "youtubeUrl": "https://youtube.com"
+    "youtubeUrl": "https://youtube.com",
+    "menuItems": [
+      { "label": "Home", "url": "/" },
+      { "label": "About Us", "url": "/about" },
+      { "label": "Our Services", "url": "/services" },
+      { "label": "Contact Us", "url": "/contact" }
+    ]
   },
   "footer": {
     "logo": "/logo-prudential.png",
@@ -182,6 +189,34 @@
       "line3": "Australia"
     },
     "email": "info@prudentialfinancial.com.au",
+    "phone": "03 8555 4063",
+    "facebookUrl": "https://facebook.com",
+    "twitterUrl": "https://twitter.com",
+    "linkedinUrl": "https://linkedin.com",
+    "instagramUrl": "https://instagram.com",
+    "quickLinks": [
+      { "label": "Home", "url": "/" },
+      { "label": "About Us", "url": "/about" },
+      { "label": "Our Services", "url": "/services" },
+      { "label": "Contact Us", "url": "/contact" }
+    ],
+    "services": [
+      { "label": "Home Loans", "url": "/services" },
+      { "label": "SMSF Loans", "url": "/services" },
+      { "label": "Commercial Loans", "url": "/services" },
+      { "label": "Personal Loans", "url": "/services" },
+      { "label": "Vehicle Loans", "url": "/services" }
+    ],
+    "termsText": "Terms & Conditions",
+    "termsUrl": "#",
+    "paymentLogos": [
+      { "name": "Visa", "image": "/images/payment-visa.png" },
+      { "name": "Mastercard", "image": "/images/payment-mastercard.png" },
+      { "name": "Amex", "image": "/images/payment-amex.png" }
+    ],
+    "quickLinksTitle": "Quick Links",
+    "servicesTitle": "Our Services",
+    "contactTitle": "Contact",
     "copyright": "© 2025 Prudential Financial. All Rights Reserved."
   }
 }
