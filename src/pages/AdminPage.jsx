@@ -17,6 +17,12 @@ export default function AdminPage() {
   const [dragActive, setDragActive] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [previewImage, setPreviewImage] = useState(null);
+  const [newsletters, setNewsletters] = useState([]);
+  const [contacts, setContacts] = useState([]);
+  const [newsletterPage, setNewsletterPage] = useState(1);
+  const [contactPage, setContactPage] = useState(1);
+  const [newsletterTotal, setNewsletterTotal] = useState(0);
+  const [contactTotal, setContactTotal] = useState(0);
   const fileInputRef = useRef(null);
   const navigate = useNavigate();
 
@@ -25,6 +31,8 @@ export default function AdminPage() {
     if (token && isAuthenticated) {
       loadContent('home');
       loadImages();
+      loadNewsletters(1);
+      loadContacts(1);
     } else if (!token) {
       setIsAuthenticated(false);
     }
@@ -109,6 +117,96 @@ export default function AdminPage() {
       }
     } catch (err) {
       console.error('Error loading images:', err);
+    }
+  };
+
+  const loadNewsletters = async (page = 1) => {
+    try {
+      const token = localStorage.getItem('adminToken');
+      const response = await fetch(`${API_URL}/newsletters?page=${page}&limit=10`, {
+        headers: { 'Authorization': `Bearer ${token}` },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setNewsletters(data.data);
+        setNewsletterTotal(data.total);
+        setNewsletterPage(page);
+      }
+    } catch (err) {
+      console.error('Error loading newsletters:', err);
+    }
+  };
+
+  const loadContacts = async (page = 1) => {
+    try {
+      const token = localStorage.getItem('adminToken');
+      const response = await fetch(`${API_URL}/contacts?page=${page}&limit=10`, {
+        headers: { 'Authorization': `Bearer ${token}` },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setContacts(data.data);
+        setContactTotal(data.total);
+        setContactPage(page);
+      }
+    } catch (err) {
+      console.error('Error loading contacts:', err);
+    }
+  };
+
+  const deleteNewsletter = async (id) => {
+    if (!confirm('Are you sure you want to delete this subscriber?')) return;
+
+    try {
+      const token = localStorage.getItem('adminToken');
+      const response = await fetch(`${API_URL}/newsletters/${id}`, {
+        method: 'DELETE',
+        headers: { 'Authorization': `Bearer ${token}` },
+      });
+
+      if (response.ok) {
+        loadNewsletters(newsletterPage);
+        setMessage({ type: 'success', text: 'Subscriber deleted successfully' });
+      }
+    } catch (err) {
+      setMessage({ type: 'error', text: 'Failed to delete subscriber' });
+    }
+  };
+
+  const deleteContact = async (id) => {
+    if (!confirm('Are you sure you want to delete this contact?')) return;
+
+    try {
+      const token = localStorage.getItem('adminToken');
+      const response = await fetch(`${API_URL}/contacts/${id}`, {
+        method: 'DELETE',
+        headers: { 'Authorization': `Bearer ${token}` },
+      });
+
+      if (response.ok) {
+        loadContacts(contactPage);
+        setMessage({ type: 'success', text: 'Contact deleted successfully' });
+      }
+    } catch (err) {
+      setMessage({ type: 'error', text: 'Failed to delete contact' });
+    }
+  };
+
+  const markContactAsRead = async (id) => {
+    try {
+      const token = localStorage.getItem('adminToken');
+      const response = await fetch(`${API_URL}/contacts/${id}/read`, {
+        method: 'PATCH',
+        headers: { 'Authorization': `Bearer ${token}` },
+      });
+
+      if (response.ok) {
+        loadContacts(contactPage);
+      }
+    } catch (err) {
+      console.error('Failed to mark as read:', err);
     }
   };
 
@@ -417,6 +515,28 @@ export default function AdminPage() {
                 Image Library ({uploadedImages.length})
               </span>
             </button>
+            <button
+              onClick={() => { setSelectedTab('newsletters'); loadNewsletters(1); }}
+              className={`px-8 py-4 font-semibold border-b-4 transition-all ${selectedTab === 'newsletters' ? 'border-emerald-500 text-emerald-600 bg-emerald-50' : 'border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}
+            >
+              <span className="flex items-center gap-2">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                Newsletters ({newsletterTotal})
+              </span>
+            </button>
+            <button
+              onClick={() => { setSelectedTab('contacts'); loadContacts(1); }}
+              className={`px-8 py-4 font-semibold border-b-4 transition-all ${selectedTab === 'contacts' ? 'border-emerald-500 text-emerald-600 bg-emerald-50' : 'border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}
+            >
+              <span className="flex items-center gap-2">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                </svg>
+                Contacts ({contactTotal})
+              </span>
+            </button>
           </div>
         </div>
       </div>
@@ -661,6 +781,161 @@ export default function AdminPage() {
               )}
             </div>
           </>
+        )}
+
+        {/* Newsletters Tab */}
+        {selectedTab === 'newsletters' && (
+          <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+              <span className="w-2 h-8 bg-emerald-500 rounded"></span>
+              Newsletter Subscribers ({newsletterTotal})
+            </h2>
+
+            {newsletters.length === 0 ? (
+              <div className="text-center py-16">
+                <div className="w-32 h-32 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <p className="text-gray-500 text-lg">No newsletter subscribers yet</p>
+              </div>
+            ) : (
+              <>
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b-2 border-gray-200">
+                        <th className="text-left py-3 px-4 font-semibold text-gray-700">Email</th>
+                        <th className="text-left py-3 px-4 font-semibold text-gray-700">Subscribed At</th>
+                        <th className="text-right py-3 px-4 font-semibold text-gray-700">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {newsletters.map((newsletter) => (
+                        <tr key={newsletter.id} className="border-b border-gray-100 hover:bg-gray-50">
+                          <td className="py-3 px-4">{newsletter.email}</td>
+                          <td className="py-3 px-4 text-gray-600">
+                            {new Date(newsletter.subscribedAt).toLocaleString()}
+                          </td>
+                          <td className="py-3 px-4 text-right">
+                            <button
+                              onClick={() => deleteNewsletter(newsletter.id)}
+                              className="text-red-600 hover:text-red-800 font-semibold"
+                            >
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                {/* Pagination */}
+                {newsletterTotal > 10 && (
+                  <div className="mt-6 flex justify-center gap-2">
+                    {Array.from({ length: Math.ceil(newsletterTotal / 10) }, (_, i) => i + 1).map((page) => (
+                      <button
+                        key={page}
+                        onClick={() => loadNewsletters(page)}
+                        className={`px-4 py-2 rounded-lg font-semibold ${
+                          newsletterPage === page
+                            ? 'bg-emerald-500 text-white'
+                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                        }`}
+                      >
+                        {page}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </>
+            )}
+          </div>
+        )}
+
+        {/* Contacts Tab */}
+        {selectedTab === 'contacts' && (
+          <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+              <span className="w-2 h-8 bg-emerald-500 rounded"></span>
+              Contact Form Submissions ({contactTotal})
+            </h2>
+
+            {contacts.length === 0 ? (
+              <div className="text-center py-16">
+                <div className="w-32 h-32 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                  </svg>
+                </div>
+                <p className="text-gray-500 text-lg">No contact submissions yet</p>
+              </div>
+            ) : (
+              <>
+                <div className="space-y-4">
+                  {contacts.map((contact) => (
+                    <div
+                      key={contact.id}
+                      className={`border-2 rounded-xl p-6 ${
+                        contact.read ? 'border-gray-200 bg-gray-50' : 'border-emerald-300 bg-emerald-50'
+                      }`}
+                    >
+                      <div className="flex justify-between items-start mb-4">
+                        <div>
+                          <h3 className="text-lg font-bold text-gray-900">{contact.name}</h3>
+                          <p className="text-gray-600">{contact.email}</p>
+                          {contact.phone && <p className="text-gray-600">{contact.phone}</p>}
+                          <p className="text-sm text-gray-500 mt-1">
+                            {new Date(contact.submittedAt).toLocaleString()}
+                          </p>
+                        </div>
+                        <div className="flex gap-2">
+                          {!contact.read && (
+                            <button
+                              onClick={() => markContactAsRead(contact.id)}
+                              className="bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-600"
+                            >
+                              Mark Read
+                            </button>
+                          )}
+                          <button
+                            onClick={() => deleteContact(contact.id)}
+                            className="bg-red-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-600"
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg border border-gray-200">
+                        <p className="text-gray-800 whitespace-pre-wrap">{contact.message}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Pagination */}
+                {contactTotal > 10 && (
+                  <div className="mt-6 flex justify-center gap-2">
+                    {Array.from({ length: Math.ceil(contactTotal / 10) }, (_, i) => i + 1).map((page) => (
+                      <button
+                        key={page}
+                        onClick={() => loadContacts(page)}
+                        className={`px-4 py-2 rounded-lg font-semibold ${
+                          contactPage === page
+                            ? 'bg-emerald-500 text-white'
+                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                        }`}
+                      >
+                        {page}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </>
+            )}
+          </div>
         )}
       </div>
     </div>

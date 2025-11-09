@@ -12,6 +12,8 @@ const Contact = ({ data = {} }) => {
     purpose: '',
     comments: ''
   });
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState({ type: '', text: '' });
 
   // Default values
   const title = data?.title || 'Contact Us';
@@ -32,9 +34,58 @@ const Contact = ({ data = {} }) => {
     submit: 'SUBMIT'
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Contact form submitted:', formData);
+    setLoading(true);
+    setMessage({ type: '', text: '' });
+
+    try {
+      // Combine form data to match backend API structure
+      const fullName = `${formData.firstName} ${formData.lastName}`.trim();
+      const detailedMessage = `
+Location: ${formData.suburb}, ${formData.postcode}, ${formData.state}
+Purpose: ${formData.purpose}
+
+${formData.comments || 'No additional comments'}
+      `.trim();
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: fullName,
+          email: formData.email,
+          phone: formData.phone,
+          message: detailedMessage,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setMessage({ type: 'success', text: data.message || 'Message sent successfully!' });
+        // Reset form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          phone: '',
+          email: '',
+          suburb: '',
+          postcode: '',
+          state: '',
+          purpose: '',
+          comments: ''
+        });
+      } else {
+        setMessage({ type: 'error', text: data.error || 'Failed to send message. Please try again.' });
+      }
+    } catch (error) {
+      setMessage({ type: 'error', text: 'Network error. Please try again.' });
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -204,10 +255,22 @@ const Contact = ({ data = {} }) => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-emerald-500 text-white px-6 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg text-justify hover:bg-emerald-600 transition-colors uppercase tracking-wide"
+                disabled={loading}
+                className="w-full bg-emerald-500 text-white px-6 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg text-justify hover:bg-emerald-600 transition-colors uppercase tracking-wide disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {labels.submit}
+                {loading ? 'SENDING...' : labels.submit}
               </button>
+
+              {/* Success/Error Message */}
+              {message.text && (
+                <div className={`p-4 rounded-lg text-center font-medium ${
+                  message.type === 'success'
+                    ? 'bg-green-100 text-green-800 border-2 border-green-300'
+                    : 'bg-red-100 text-red-800 border-2 border-red-300'
+                }`}>
+                  {message.text}
+                </div>
+              )}
             </form>
           </div>
 

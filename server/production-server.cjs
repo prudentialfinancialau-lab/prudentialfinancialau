@@ -10,6 +10,9 @@ const PORT = process.env.PORT || 3000;
 const DIST_DIR = path.join(__dirname, '../dist');
 const CONTENT_DIR = path.join(__dirname, '../public/content');
 const UPLOADS_DIR = path.join(__dirname, '../public/uploads');
+const DATA_DIR = path.join(__dirname, '../data');
+const NEWSLETTER_FILE = path.join(DATA_DIR, 'newsletters.json');
+const CONTACTS_FILE = path.join(DATA_DIR, 'contacts.json');
 
 // Admin credentials from environment variables (REQUIRED)
 const ADMIN_USER = process.env.ADMIN_USERNAME;
@@ -54,6 +57,27 @@ const upload = multer({
     cb(new Error('Only image files allowed!'));
   }
 });
+
+// Helper functions for data storage
+function ensureDataDir() {
+  if (!fs.existsSync(DATA_DIR)) {
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+  }
+}
+
+function readJSONFile(filePath, defaultValue = []) {
+  ensureDataDir();
+  if (!fs.existsSync(filePath)) {
+    fs.writeFileSync(filePath, JSON.stringify(defaultValue, null, 2));
+    return defaultValue;
+  }
+  return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+}
+
+function writeJSONFile(filePath, data) {
+  ensureDataDir();
+  fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+}
 
 // Auth middleware
 function checkAuth(req, res, next) {
@@ -178,6 +202,126 @@ app.delete('/api/admin/images/:filename', checkAuth, (req, res) => {
 
   fs.unlinkSync(filePath);
   res.json({ message: 'Image deleted' });
+});
+
+// Newsletter subscription (public endpoint)
+app.post('/api/newsletter', (req, res) => {
+  const { email } = req.body;
+
+  if (!email || !email.includes('@')) {
+    return res.status(400).json({ error: 'Valid email required' });
+  }
+
+  const newsletters = readJSONFile(NEWSLETTER_FILE);
+  const existingIndex = newsletters.findIndex(n => n.email === email);
+
+  if (existingIndex >= 0) {
+    return res.status(400).json({ error: 'Email already subscribed' });
+  }
+
+  newsletters.unshift({
+    id: Date.now(),
+    email,
+    subscribedAt: new Date().toISOString()
+  });
+
+  writeJSONFile(NEWSLETTER_FILE, newsletters);
+  res.json({ message: 'Successfully subscribed!' });
+});
+
+// Contact form submission (public endpoint)
+app.post('/api/contact', (req, res) => {
+  const { name, email, phone, message } = req.body;
+
+  if (!name || !email || !message) {
+    return res.status(400).json({ error: 'Name, email, and message are required' });
+  }
+
+  const contacts = readJSONFile(CONTACTS_FILE);
+
+  contacts.unshift({
+    id: Date.now(),
+    name,
+    email,
+    phone: phone || '',
+    message,
+    submittedAt: new Date().toISOString(),
+    read: false
+  });
+
+  writeJSONFile(CONTACTS_FILE, contacts);
+  res.json({ message: 'Message sent successfully!' });
+});
+
+// Get newsletters (admin only, with pagination)
+app.get('/api/admin/newsletters', checkAuth, (req, res) => {
+  const page = parseInt(req.query.page) || 1;
+  const limit = parseInt(req.query.limit) || 10;
+
+  const newsletters = readJSONFile(NEWSLETTER_FILE);
+  const startIndex = (page - 1) * limit;
+  const endIndex = startIndex + limit;
+
+  res.json({
+    total: newsletters.length,
+    page,
+    limit,
+    totalPages: Math.ceil(newsletters.length / limit),
+    data: newsletters.slice(startIndex, endIndex)
+  });
+});
+
+// Get contacts (admin only, with pagination)
+app.get('/api/admin/contacts', checkAuth, (req, res) => {
+  const page = parseInt(req.query.page) || 1;
+  const limit = parseInt(req.query.limit) || 10;
+
+  const contacts = readJSONFile(CONTACTS_FILE);
+  const startIndex = (page - 1) * limit;
+  const endIndex = startIndex + limit;
+
+  res.json({
+    total: contacts.length,
+    page,
+    limit,
+    totalPages: Math.ceil(contacts.length / limit),
+    data: contacts.slice(startIndex, endIndex)
+  });
+});
+
+// Mark contact as read
+app.patch('/api/admin/contacts/:id/read', checkAuth, (req, res) => {
+  const id = parseInt(req.params.id);
+  const contacts = readJSONFile(CONTACTS_FILE);
+
+  const contact = contacts.find(c => c.id === id);
+  if (!contact) {
+    return res.status(404).json({ error: 'Contact not found' });
+  }
+
+  contact.read = true;
+  writeJSONFile(CONTACTS_FILE, contacts);
+  res.json({ message: 'Contact marked as read' });
+});
+
+// Delete newsletter subscriber
+app.delete('/api/admin/newsletters/:id', checkAuth, (req, res) => {
+  const id = parseInt(req.params.id);
+  let newsletters = readJSONFile(NEWSLETTER_FILE);
+
+  newsletters = newsletters.filter(n => n.id !== id);
+  writeJSONFile(NEWSLETTER_FILE, newsletters);
+  res.json({ message: 'Newsletter subscriber deleted' });
+});
+
+// Delete contact
+app.delete('/api/admin/contacts/:id', checkAuth, (req, res) => {
+  const id = parseInt(req.params.id);
+  let contacts = readJSONFile(CONTACTS_FILE);
+
+  contacts = contacts.filter(c => c.id !== id);
+  writeJSONFile(CONTACTS_FILE, contacts);
+  res.json({ message: 'Contact deleted' });
 });
 
 // Serve content JSON files with no-cache headers
