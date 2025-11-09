@@ -349,12 +349,6 @@ export default function AdminPage() {
                   </span>
                 ) : 'Sign In'}
               </button>
-
-              <div className="text-center mt-4">
-                <p className="text-sm text-gray-500">
-                  Default: <span className="font-semibold">admin</span> / <span className="font-semibold">admin123</span>
-                </p>
-              </div>
             </form>
           </div>
         </div>
