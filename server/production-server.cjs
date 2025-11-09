@@ -11,9 +11,9 @@ const DIST_DIR = path.join(__dirname, '../dist');
 const CONTENT_DIR = path.join(__dirname, '../public/content');
 const UPLOADS_DIR = path.join(__dirname, '../public/uploads');
 
-// Admin credentials
-const ADMIN_USER = 'admin';
-const ADMIN_PASS = 'admin123';
+// Admin credentials from environment variables (fallback for development only)
+const ADMIN_USER = process.env.ADMIN_USERNAME || 'admin';
+const ADMIN_PASS = process.env.ADMIN_PASSWORD || 'changeme123';
 
 // Middleware
 app.use(express.json());
@@ -202,7 +202,5 @@ app.listen(PORT, '0.0.0.0', () => {
   console.log(`\n🚀 Production server running on http://localhost:${PORT}`);
   console.log(`📁 Serving static files from: ${DIST_DIR}`);
   console.log(`📝 Content directory: ${CONTENT_DIR}`);
-  console.log(`🔐 Admin panel: http://localhost:${PORT}/admin`);
-  console.log(`   Username: ${ADMIN_USER}`);
-  console.log(`   Password: ${ADMIN_PASS}\n`);
+  console.log(`🔐 Admin panel: http://localhost:${PORT}/admin\n`);
 });
