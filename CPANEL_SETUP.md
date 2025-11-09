@@ -60,9 +60,10 @@ Click "Run NPM Install" and then "Restart" in the Node.js App interface.
 
 ## Security Notes
 
-- The default fallback credentials (admin/changeme123) are only for local development
-- **IMPORTANT:** Always set ADMIN_USERNAME and ADMIN_PASSWORD environment variables in production
+- **REQUIRED:** You MUST set ADMIN_USERNAME and ADMIN_PASSWORD environment variables
+- The application will not start without these credentials configured
 - Never commit credentials to git
+- Use a strong, unique password
 - Change your password regularly
 
 ## Troubleshooting

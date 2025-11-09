@@ -11,9 +11,18 @@ const DIST_DIR = path.join(__dirname, '../dist');
 const CONTENT_DIR = path.join(__dirname, '../public/content');
 const UPLOADS_DIR = path.join(__dirname, '../public/uploads');
 
-// Admin credentials from environment variables (fallback for development only)
-const ADMIN_USER = process.env.ADMIN_USERNAME || 'admin';
-const ADMIN_PASS = process.env.ADMIN_PASSWORD || 'changeme123';
+// Admin credentials from environment variables (REQUIRED)
+const ADMIN_USER = process.env.ADMIN_USERNAME;
+const ADMIN_PASS = process.env.ADMIN_PASSWORD;
+
+// Check if credentials are set
+if (!ADMIN_USER || !ADMIN_PASS) {
+  console.error('\n❌ ERROR: Admin credentials not configured!');
+  console.error('Please set the following environment variables:');
+  console.error('  - ADMIN_USERNAME');
+  console.error('  - ADMIN_PASSWORD\n');
+  process.exit(1);
+}
 
 // Middleware
 app.use(express.json());
