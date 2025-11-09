@@ -25,10 +25,22 @@
     "linkedinUrl": "https://linkedin.com",
     "youtubeUrl": "https://youtube.com",
     "menuItems": [
-      { "label": "Home", "url": "/" },
-      { "label": "About Us", "url": "/about" },
-      { "label": "Our Services", "url": "/services" },
-      { "label": "Contact Us", "url": "/contact" }
+      {
+        "label": "Home",
+        "url": "/"
+      },
+      {
+        "label": "About Us",
+        "url": "/about"
+      },
+      {
+        "label": "Our Services",
+        "url": "/services"
+      },
+      {
+        "label": "Contact Us",
+        "url": "/contact"
+      }
     ]
   },
   "footer": {
@@ -46,24 +58,60 @@
     "linkedinUrl": "https://linkedin.com",
     "instagramUrl": "https://instagram.com",
     "quickLinks": [
-      { "label": "Home", "url": "/" },
-      { "label": "About Us", "url": "/about" },
-      { "label": "Our Services", "url": "/services" },
-      { "label": "Contact Us", "url": "/contact" }
+      {
+        "label": "Home",
+        "url": "/"
+      },
+      {
+        "label": "About Us",
+        "url": "/about"
+      },
+      {
+        "label": "Our Services",
+        "url": "/services"
+      },
+      {
+        "label": "Contact Us",
+        "url": "/contact"
+      }
     ],
     "services": [
-      { "label": "Home Loans", "url": "/services" },
-      { "label": "SMSF Loans", "url": "/services" },
-      { "label": "Commercial Loans", "url": "/services" },
-      { "label": "Personal Loans", "url": "/services" },
-      { "label": "Vehicle Loans", "url": "/services" }
+      {
+        "label": "Home Loans",
+        "url": "/services"
+      },
+      {
+        "label": "SMSF Loans",
+        "url": "/services"
+      },
+      {
+        "label": "Commercial Loans",
+        "url": "/services"
+      },
+      {
+        "label": "Personal Loans",
+        "url": "/services"
+      },
+      {
+        "label": "Vehicle Loans",
+        "url": "/services"
+      }
     ],
     "termsText": "Terms & Conditions",
     "termsUrl": "#",
     "paymentLogos": [
-      { "name": "Visa", "image": "/images/payment-visa.png" },
-      { "name": "Mastercard", "image": "/images/payment-mastercard.png" },
-      { "name": "Amex", "image": "/images/payment-amex.png" }
+      {
+        "name": "Visa",
+        "image": "/images/payment-visa.png"
+      },
+      {
+        "name": "Mastercard",
+        "image": "/images/payment-mastercard.png"
+      },
+      {
+        "name": "Amex",
+        "image": "/images/payment-amex.png"
+      }
     ],
     "quickLinksTitle": "Quick Links",
     "servicesTitle": "Our Services",
